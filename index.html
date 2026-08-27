@@ -5357,6 +5357,192 @@
 }
 </style>
 
+
+<style>
+@media (max-width:1180px){
+  .mr-avatar,.mr-side-avatar,.mr-side-mini{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  .mr-avatar-icon{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    line-height:1;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 25%, #2a2a30 0%, #1b1b20 72%, #111115 100%);
+    box-shadow:
+      inset 0 0 0 1px #2d2d34,
+      0 0 0 1px rgba(255,255,255,.02);
+  }
+  .mr-avatar-icon-lg{font-size:22px}
+  .mr-avatar-icon-sm{font-size:15px}
+
+  .mr-profile-wrap{padding:0 0 calc(12px + env(safe-area-inset-bottom))}
+  .mr-profile-top{
+    min-height:calc(56px + env(safe-area-inset-top));
+    padding:calc(env(safe-area-inset-top) + 4px) 0 2px;
+    display:grid;
+    grid-template-columns:40px 1fr auto;
+    align-items:center;
+    gap:8px;
+    border-bottom:1px solid #18181d;
+    margin-bottom:18px;
+  }
+  .mr-profile-back{
+    width:40px;height:40px;border:0;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:transparent;color:#fff;
+  }
+  .mr-profile-back svg{width:21px;height:21px}
+  .mr-profile-title{
+    font-size:18px;font-weight:720;letter-spacing:-.2px;
+  }
+  .mr-profile-save{
+    height:36px;padding:0 2px;border:0;background:transparent;
+    color:#aa9cff;font-size:16px;font-weight:700;
+  }
+
+  .mr-profile-center{
+    display:flex;flex-direction:column;align-items:center;
+    padding:0 0 12px;
+  }
+  .mr-profile-avatar{
+    width:112px;height:112px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 30% 25%, #2a2a30 0%, #1c1c20 72%, #131317 100%);
+    box-shadow:inset 0 0 0 2px #2a2a30, 0 8px 24px rgba(0,0,0,.35);
+    position:relative;
+    font-size:48px;
+  }
+  .mr-profile-edit-badge{
+    position:absolute;right:2px;bottom:2px;
+    width:33px;height:33px;border-radius:50%;
+    border:0;background:#aa9cff;color:#181222;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 12px rgba(0,0,0,.28);
+  }
+  .mr-profile-edit-badge svg{width:16px;height:16px}
+  .mr-profile-handle{
+    margin-top:14px;
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:-.2px;
+  }
+
+  .mr-profile-section-label{
+    margin:18px 0 10px;
+    color:#8f8f97;
+    font-size:12px;
+    font-weight:750;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+  }
+
+  .mr-icon-picker-card,.mr-profile-form{
+    background:#17171b;
+    border-radius:21px;
+    padding:14px;
+    box-shadow:inset 0 0 0 1px #1f1f25;
+  }
+  .mr-icon-tabs{
+    height:42px;
+    background:linear-gradient(180deg,#2a2a30,#232329);
+    border-radius:21px;
+    padding:4px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4px;
+    margin-bottom:14px;
+  }
+  .mr-icon-tab{
+    border:0;border-radius:17px;
+    background:transparent;color:#9e9eaa;
+    font-size:13px;font-weight:700;
+    letter-spacing:.3px;
+  }
+  .mr-icon-tab.active{
+    background:#1b1b20;color:#fff;
+  }
+  .mr-icon-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:10px;
+  }
+  .mr-icon-choice{
+    aspect-ratio:1/1;
+    min-height:46px;
+    border:0;
+    border-radius:15px;
+    background:#232329;
+    display:flex;align-items:center;justify-content:center;
+    font-size:23px;
+    position:relative;
+    color:#fff;
+  }
+  .mr-icon-choice.active{
+    background:#a995ff;
+    color:#171122;
+  }
+  .mr-icon-choice.active::after{
+    content:"✓";
+    position:absolute;right:5px;top:5px;
+    width:14px;height:14px;border-radius:50%;
+    background:#fff;color:#1b1b22;
+    font-size:10px;font-weight:900;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  .mr-profile-form-row{
+    display:grid;
+    grid-template-columns:1.2fr .4fr 1fr;
+    align-items:center;
+    gap:10px;
+    min-height:55px;
+    border-top:1px solid #23232a;
+  }
+  .mr-profile-form-row:first-child{border-top:0}
+  .mr-profile-form-row label{
+    color:#8e8ea0;
+    font-size:13px;
+  }
+  .mr-profile-prefix{
+    color:#8f8fa0;
+    font-size:13px;
+    text-align:center;
+  }
+  .mr-profile-input{
+    width:100%;
+    height:36px;
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-size:13px;
+    text-align:right;
+    outline:none;
+  }
+  .mr-generate-btn{
+    height:34px;
+    border:0;
+    background:transparent;
+    color:#a995ff;
+    font-size:13px;
+    font-weight:700;
+    text-align:right;
+  }
+  .mr-profile-note{
+    margin-top:12px;
+    color:#7d7d88;
+    font-size:11px;
+    line-height:1.45;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -5609,9 +5795,7 @@
   <!-- Mobile-only local wallet simulator shell. Desktop remains unchanged. -->
   <div id="mobileReferenceWallet" class="mr-wallet" aria-label="Local wallet simulator">
     <header class="mr-top">
-      <button class="mr-avatar" type="button" onclick="mrOpenSideMenu()" aria-label="Open account menu">
-        <img id="mrAvatar" alt="Account avatar">
-      </button>
+      <button class="mr-avatar" type="button" onclick="mrOpenSideMenu()" aria-label="Open account menu"><span class="mr-avatar-icon" id="mrAvatarIcon">🔐</span></button>
 
       <nav class="mr-segments" aria-label="Wallet sections">
         <button class="mr-seg active" type="button" data-mr-page="home" onclick="mrSwitch('home',this)">Home</button>
@@ -5780,7 +5964,7 @@
     <div class="mr-side-backdrop" id="mrSideBackdrop" onclick="mrCloseSideMenu()" hidden></div>
     <aside class="mr-side-panel" id="mrSidePanel" aria-hidden="true">
       <div class="mr-side-head">
-        <button class="mr-side-avatar" type="button" onclick="mrCloseSideMenu()"><img id="mrSideAvatar" alt=""></button>
+        <button class="mr-side-avatar" type="button" onclick="mrCloseSideMenu()"><span class="mr-avatar-icon mr-avatar-icon-lg" id="mrSideAvatarIcon">🔐</span></button>
         <button class="mr-side-copy" type="button" onclick="copyAddr()" aria-label="Copy local wallet address">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="10" height="10" rx="2"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
         </button>
@@ -5789,13 +5973,13 @@
       <div class="mr-side-address">Local simulator account</div>
 
       <button class="mr-side-account" type="button" onclick="toggleDropdown();mrCloseSideMenu()">
-        <span class="mr-side-mini"><img id="mrSideMiniAvatar" alt=""></span>
+        <span class="mr-side-mini"><span class="mr-avatar-icon mr-avatar-icon-sm" id="mrSideMiniAvatarIcon">🔐</span></span>
         <span><strong id="mrSideAccountName">Account 1</strong><small>Switch account</small></span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
       </button>
 
       <div class="mr-side-links">
-        <button type="button" onclick="mrShowSideNotice('Profile')"><span>Profile</span><span>›</span></button>
+        <button type="button" onclick="mrOpenProfileEditor()"><span>Profile</span><span>›</span></button>
         <button type="button" onclick="mrShowOriginalPanel('activity');mrCloseSideMenu()"><span>History</span><span>›</span></button>
         <button type="button" onclick="mrOpenSettings()"><span>Settings</span><span>›</span></button>
         <button type="button" onclick="showToast('This is a local wallet simulator');mrCloseSideMenu()"><span>Help &amp; Support</span><span>›</span></button>
@@ -7838,6 +8022,169 @@ hydrateStreamAvatars();
   if(sc) sc.addEventListener('scroll',()=>{}, {passive:true});
 
   mrRender();
+})();
+</script>
+
+
+<script>
+(function initIconProfileSupport(){
+  if(window.__iconProfileSupport) return;
+  window.__iconProfileSupport = true;
+
+  window.profileState = window.profileState || {
+    username: "Zzekuro",
+    profileName: "Account 1",
+    icon: "🔐"
+  };
+
+  const ICON_SET = ["🔥","🔐","🔮","🖼️","💯","🪄","⚒️","⛓️","🚀","🌙","💩","👻","👽","👾","🤖","🐱","😬","📣","🙂","🤡","💎","🙌","🫧","🦾"];
+
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, ch => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[ch]));
+  }
+
+  function updateIconAvatars(){
+    const icon = profileState.icon || "🔐";
+    ["mrAvatarIcon","mrSideAvatarIcon","mrSideMiniAvatarIcon"].forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.textContent = icon;
+    });
+
+    const sideHandle = document.querySelector(".mr-side-handle");
+    if(sideHandle) sideHandle.textContent = "@" + (profileState.username || "Zzekuro");
+
+    const sideAddress = document.querySelector(".mr-side-address");
+    if(sideAddress) sideAddress.textContent = "Profile: " + (profileState.profileName || "Account 1");
+  }
+
+  const prevMrRender = window.mrRender;
+  window.mrRender = function(){
+    if(prevMrRender) prevMrRender();
+
+    const accountBtn = document.getElementById("mrAccountName");
+    if(accountBtn) accountBtn.textContent = current || "Account 1";
+
+    const sideAccount = document.getElementById("mrSideAccountName");
+    if(sideAccount) sideAccount.textContent = current || "Account 1";
+
+    updateIconAvatars();
+  };
+
+  window.mrSetIconTab = function(which){
+    document.querySelectorAll(".mr-icon-tab").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.tab === which);
+    });
+  };
+
+  window.mrSetIcon = function(icon){
+    profileState.icon = icon;
+    document.querySelectorAll(".mr-icon-choice").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.icon === icon);
+    });
+    const preview = document.getElementById("mrProfileAvatarPreview");
+    if(preview) preview.textContent = icon;
+  };
+
+  window.mrGenerateWalletLabel = function(){
+    const input = document.getElementById("mrProfileNameInput");
+    if(!input) return;
+    const names = ["Lyno Holder","Midnight Vault","Ghost Configs","Moon Wallet","Phantom Bag","Chain Locker"];
+    input.value = names[Math.floor(Math.random()*names.length)];
+  };
+
+  window.mrOpenProfileEditor = function(){
+    mrCloseSideMenu();
+    const overlay = document.getElementById("overlay");
+    const sheet = document.getElementById("sheet");
+    if(!overlay || !sheet) return;
+
+    overlay.classList.remove("mobile-bottomsheet");
+    overlay.classList.add("mobile-fullpage");
+
+    const currentIcon = escapeHtml(profileState.icon || "🔐");
+    const iconGrid = ICON_SET.map(icon => {
+      const safeIcon = escapeHtml(icon);
+      const active = icon === profileState.icon ? " active" : "";
+      return `<button class="mr-icon-choice${active}" data-icon="${safeIcon}" type="button" onclick="mrSetIcon('${safeIcon}')">${safeIcon}</button>`;
+    }).join("");
+
+    const username = escapeHtml(profileState.username || "Zzekuro");
+    const profileName = escapeHtml(profileState.profileName || "Account 1");
+
+    sheet.innerHTML = `
+      <div class="mobile-page-inner mr-profile-wrap">
+        <div class="mr-profile-top">
+          <button class="mr-profile-back" type="button" onclick="closeSheet()" aria-label="Back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div class="mr-profile-title">Profile</div>
+          <button class="mr-profile-save" type="button" onclick="mrSaveProfile()">Save</button>
+        </div>
+
+        <div class="mr-profile-center">
+          <div class="mr-profile-avatar" id="mrProfileAvatarPreview">${currentIcon}
+            <button class="mr-profile-edit-badge" type="button" onclick="document.getElementById('mrEmojiTab')?.focus()" aria-label="Edit icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 20 4.5-1 9.7-9.7a2.1 2.1 0 0 0 0-3l-.5-.5a2.1 2.1 0 0 0-3 0L5 15.5 4 20Z"/><path d="m13.5 6.5 4 4"/></svg>
+            </button>
+          </div>
+          <div class="mr-profile-handle">@${username}</div>
+        </div>
+
+        <div class="mr-profile-section-label">Icon</div>
+        <div class="mr-icon-picker-card">
+          <div class="mr-icon-tabs">
+            <button class="mr-icon-tab active" id="mrEmojiTab" data-tab="emojis" type="button" onclick="mrSetIconTab('emojis')">EMOJIS</button>
+            <button class="mr-icon-tab" data-tab="icons" type="button" onclick="mrSetIconTab('icons')">ICONS</button>
+          </div>
+          <div class="mr-icon-grid">${iconGrid}</div>
+        </div>
+
+        <div class="mr-profile-section-label">Profile</div>
+        <div class="mr-profile-form">
+          <div class="mr-profile-form-row">
+            <label for="mrUsernameInput">Username</label>
+            <div class="mr-profile-prefix">@</div>
+            <input class="mr-profile-input" id="mrUsernameInput" value="${username}" maxlength="20">
+          </div>
+          <div class="mr-profile-form-row">
+            <label for="mrProfileNameInput">Account Name</label>
+            <div class="mr-profile-prefix"></div>
+            <input class="mr-profile-input" id="mrProfileNameInput" value="${profileName}" maxlength="24">
+          </div>
+          <div class="mr-profile-form-row">
+            <label>Wallet Address</label>
+            <div class="mr-profile-prefix"></div>
+            <button class="mr-generate-btn" type="button" onclick="generateAddr();showToast('New local wallet address generated')">GENERATE</button>
+          </div>
+        </div>
+
+        <div class="mr-profile-note">
+          This only changes the look of your local wallet simulator. It does not connect to a real wallet or use a real profile picture.
+        </div>
+      </div>
+    `;
+    overlay.classList.remove("hidden");
+  };
+
+  window.mrSaveProfile = function(){
+    const userInput = document.getElementById("mrUsernameInput");
+    const profileInput = document.getElementById("mrProfileNameInput");
+
+    const username = userInput ? userInput.value.trim().replace(/^@+/, "") : "";
+    const profileName = profileInput ? profileInput.value.trim() : "";
+
+    profileState.username = username || "Zzekuro";
+    profileState.profileName = profileName || "Account 1";
+
+    updateIconAvatars();
+    if(typeof mrRender === "function") mrRender();
+    closeSheet();
+    showToast("Profile updated");
+  };
+
+  if(typeof mrRender === "function") mrRender();
 })();
 </script>
 
