@@ -4699,6 +4699,368 @@
 }
 </style>
 
+
+<style>
+/* ==========================================================
+   PUBLIC-REFERENCE-INSPIRED MOBILE WALLET SHELL
+   Based only on publicly visible layout patterns and the
+   user's uploaded visual references. Desktop is unchanged.
+   ========================================================== */
+.mr-wallet{display:none}
+
+@media (max-width:1180px){
+  /* Hide the older mobile wallet home chrome only. Core DOM/state
+     remains present so all existing wallet logic continues working. */
+  .frame > .topbar,
+  .frame > .wallet-main,
+  .frame > .bottom-nav{
+    display:none !important;
+  }
+
+  .mr-wallet{
+    display:flex;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    min-height:0;
+    flex-direction:column;
+    background:#000;
+    color:#fff;
+    overflow:hidden;
+    z-index:2;
+    font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+  }
+
+  .mr-top{
+    flex:0 0 auto;
+    min-height:calc(58px + env(safe-area-inset-top));
+    padding:calc(env(safe-area-inset-top) + 7px) 14px 6px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#000;
+  }
+  .mr-avatar{
+    width:36px;height:36px;flex:0 0 36px;
+    border:0;padding:0;border-radius:50%;
+    overflow:hidden;background:#1b1b1d;
+  }
+  .mr-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .mr-segments{
+    min-width:0;
+    display:flex;
+    gap:7px;
+    align-items:center;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .mr-segments::-webkit-scrollbar{display:none}
+  .mr-seg{
+    height:34px;
+    padding:0 14px;
+    flex:0 0 auto;
+    border:0;
+    border-radius:18px;
+    background:#202022;
+    color:#aaaab0;
+    font-size:13px;
+    font-weight:650;
+  }
+  .mr-seg.active{
+    background:#a996ff;
+    color:#110b1f;
+  }
+
+  .mr-scroll{
+    flex:1 1 auto;
+    min-height:0;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+    padding:4px 14px 16px;
+    scrollbar-width:none;
+  }
+  .mr-scroll::-webkit-scrollbar{display:none}
+  .mr-page{display:none;max-width:700px;margin:0 auto}
+  .mr-page.active{display:block}
+
+  .mr-account-name{
+    display:flex;
+    align-items:center;
+    gap:3px;
+    border:0;
+    background:transparent;
+    color:#919198;
+    font-size:14px;
+    font-weight:560;
+    padding:12px 0 2px;
+  }
+  .mr-account-name svg{width:16px;height:16px}
+
+  .mr-balance-line{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:7px;
+    min-width:0;
+  }
+  .mr-balance{
+    max-width:calc(100% - 42px);
+    padding:0;
+    border:0;
+    background:transparent;
+    color:#fff;
+    text-align:left;
+    font-size:clamp(37px,10.8vw,51px);
+    line-height:1.04;
+    font-weight:720;
+    letter-spacing:-1.9px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .mr-eye{
+    width:32px;height:32px;
+    border:0;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#151517;color:#77777e;
+  }
+  .mr-eye svg{width:18px;height:18px}
+  .mr-pnl{
+    min-height:25px;
+    display:flex;
+    align-items:center;
+    margin-top:5px;
+    font-size:15px;
+    font-weight:650;
+    color:#33d17a;
+  }
+  .mr-pnl.down{color:#ff4d62}
+
+  .mr-cash-card{
+    width:100%;
+    min-height:70px;
+    margin:23px 0 19px;
+    padding:0 17px;
+    display:grid;
+    grid-template-columns:33px 1fr auto;
+    align-items:center;
+    gap:9px;
+    border:0;
+    border-radius:22px;
+    background:#1c1c1e;
+    color:#fff;
+    text-align:left;
+  }
+  .mr-cash-icon{
+    width:29px;height:29px;border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    color:#d0d0d3;background:#2b2b2e;
+  }
+  .mr-cash-icon svg{width:19px;height:19px}
+  .mr-cash-label{font-size:15px;font-weight:650}
+  .mr-cash-value{font-size:15px;font-weight:650;color:#f3f3f5}
+
+  .mr-section-head{
+    display:flex;align-items:center;justify-content:space-between;
+    min-height:38px;
+  }
+  .mr-section-title{
+    display:inline-flex;align-items:center;gap:1px;
+    padding:0;border:0;background:transparent;color:#fff;
+    font-size:20px;font-weight:720;letter-spacing:-.35px;
+  }
+  .mr-section-title svg{width:18px;height:18px}
+
+  .mr-token-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    padding-bottom:4px;
+  }
+  .mr-token-row{
+    width:100%;
+    min-height:67px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    gap:10px;
+    padding:8px 12px;
+    border:0;
+    border-radius:19px;
+    background:#1a1a1c;
+    color:#fff;
+    text-align:left;
+  }
+  .mr-token-left{display:flex;align-items:center;gap:10px;min-width:0}
+  .mr-token-icon{
+    width:40px;height:40px;flex:0 0 40px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;font-weight:760;
+    overflow:hidden;
+  }
+  .mr-token-icon.sol{background:#09090c;position:relative}
+  .mr-token-icon.sol::before,.mr-token-icon.sol::after,.mr-token-icon.sol span{
+    content:"";position:absolute;width:25px;height:6px;left:7px;border-radius:5px;transform:skewX(-17deg)
+  }
+  .mr-token-icon.sol::before{top:8px;background:linear-gradient(90deg,#8f5cff,#51e6bd)}
+  .mr-token-icon.sol span{top:17px;background:linear-gradient(90deg,#51e6bd,#8f5cff)}
+  .mr-token-icon.sol::after{top:26px;background:linear-gradient(90deg,#8f5cff,#51e6bd)}
+  .mr-token-copy{min-width:0}
+  .mr-token-name{
+    font-size:14.5px;font-weight:660;line-height:1.25;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+  }
+  .mr-token-qty{
+    margin-top:2px;color:#8c8c93;font-size:12px;line-height:1.25;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis
+  }
+  .mr-token-right{text-align:right;min-width:88px}
+  .mr-token-value{font-size:14px;font-weight:620;line-height:1.25}
+  .mr-token-move{margin-top:2px;font-size:12px;color:#34d77c}
+  .mr-token-move.down{color:#ff4f65}
+
+  .mr-trade-title{
+    margin-top:18px;
+    font-size:30px;font-weight:740;letter-spacing:-.9px;
+  }
+  .mr-trade-sub{margin-top:4px;color:#888890;font-size:13px}
+  .mr-action-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px;
+    margin-top:20px;
+  }
+  .mr-action-card{
+    min-height:112px;
+    padding:15px;
+    border:0;
+    border-radius:20px;
+    background:#1b1b1d;
+    color:#fff;
+    text-align:left;
+  }
+  .mr-action-icon{
+    width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:13px;
+    background:#2b2740;color:#b6a7ff;
+  }
+  .mr-action-icon svg{width:21px;height:21px}
+  .mr-action-card strong{display:block;font-size:15px;font-weight:690}
+  .mr-action-card small{display:block;margin-top:3px;color:#83838a;font-size:11.5px}
+  .mr-subsection-title{
+    margin:23px 0 10px;
+    font-size:17px;font-weight:700;
+  }
+
+  .mr-activity-list{display:flex;flex-direction:column;gap:8px}
+  .mr-activity-row,.mr-wide-card{
+    width:100%;min-height:64px;
+    display:grid;grid-template-columns:auto 1fr auto;
+    align-items:center;gap:11px;
+    padding:10px 12px;
+    border:0;border-radius:18px;
+    background:#1a1a1c;color:#fff;text-align:left;
+  }
+  .mr-activity-row>svg,.mr-wide-card>svg{width:18px;height:18px;color:#6f6f75}
+  .mr-activity-row strong,.mr-wide-card strong{display:block;font-size:14px}
+  .mr-activity-row small,.mr-wide-card small{display:block;margin-top:3px;color:#85858b;font-size:11.5px}
+  .mr-activity-dot{width:30px;height:30px;border-radius:50%;background:#2a2440}
+  .mr-wide-icon{
+    width:36px;height:36px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    background:#242426;color:#b1a2fb;
+  }
+  .mr-wide-icon svg{width:21px;height:21px}
+  .mr-wide-card + .mr-wide-card{margin-top:8px}
+
+  .mr-explore-search{
+    height:46px;margin-top:14px;padding:0 14px;
+    display:flex;align-items:center;gap:9px;
+    border-radius:24px;background:#1d1d1f;color:#808087;
+    font-size:14px;
+  }
+  .mr-explore-search svg{width:19px;height:19px}
+
+  .mr-bottom{
+    flex:0 0 auto;
+    width:100%;
+    max-width:730px;
+    min-height:calc(62px + env(safe-area-inset-bottom));
+    margin:0 auto;
+    padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 48px;
+    align-items:center;
+    gap:9px;
+    background:linear-gradient(to bottom,rgba(0,0,0,.76),#000 36%);
+    border-top:1px solid #0f0f10;
+  }
+  .mr-search-pill{
+    height:46px;min-width:0;
+    padding:0 15px;
+    display:flex;align-items:center;gap:9px;
+    border:0;border-radius:24px;
+    background:#1c1c1e;color:#77777e;
+    text-align:left;font-size:13px;
+  }
+  .mr-search-pill svg{width:18px;height:18px;flex:0 0 18px}
+  .mr-search-pill span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mr-plus{
+    width:46px;height:46px;
+    border:0;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#a895ff;color:#120d1d;
+  }
+  .mr-plus svg{width:25px;height:25px}
+
+  /* Quick actions and balance editor are bottom sheets. */
+  .mr-sheet-title{font-size:18px;font-weight:720;margin-bottom:14px}
+  .mr-quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .mr-quick-btn{
+    min-height:58px;border:0;border-radius:16px;
+    background:#242426;color:#fff;font-size:14px;font-weight:650;
+  }
+  .mr-sheet-note{margin-top:12px;color:#727279;font-size:11px;line-height:1.45}
+  .mr-balance-editor{
+    width:100%;height:54px;padding:0 14px;border:1px solid #333338;
+    border-radius:15px;background:#151517;color:#fff;font-size:20px;outline:none;
+  }
+  .mr-save{
+    width:100%;height:50px;margin-top:12px;border:0;border-radius:25px;
+    background:#a895ff;color:#130e1f;font-size:14px;font-weight:720;
+  }
+
+  /* Existing modal/full-page layers stay above the new home shell. */
+  .overlay,.detail,.lock,.dropdown,.toast{z-index:50}
+  .lock{z-index:100}
+  .toast{z-index:120}
+}
+
+@media (max-width:390px){
+  .mr-top{padding-left:10px;padding-right:10px;gap:7px}
+  .mr-avatar{width:34px;height:34px;flex-basis:34px}
+  .mr-seg{height:32px;padding:0 12px;font-size:12.5px}
+  .mr-scroll{padding-left:11px;padding-right:11px}
+  .mr-cash-card{margin-top:19px}
+  .mr-token-row{min-height:64px;border-radius:17px}
+  .mr-action-grid{gap:7px}
+  .mr-action-card{min-height:106px;padding:13px}
+  .mr-bottom{padding-left:10px;padding-right:10px}
+}
+
+@media (min-width:768px) and (max-width:1180px){
+  .mr-top,.mr-scroll,.mr-bottom{width:min(100%,720px);margin-left:auto;margin-right:auto}
+  .mr-scroll{padding-left:24px;padding-right:24px}
+  .mr-token-row{min-height:72px;padding-left:15px;padding-right:15px}
+  .mr-action-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .mr-action-card{min-height:122px}
+}
+</style>
+
 </head>
 <body>
 
@@ -4946,7 +5308,121 @@
 <div class="frame" id="frame">
   <div class="drag-bar-wrap"><div class="drag-bar"></div></div>
 
-  <div class="lock" id="lockScreen" aria-label="Fictional wallet unlock screen">
+  
+  <!-- Mobile-only wallet shell inspired by the public reference layout.
+       It reuses the existing local/simulated wallet state and actions. -->
+  <div id="mobileReferenceWallet" class="mr-wallet" aria-label="Local wallet simulator">
+    <header class="mr-top">
+      <button class="mr-avatar account-btn" type="button" onclick="toggleDropdown()" aria-label="Switch account">
+        <img id="mrAvatar" alt="Account avatar">
+      </button>
+      <nav class="mr-segments" aria-label="Wallet sections">
+        <button class="mr-seg active" type="button" data-mr-page="home" onclick="mrSwitch('home',this)">Home</button>
+        <button class="mr-seg" type="button" data-mr-page="trade" onclick="mrSwitch('trade',this)">Trade</button>
+        <button class="mr-seg" type="button" data-mr-page="explore" onclick="mrSwitch('explore',this)">Explore</button>
+      </nav>
+    </header>
+
+    <main class="mr-scroll">
+      <section class="mr-page active" id="mr-page-home">
+        <button class="mr-account-name account-btn" type="button" onclick="toggleDropdown()">
+          <span id="mrAccountName">Account 1</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 10 4 4 4-4"/></svg>
+        </button>
+
+        <div class="mr-balance-line">
+          <button class="mr-balance" id="mrBalance" type="button" onclick="mrEditBalance()" aria-label="Edit simulated balance">$128,412.90</button>
+          <button class="mr-eye" type="button" onclick="toggleMask()" aria-label="Hide or show balance">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 12s3.5-5.5 9.5-5.5S21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+          </button>
+        </div>
+        <div class="mr-pnl" id="mrPnl">+$4,208.11&nbsp;&nbsp;+3.4%</div>
+
+        <button class="mr-cash-card" type="button" onclick="openSheet('receive')">
+          <span class="mr-cash-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M8 9h.01M16 15h.01"/><circle cx="12" cy="12" r="2.2"/></svg>
+          </span>
+          <span class="mr-cash-label">Cash</span>
+          <span class="mr-cash-value" id="mrCashValue">$0.00</span>
+        </button>
+
+        <div class="mr-section-head">
+          <button type="button" class="mr-section-title" onclick="mrScrollTokens()">Tokens
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+
+        <div class="mr-token-list" id="mrTokenList"></div>
+      </section>
+
+      <section class="mr-page" id="mr-page-trade">
+        <div class="mr-trade-title">Trade</div>
+        <div class="mr-trade-sub">Local simulated wallet actions</div>
+
+        <div class="mr-action-grid">
+          <button class="mr-action-card" type="button" onclick="openSheet('send')">
+            <span class="mr-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 11.5 19 5l-6.5 14-2.2-5.3L5 11.5Z"/><path d="m10.3 13.7 3.2-3.2"/></svg></span>
+            <strong>Send</strong><small>Simulated transfer</small>
+          </button>
+          <button class="mr-action-card" type="button" onclick="openSheet('receive')">
+            <span class="mr-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 4v12M7 11l5 5 5-5"/><path d="M5 20h14"/></svg></span>
+            <strong>Receive</strong><small>Local address / QR</small>
+          </button>
+          <button class="mr-action-card" type="button" onclick="openSheet('swap')">
+            <span class="mr-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 7h11l-3-3M17 17H6l3 3"/><path d="M18 7v4M6 17v-4"/></svg></span>
+            <strong>Swap</strong><small>Local calculation</small>
+          </button>
+          <button class="mr-action-card" type="button" onclick="openSheet('buy')">
+            <span class="mr-action-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></span>
+            <strong>Add funds</strong><small>Simulation only</small>
+          </button>
+        </div>
+
+        <div class="mr-subsection-title">Assets</div>
+        <div class="mr-token-list" id="mrTradeTokens"></div>
+
+        <div class="mr-subsection-title">Recent activity</div>
+        <div class="mr-activity-list">
+          <button type="button" onclick="navClick(document.querySelector('.wallet-nav-btn[aria-label=&quot;Activity&quot;]'),'activity');mrShowOriginalPanel('activity')" class="mr-activity-row">
+            <span class="mr-activity-dot"></span>
+            <span><strong>Wallet activity</strong><small>View simulated history</small></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="mr-page" id="mr-page-explore">
+        <div class="mr-explore-search" role="button" tabindex="0" onclick="openWalletSearch()" onkeydown="if(event.key==='Enter')openWalletSearch()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+          <span>Search tokens</span>
+        </div>
+
+        <div class="mr-subsection-title">Explore</div>
+        <button class="mr-wide-card" type="button" onclick="mrShowOriginalPanel('activity')">
+          <span class="mr-wide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
+          <span><strong>Activity</strong><small>Simulated sends, receives and swaps</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+        <button class="mr-wide-card" type="button" onclick="mrShowOriginalPanel('nfts')">
+          <span class="mr-wide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.5"/><path d="m6 17 4-4 3 3 2-2 3 3"/></svg></span>
+          <span><strong>Collectibles</strong><small>Local fictional collection</small></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+        </button>
+      </section>
+    </main>
+
+    <footer class="mr-bottom">
+      <button class="mr-search-pill" type="button" onclick="openWalletSearch()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
+        <span>Search Phantom</span>
+      </button>
+      <button class="mr-plus" type="button" onclick="mrQuickActions()" aria-label="Open wallet actions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+    </footer>
+  </div>
+
+<div class="lock" id="lockScreen" aria-label="Fictional wallet unlock screen">
     <div class="lock-header">
       <div class="lock-brand-wrap">
         <div class="lock-brand">phantom</div>
@@ -6597,6 +7073,211 @@ hydrateStreamAvatars();
       navigator.serviceWorker.register('./sw.js', {scope:'./'}).catch(function(){});
     });
   }
+})();
+</script>
+
+
+<script>
+(function initPublicReferenceMobileShell(){
+  if(window.__mrWalletInit) return;
+  window.__mrWalletInit = true;
+
+  const tokenMeta = {
+    eth:{name:'Ethereum',symbol:'ETH',icon:'Ξ',bg:'#eeeeef',fg:'#29292d',move:'+1.8%',down:false},
+    sol:{name:'Solana',symbol:'SOL',icon:'',bg:'#09090c',fg:'#fff',move:'+5.2%',down:false},
+    usdc:{name:'USD Coin',symbol:'USDC',icon:'$',bg:'#2775ca',fg:'#fff',move:'+0.0%',down:false},
+    bonk:{name:'BONK',symbol:'BONK',icon:'B',bg:'#d78e33',fg:'#fff',move:'-2.1%',down:true}
+  };
+
+  function mrQty(key,value){
+    const p=tokenPrices[key]||1;
+    const qty=value/p;
+    if(masked) return '•••••• '+tokenMeta[key].symbol;
+    if(key==='bonk') return Math.round(qty).toLocaleString('en-US')+' '+tokenMeta[key].symbol;
+    return qty.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+' '+tokenMeta[key].symbol;
+  }
+
+  function mrTokenRows(){
+    const total=accounts[current].balance;
+    return ['eth','sol','usdc','bonk'].map(key=>{
+      const m=tokenMeta[key];
+      const value=total*(tokenWeights[key]||0);
+      const icon=key==='sol'
+        ? '<span class="mr-token-icon sol"><span></span></span>'
+        : '<span class="mr-token-icon" style="background:'+m.bg+';color:'+m.fg+'">'+m.icon+'</span>';
+      return `<button class="mr-token-row" type="button" onclick="openDetail('${key}')">`+
+        '<span class="mr-token-left">'+icon+
+          '<span class="mr-token-copy"><span class="mr-token-name">'+m.name+'</span>'+
+          '<span class="mr-token-qty">'+mrQty(key,value)+'</span></span>'+
+        '</span>'+
+        '<span class="mr-token-right"><span class="mr-token-value">'+(masked?'••••••':fmt(value))+'</span>'+
+        '<span class="mr-token-move '+(m.down?'down':'')+'">'+m.move+'</span></span>'+
+      '</button>';
+    }).join('');
+  }
+
+  window.mrRender = function(){
+    if(!isWalletApp()) return;
+    const root=document.getElementById('mobileReferenceWallet');
+    if(!root) return;
+
+    const acct=document.getElementById('mrAccountName');
+    if(acct) acct.textContent=current;
+
+    const bal=document.getElementById('mrBalance');
+    if(bal) bal.textContent=masked?'••••••':fmt(accounts[current].balance);
+
+    const originalChange=document.getElementById('changeText');
+    const pnl=document.getElementById('mrPnl');
+    if(pnl && originalChange){
+      pnl.textContent=originalChange.textContent;
+      pnl.classList.toggle('down',originalChange.classList.contains('down'));
+    }
+
+    const cash=document.getElementById('mrCashValue');
+    if(cash){
+      const cv=accounts[current].balance*(tokenWeights.usdc||0);
+      cash.textContent=masked?'••••••':fmt(cv);
+    }
+
+    const rows=mrTokenRows();
+    const home=document.getElementById('mrTokenList');
+    const trade=document.getElementById('mrTradeTokens');
+    if(home) home.innerHTML=rows;
+    if(trade) trade.innerHTML=rows;
+
+    const sourceAvatar=document.getElementById('walletCreatorAvatar');
+    const targetAvatar=document.getElementById('mrAvatar');
+    if(sourceAvatar && targetAvatar && sourceAvatar.src) targetAvatar.src=sourceAvatar.src;
+  };
+
+  window.mrSwitch = function(name,btn){
+    document.querySelectorAll('.mr-seg').forEach(b=>b.classList.toggle('active',b===btn));
+    document.querySelectorAll('.mr-page').forEach(p=>p.classList.toggle('active',p.id==='mr-page-'+name));
+    const sc=document.querySelector('.mr-scroll');
+    if(sc) sc.scrollTop=0;
+    buzz(5);
+  };
+
+  window.mrScrollTokens = function(){
+    document.getElementById('mrTokenList')?.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+
+  window.mrEditBalance = function(){
+    const overlay=document.getElementById('overlay');
+    const sheet=document.getElementById('sheet');
+    if(!overlay||!sheet) return;
+    overlay.classList.remove('mobile-fullpage');
+    overlay.classList.add('mobile-bottomsheet');
+    sheet.innerHTML=
+      '<div class="mr-sheet-title">Set simulated balance</div>'+
+      '<input id="mrBalanceInput" class="mr-balance-editor" inputmode="decimal" value="'+accounts[current].balance.toFixed(2)+'" aria-label="Simulated balance">'+
+      '<button class="mr-save" type="button" onclick="mrSaveBalance()">Save balance</button>'+
+      '<div class="mr-sheet-note">This changes only the local simulator. It does not connect to or move real funds.</div>';
+    overlay.classList.remove('hidden');
+    setTimeout(()=>{const i=document.getElementById('mrBalanceInput');if(i){i.focus();i.select();}},30);
+  };
+
+  window.mrSaveBalance = function(){
+    const input=document.getElementById('mrBalanceInput');
+    if(!input) return;
+    let value=parseFloat(String(input.value).replace(/[^0-9.-]/g,''));
+    if(!Number.isFinite(value)||value<0) value=accounts[current].balance;
+    value=Math.min(value,999999999999.99);
+    accounts[current].balance=value;
+    renderAccount();
+    randomizeChange();
+    mrRender();
+    closeSheet();
+  };
+
+  window.mrQuickActions = function(){
+    const overlay=document.getElementById('overlay');
+    const sheet=document.getElementById('sheet');
+    if(!overlay||!sheet) return;
+    overlay.classList.remove('mobile-fullpage');
+    overlay.classList.add('mobile-bottomsheet');
+    sheet.innerHTML=
+      '<div class="mr-sheet-title">Wallet actions</div>'+
+      '<div class="mr-quick-grid">'+
+        `<button class="mr-quick-btn" type="button" onclick="closeSheet();setTimeout(()=>openSheet('send'),80)">Send</button>`+
+        `<button class="mr-quick-btn" type="button" onclick="closeSheet();setTimeout(()=>openSheet('receive'),80)">Receive</button>`+
+        `<button class="mr-quick-btn" type="button" onclick="closeSheet();setTimeout(()=>openSheet('swap'),80)">Swap</button>`+
+        `<button class="mr-quick-btn" type="button" onclick="closeSheet();setTimeout(()=>openSheet('buy'),80)">Add funds</button>`+
+      '</div>'+
+      '<div class="mr-sheet-note">All actions are local simulations; there is no real wallet connection or transaction signing.</div>';
+    overlay.classList.remove('hidden');
+  };
+
+  window.mrShowOriginalPanel = function(name){
+    if(name==='activity'){
+      const b=document.querySelector('.wallet-nav-btn[aria-label="Activity"]');
+      if(b) navClick(b,'activity'); else switchTab('activity');
+    }else{
+      switchTab(name);
+    }
+    // Reuse the existing full-page search/explore route to keep original logic reachable.
+    const overlay=document.getElementById('overlay');
+    const sheet=document.getElementById('sheet');
+    if(!overlay||!sheet) return;
+
+    const src=document.getElementById('panel-'+name);
+    overlay.classList.remove('mobile-bottomsheet');
+    overlay.classList.add('mobile-fullpage');
+    let title=name==='nfts'?'Collectibles':'Activity';
+    let content='';
+    if(name==='activity'){
+      const rows=accounts[current].hasActivity
+        ? '<div class="mobile-recent"><div class="mobile-recent-row"><div>Received SOL<small>Today</small></div><div class="up">+12.0 SOL</div></div><div class="mobile-recent-row"><div>Swapped ETH → USDC<small>Yesterday</small></div><div>1.0 ETH</div></div><div class="mobile-recent-row"><div>Sent SOL<small>Earlier</small></div><div class="down">-4.5 SOL</div></div></div>'
+        : '<div class="empty-state"><div class="empty-title">No activity yet</div></div>';
+      content=rows;
+    }else{
+      content='<div style="padding:14px;color:#8c8c92;font-size:13px;">Your existing local collectible screen is still available from the original wallet logic.</div>'+
+              `<button class="mobile-review-btn" type="button" onclick="closeSheet();switchTab('nfts')">View collectibles</button>`;
+    }
+    sheet.innerHTML='<div class="mobile-page-inner">'+walletPageHead(title)+content+'</div>';
+    overlay.classList.remove('hidden');
+  };
+
+  // Keep the new shell synchronized with the original wallet state.
+  const oldRenderAccount=renderAccount;
+  renderAccount=function(){
+    oldRenderAccount();
+    mrRender();
+  };
+
+  const oldRandomizeChange=randomizeChange;
+  randomizeChange=function(){
+    oldRandomizeChange();
+    mrRender();
+  };
+
+  const oldToggleMask=toggleMask;
+  toggleMask=function(){
+    oldToggleMask();
+    mrRender();
+  };
+
+  const oldSelectAccount=selectAccount;
+  selectAccount=function(name){
+    oldSelectAccount(name);
+    mrRender();
+  };
+
+  const oldCommitEdit=commitEdit;
+  commitEdit=function(){
+    oldCommitEdit();
+    mrRender();
+  };
+
+  const oldUnlock=unlock;
+  unlock=function(){
+    oldUnlock();
+    setTimeout(mrRender,30);
+  };
+
+  mrRender();
+  window.addEventListener('resize',mrRender);
 })();
 </script>
 

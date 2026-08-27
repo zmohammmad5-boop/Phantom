@@ -1,7 +1,7 @@
 {
   "name": "Phantom",
   "short_name": "Phantom",
-  "description": "A standalone fictional local wallet interface.",
+  "description": "A standalone fictional local wallet simulator.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",
