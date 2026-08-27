@@ -4286,10 +4286,10 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Wallet">
+<meta name="application-name" content="Phantom">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Wallet">
+<meta name="apple-mobile-web-app-title" content="Phantom">
 <meta name="theme-color" content="#000000">
 <meta name="msapplication-TileColor" content="#000000">
 
@@ -4306,6 +4306,396 @@
 }
 @supports (-webkit-touch-callout:none){
   body{ min-height:-webkit-fill-available; }
+}
+</style>
+
+
+<style>
+/* =========================================================
+   MOBILE / TABLET WALLET REFERENCE REFINEMENT
+   IMPORTANT: desktop >=1181px remains unchanged.
+   ========================================================= */
+@media (max-width:1180px){
+  /* The app is already a full-height flex layout. Do not reserve
+     the bottom navigation twice inside the scrolling token area. */
+  .wallet-main{
+    min-height:0 !important;
+  }
+
+  .topbar{
+    width:min(100%,720px) !important;
+    min-height:calc(54px + env(safe-area-inset-top)) !important;
+    padding:calc(env(safe-area-inset-top) + 5px) 12px 4px !important;
+  }
+
+  .wallet-profile-btn{
+    min-height:42px !important;
+    max-width:205px !important;
+    gap:9px !important;
+  }
+  .wallet-user-avatar{
+    width:36px !important;
+    height:36px !important;
+    flex-basis:36px !important;
+  }
+  .account-btn.wallet-profile-btn .wallet-handle{
+    font-size:13px !important;
+    font-weight:700 !important;
+  }
+  .account-btn.wallet-profile-btn .wallet-account-line,
+  .wallet-account-line #acctName{
+    font-size:11px !important;
+    margin-top:2px !important;
+  }
+  .mobile-wallet-header-icons{
+    gap:0 !important;
+  }
+  .wallet-head-icon{
+    width:40px !important;
+    height:40px !important;
+    border-radius:20px !important;
+  }
+  .wallet-head-icon svg{
+    width:19px !important;
+    height:19px !important;
+  }
+
+  /* Tighter portfolio hierarchy. */
+  .wallet-balance-area{
+    padding:12px 14px 15px !important;
+  }
+  .balance-row{
+    min-height:48px !important;
+    gap:3px !important;
+  }
+  .balance{
+    font-size:clamp(36px,8.6vw,45px) !important;
+    line-height:.98 !important;
+    font-weight:760 !important;
+    letter-spacing:-1.55px !important;
+  }
+  .balance.masked{
+    font-size:34px !important;
+  }
+  .change-row{
+    margin-top:6px !important;
+    font-size:13px !important;
+    line-height:1.2 !important;
+  }
+  .edit-pencil,.eye-btn{
+    width:26px !important;
+    height:26px !important;
+    opacity:.64 !important;
+  }
+
+  /* Compact action row like a native wallet. */
+  .wallet-actions{
+    margin:0 12px 14px !important;
+    gap:7px !important;
+  }
+  .wallet-actions .action{
+    height:68px !important;
+    min-height:68px !important;
+    padding:8px 2px 7px !important;
+    border-radius:17px !important;
+    background:#1d1d1f !important;
+    gap:4px !important;
+    font-size:10.8px !important;
+    font-weight:600 !important;
+  }
+  .wallet-actions .action .circ{
+    width:27px !important;
+    height:27px !important;
+  }
+  .wallet-actions .action .circ svg{
+    width:22px !important;
+    height:22px !important;
+  }
+
+  /* Tabs sit directly above the asset list without a large gap. */
+  .wallet-tabs{
+    min-height:32px !important;
+    margin:0 12px 6px !important;
+    gap:15px !important;
+  }
+  .wallet-tabs .tab{
+    min-height:32px !important;
+    line-height:32px !important;
+    font-size:14px !important;
+    font-weight:650 !important;
+  }
+  .wallet-tabs .wallet-tab-more{
+    width:36px !important;
+    height:36px !important;
+    font-size:19px !important;
+  }
+
+  /* This was the main source of the bottom controls looking too high:
+     the old layout reserved ~74px inside the scroll area AND then rendered
+     a separate navigation bar. Now the list naturally ends at the nav. */
+  .body-scroll{
+    padding:0 12px 7px !important;
+    scroll-padding-bottom:8px !important;
+  }
+
+  .token-row{
+    min-height:61px !important;
+    margin:0 0 7px !important;
+    padding:8px 10px !important;
+    border-radius:15px !important;
+    background:#1b1b1d !important;
+  }
+  .token-left{gap:10px !important;}
+  .token-icon{
+    width:37px !important;
+    height:37px !important;
+    flex-basis:37px !important;
+  }
+  .token-name{
+    font-size:13px !important;
+    line-height:1.2 !important;
+  }
+  .token-sub{
+    margin-top:2px !important;
+    font-size:10.8px !important;
+  }
+  .token-val{
+    font-size:13px !important;
+    line-height:1.2 !important;
+  }
+  .token-change{
+    margin-top:2px !important;
+    font-size:10.8px !important;
+  }
+
+  .perps-card{
+    min-height:62px !important;
+    margin-bottom:7px !important;
+    padding:8px 10px !important;
+    border-radius:15px !important;
+    background:#1b1b1d !important;
+  }
+  .activity-row{
+    min-height:56px !important;
+    padding:8px 4px !important;
+  }
+
+  /* Bottom navigation: flush to the app bottom and compact.
+     The safe area is BELOW the icon row rather than pushing the icons upward. */
+  .bottom-nav{
+    flex:0 0 auto !important;
+    width:min(100%,720px) !important;
+    height:calc(49px + env(safe-area-inset-bottom)) !important;
+    min-height:calc(49px + env(safe-area-inset-bottom)) !important;
+    margin:0 auto !important;
+    padding:0 8px env(safe-area-inset-bottom) !important;
+    grid-template-columns:repeat(4,1fr) !important;
+    align-items:center !important;
+    background:#000 !important;
+    border-top:1px solid #1b1b1d !important;
+    border-radius:0 !important;
+    position:relative !important;
+    bottom:auto !important;
+    box-shadow:none !important;
+  }
+  .wallet-nav-btn{
+    min-height:45px !important;
+    height:45px !important;
+    padding:0 !important;
+    border-radius:12px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  .wallet-nav-btn .nav-icon{
+    width:25px !important;
+    height:25px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+  .wallet-nav-btn .nav-icon svg{
+    width:23px !important;
+    height:23px !important;
+  }
+
+  /* Full-page action flows use the same compact native spacing. */
+  .mobile-page-inner{
+    width:min(100%,660px) !important;
+    padding:0 14px calc(18px + env(safe-area-inset-bottom)) !important;
+  }
+  .mobile-page-head{
+    min-height:calc(52px + env(safe-area-inset-top)) !important;
+    padding:calc(env(safe-area-inset-top) + 4px) 0 3px !important;
+  }
+  .mobile-page-back{
+    width:40px !important;
+    height:40px !important;
+  }
+  .mobile-page-title{
+    font-size:16px !important;
+  }
+  .mobile-page-section{
+    margin-top:14px !important;
+  }
+  .mobile-app-field,.mobile-app-select{
+    min-height:52px !important;
+    border-radius:14px !important;
+  }
+  .mobile-review-btn{
+    min-height:50px !important;
+    margin-top:18px !important;
+    border-radius:25px !important;
+  }
+  .mobile-swap-card{
+    padding:13px !important;
+    border-radius:17px !important;
+  }
+
+  /* Bottom sheets sit all the way down to the home-indicator area. */
+  .dropdown,
+  .overlay.mobile-bottomsheet .sheet{
+    padding-bottom:calc(10px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Token detail screen density. */
+  .detail-top{
+    min-height:calc(52px + env(safe-area-inset-top)) !important;
+    padding:calc(env(safe-area-inset-top) + 4px) 14px 3px !important;
+  }
+  .detail-body{
+    padding:8px 14px 18px !important;
+  }
+  .detail-icon{
+    width:58px !important;
+    height:58px !important;
+    margin:8px auto 12px !important;
+  }
+  .detail-price{
+    font-size:33px !important;
+  }
+  .mobile-held-card{
+    margin-top:20px !important;
+    border-radius:15px !important;
+    padding:14px !important;
+  }
+  .mobile-detail-actions{
+    margin-top:9px !important;
+    padding:0 14px !important;
+    gap:7px !important;
+  }
+  .mobile-detail-action{
+    min-height:64px !important;
+    border-radius:16px !important;
+  }
+  .mobile-recent{
+    margin-top:20px !important;
+    padding:0 14px calc(18px + env(safe-area-inset-bottom)) !important;
+  }
+
+  /* Lock view fits the same tighter app proportions. */
+  .lock-header{
+    height:calc(52px + env(safe-area-inset-top)) !important;
+    flex-basis:calc(52px + env(safe-area-inset-top)) !important;
+  }
+  .lock-content{
+    padding-top:34px !important;
+  }
+  .lock-ghost-svg{
+    width:112px !important;
+    height:112px !important;
+    margin-bottom:30px !important;
+  }
+  .unlock-btn{
+    margin-top:38px !important;
+  }
+}
+
+/* Narrow iPhones need an even denser header/actions row. */
+@media (max-width:390px){
+  .topbar{
+    padding-left:10px !important;
+    padding-right:5px !important;
+  }
+  .wallet-profile-btn{
+    max-width:158px !important;
+  }
+  .wallet-user-avatar{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px !important;
+  }
+  .wallet-head-icon{
+    width:37px !important;
+    height:37px !important;
+  }
+  .wallet-balance-area{
+    padding-top:9px !important;
+    padding-bottom:13px !important;
+  }
+  .wallet-actions{
+    margin-left:8px !important;
+    margin-right:8px !important;
+    gap:5px !important;
+  }
+  .wallet-actions .action{
+    height:64px !important;
+    min-height:64px !important;
+    border-radius:15px !important;
+  }
+  .wallet-tabs{
+    margin-left:10px !important;
+    margin-right:8px !important;
+    gap:11px !important;
+  }
+  .wallet-tabs .tab{
+    font-size:13px !important;
+  }
+  .body-scroll{
+    padding-left:8px !important;
+    padding-right:8px !important;
+  }
+}
+
+/* iPad keeps the app feel, but gives the content more breathing room
+   without turning the bottom nav into a floating desktop dock. */
+@media (min-width:768px) and (max-width:1180px){
+  .topbar,.wallet-main{
+    width:min(100%,720px) !important;
+  }
+  .wallet-balance-area{
+    padding-top:25px !important;
+    padding-bottom:22px !important;
+  }
+  .wallet-actions{
+    margin-left:24px !important;
+    margin-right:24px !important;
+    margin-bottom:18px !important;
+    gap:10px !important;
+  }
+  .wallet-actions .action{
+    height:76px !important;
+    min-height:76px !important;
+  }
+  .wallet-tabs{
+    margin-left:24px !important;
+    margin-right:24px !important;
+  }
+  .body-scroll{
+    padding-left:24px !important;
+    padding-right:24px !important;
+  }
+  .token-row,.perps-card{
+    min-height:67px !important;
+    padding-left:13px !important;
+    padding-right:13px !important;
+  }
+  .bottom-nav{
+    width:min(100%,720px) !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-bottom:0 !important;
+  }
 }
 </style>
 
@@ -4827,7 +5217,7 @@ function walletPageHead(title, closeFn='closeSheet()'){
   </div>`;
 }
 function setMobileDocumentTitle(){
-  document.title = isWalletApp() ? 'Wallet' : 'StreamHub';
+  document.title = isWalletApp() ? 'Phantom' : 'StreamHub';
 }
 setMobileDocumentTitle();
 window.addEventListener('resize', setMobileDocumentTitle);
