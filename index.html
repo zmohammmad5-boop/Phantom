@@ -5061,6 +5061,302 @@
 }
 </style>
 
+
+<style>
+/* ===== Mobile reference pass v2 — desktop >=1181px untouched ===== */
+@media (max-width:1180px){
+  .mr-wallet{
+    background:#000 !important;
+    color:#fff !important;
+    letter-spacing:0;
+  }
+  .mr-top{
+    min-height:calc(58px + env(safe-area-inset-top)) !important;
+    padding:calc(env(safe-area-inset-top) + 8px) 14px 5px !important;
+    gap:9px !important;
+  }
+  .mr-avatar{
+    width:35px !important;height:35px !important;flex-basis:35px !important;
+    border-radius:50% !important;background:#202024 !important;
+    box-shadow:inset 0 0 0 1px #29292d !important;
+  }
+  .mr-segments{
+    gap:7px !important;
+    width:calc(100% - 44px) !important;
+    overflow-x:auto !important;
+  }
+  .mr-seg{
+    height:35px !important;
+    padding:0 14px !important;
+    border-radius:19px !important;
+    background:#1d1d20 !important;
+    color:#b7b7bc !important;
+    font-size:13.2px !important;
+    font-weight:650 !important;
+  }
+  .mr-seg.active{
+    background:#a995ff !important;
+    color:#171122 !important;
+  }
+
+  .mr-scroll{
+    padding:0 14px 8px !important;
+  }
+  .mr-page{
+    max-width:700px !important;
+  }
+  .mr-account-name{
+    min-height:23px !important;
+    padding:7px 0 0 !important;
+    font-size:13px !important;
+    color:#9a9aa1 !important;
+  }
+  .mr-account-name svg{width:14px !important;height:14px !important}
+  .mr-balance-line{margin-top:1px !important}
+  .mr-balance{
+    max-width:100% !important;
+    font-size:clamp(39px,11.6vw,50px) !important;
+    line-height:1.01 !important;
+    font-weight:700 !important;
+    letter-spacing:-1.9px !important;
+  }
+  .mr-performance{
+    display:flex !important;
+    align-items:center !important;
+    gap:10px !important;
+    margin-top:7px !important;
+    min-height:23px !important;
+    color:#39e77c !important;
+    font-size:14px !important;
+    font-weight:650 !important;
+  }
+  .mr-performance.down{color:#ff5669 !important}
+  .mr-performance-pill{
+    display:inline-flex !important;
+    align-items:center !important;
+    min-height:22px !important;
+    padding:0 7px !important;
+    border-radius:6px !important;
+    background:#50f283 !important;
+    color:#101812 !important;
+    font-size:12.5px !important;
+    font-weight:750 !important;
+  }
+  .mr-performance.down .mr-performance-pill{
+    background:#ff5669 !important;color:#fff !important;
+  }
+
+  .mr-cash-card{
+    min-height:65px !important;
+    margin:27px 0 22px !important;
+    grid-template-columns:32px 1fr auto !important;
+    padding:0 17px !important;
+    border-radius:21px !important;
+    background:#1d1d20 !important;
+  }
+  .mr-cash-icon{
+    width:27px !important;height:27px !important;
+    background:transparent !important;color:#8f8f95 !important;
+  }
+  .mr-cash-icon svg{width:21px !important;height:21px !important}
+  .mr-cash-label,.mr-cash-value{font-size:14.5px !important;font-weight:650 !important}
+
+  .mr-section-head{min-height:39px !important}
+  .mr-section-title{
+    font-size:20px !important;
+    line-height:1 !important;
+    font-weight:720 !important;
+    letter-spacing:-.35px !important;
+    margin:0 0 9px !important;
+  }
+  .mr-section-title svg{width:17px !important;height:17px !important}
+  .mr-token-list{gap:8px !important}
+  .mr-token-row{
+    min-height:66px !important;
+    padding:8px 12px !important;
+    border-radius:18px !important;
+    background:#1c1c1f !important;
+  }
+  .mr-token-icon{
+    width:39px !important;height:39px !important;flex-basis:39px !important;
+  }
+  .mr-token-name{font-size:14.3px !important;font-weight:650 !important}
+  .mr-token-qty,.mr-token-move{font-size:11.8px !important}
+  .mr-token-right{min-width:90px !important}
+  .mr-token-value{font-size:14.1px !important}
+  .mr-verified{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:14px;height:14px;margin-left:4px;border-radius:50%;
+    background:#a995ff;color:#171122;font-size:9px;font-weight:900;vertical-align:1px;
+  }
+
+  .mr-feed-section{margin-top:27px !important}
+  .mr-hscroll{
+    display:flex !important;
+    gap:9px !important;
+    overflow-x:auto !important;
+    scrollbar-width:none !important;
+    padding-bottom:2px !important;
+  }
+  .mr-hscroll::-webkit-scrollbar{display:none}
+  .mr-market-card{
+    min-width:145px !important;
+    height:126px !important;
+    padding:14px !important;
+    border:0 !important;border-radius:18px !important;
+    background:#1c1c1f !important;color:#fff !important;text-align:left !important;
+  }
+  .mr-market-icon{
+    width:39px;height:39px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    margin-bottom:11px;font-size:22px;font-weight:800;
+  }
+  .mr-market-icon.btc{background:#f59c2a;color:#fff}
+  .mr-market-icon.eth{background:#efeff1;color:#222}
+  .mr-market-icon.hype{background:#6ee8c8;color:#0c2d28}
+  .mr-market-card strong{display:block;font-size:14px}
+  .mr-market-card strong small{color:#c4c4c8;font-size:11px;font-weight:600}
+  .mr-market-card .mr-green{display:block;margin-top:7px;color:#39e77c;font-size:13px;font-weight:650}
+  .mr-predict-card{
+    width:218px !important;min-width:218px !important;
+    height:136px !important;
+    padding:14px !important;
+    border:0;border-radius:18px;background:#1c1c1f;color:#fff;text-align:left;
+  }
+  .mr-predict-logo{
+    width:45px;height:45px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:12px;background:#42dcbc;color:#fff;font-weight:900;font-size:19px;
+  }
+  .mr-predict-card strong{display:block;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mr-predict-card small{display:block;margin-top:7px;color:#9b9ba1;font-size:11.5px}
+  .mr-empty-card{
+    width:100%;min-height:72px;padding:11px 14px;
+    display:grid;grid-template-columns:42px 1fr;align-items:center;gap:10px;
+    border:0;border-radius:18px;background:#1c1c1f;color:#fff;text-align:left;
+  }
+  .mr-empty-face{
+    width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:#2b2b2e;color:#8b8b90;font-size:22px;transform:rotate(180deg);
+  }
+  .mr-empty-card strong{display:block;font-size:13.5px}
+  .mr-empty-card small{display:block;margin-top:3px;color:#8d8d93;font-size:11.5px}
+  .mr-watch-row{
+    min-height:58px;padding:9px 12px;border-radius:17px;background:#1c1c1f;
+    display:flex;align-items:center;justify-content:space-between;color:#a0a0a5;font-size:12.5px;
+  }
+  .mr-watch-row button{
+    height:34px;padding:0 14px;border:0;border-radius:17px;background:#2b2740;color:#baaaff;font-weight:700;
+  }
+
+  .mr-bottom{
+    min-height:calc(64px + env(safe-area-inset-bottom)) !important;
+    height:calc(64px + env(safe-area-inset-bottom)) !important;
+    padding:7px 13px calc(8px + env(safe-area-inset-bottom)) !important;
+    grid-template-columns:minmax(0,1fr) 48px !important;
+    gap:10px !important;
+    border-top:0 !important;
+    background:linear-gradient(to bottom,rgba(0,0,0,.64),#000 28%) !important;
+  }
+  .mr-search-pill{
+    height:46px !important;
+    padding:0 15px !important;
+    border-radius:24px !important;
+    background:#1c1c1f !important;
+    color:#78787f !important;
+    font-size:13px !important;
+  }
+  .mr-plus{
+    width:46px !important;height:46px !important;border-radius:50% !important;
+    background:#a995ff !important;color:#15101f !important;
+  }
+
+  .mr-page-heading{margin-top:16px;font-size:31px;font-weight:730;letter-spacing:-.9px}
+  .mr-page-sub{margin-top:4px;color:#888890;font-size:13px}
+  .mr-predict-stack{display:flex;flex-direction:column;gap:9px;margin-top:22px}
+  .mr-predict-wide{
+    width:100%;min-height:72px;padding:10px 12px;border:0;border-radius:18px;
+    background:#1c1c1f;color:#fff;display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;text-align:left;
+  }
+  .mr-predict-wide .mr-predict-logo{width:38px;height:38px;margin:0}
+  .mr-predict-wide strong{display:block;font-size:13.5px}
+  .mr-predict-wide small{display:block;margin-top:3px;color:#898990;font-size:11.5px}
+  .mr-predict-price{font-size:14px;font-weight:700;color:#baaaff}
+
+  /* Slide-out account drawer shown in the reference. */
+  .mr-side-backdrop{
+    position:absolute;inset:0;background:rgba(0,0,0,.55);z-index:70;
+  }
+  .mr-side-backdrop[hidden]{display:none}
+  .mr-side-panel{
+    position:absolute;z-index:71;top:0;left:0;bottom:0;width:min(82%,330px);
+    padding:calc(env(safe-area-inset-top) + 17px) 16px calc(env(safe-area-inset-bottom) + 18px);
+    background:#080809;border-right:1px solid #1e1e21;
+    transform:translateX(-103%);transition:transform .22s ease;
+    overflow-y:auto;
+  }
+  .mr-side-panel.open{transform:translateX(0)}
+  .mr-side-head{display:flex;align-items:center;justify-content:space-between}
+  .mr-side-avatar,.mr-side-mini{
+    width:38px;height:38px;border:0;padding:0;border-radius:50%;overflow:hidden;background:#202024;
+  }
+  .mr-side-avatar img,.mr-side-mini img{width:100%;height:100%;object-fit:cover}
+  .mr-side-copy{
+    width:36px;height:36px;border:0;border-radius:50%;background:#202024;color:#aaaab0;display:flex;align-items:center;justify-content:center;
+  }
+  .mr-side-copy svg{width:18px;height:18px}
+  .mr-side-handle{margin-top:15px;font-size:15px;font-weight:700}
+  .mr-side-address{margin-top:5px;color:#77777e;font-size:11.5px}
+  .mr-side-account{
+    width:100%;min-height:62px;margin-top:19px;padding:9px 8px;border:0;border-radius:16px;background:#151517;color:#fff;
+    display:grid;grid-template-columns:38px 1fr 18px;align-items:center;gap:10px;text-align:left;
+  }
+  .mr-side-account strong{display:block;font-size:13px}
+  .mr-side-account small{display:block;margin-top:3px;color:#7e7e84;font-size:10.8px}
+  .mr-side-account>svg{width:18px;height:18px;color:#707078}
+  .mr-side-links{margin-top:16px;display:flex;flex-direction:column}
+  .mr-side-links button{
+    min-height:52px;padding:0 5px;border:0;border-bottom:1px solid #151517;background:transparent;color:#f5f5f6;
+    display:flex;align-items:center;justify-content:space-between;font-size:13.5px;text-align:left;
+  }
+  .mr-side-links button span:last-child{color:#66666d;font-size:20px}
+  .mr-sim-badge{
+    display:inline-flex;margin-top:20px;padding:5px 8px;border-radius:7px;
+    background:#17131f;color:#8f7be9;font-size:9px;font-weight:800;letter-spacing:.7px;
+  }
+
+  /* Settings sheet inspired by the reference's editor without any real wallet functionality. */
+  .mr-settings{
+    display:flex;flex-direction:column;gap:13px;
+  }
+  .mr-setting-group{
+    padding:13px;border-radius:17px;background:#19191c;
+  }
+  .mr-setting-title{font-size:12px;color:#8a8a91;margin-bottom:9px;text-transform:uppercase;letter-spacing:.45px}
+  .mr-setting-row{
+    display:grid;grid-template-columns:1fr 118px;gap:9px;align-items:center;margin-top:8px;
+  }
+  .mr-setting-row:first-of-type{margin-top:0}
+  .mr-setting-row label{font-size:12px;color:#d8d8dc}
+  .mr-setting-row input{
+    width:100%;height:39px;padding:0 10px;border:1px solid #303034;border-radius:9px;background:#202023;color:#fff;font-size:12px;outline:none;
+  }
+  .mr-setting-save{
+    width:100%;height:48px;border:0;border-radius:24px;background:#a995ff;color:#171122;font-weight:760;
+  }
+}
+@media (max-width:390px){
+  .mr-top{padding-left:10px !important;padding-right:10px !important}
+  .mr-seg{padding-left:12px !important;padding-right:12px !important;font-size:12.5px !important}
+  .mr-scroll{padding-left:11px !important;padding-right:11px !important}
+  .mr-balance{font-size:40px !important}
+  .mr-cash-card{margin-top:23px !important}
+}
+@media (min-width:768px) and (max-width:1180px){
+  .mr-top,.mr-scroll,.mr-bottom{width:min(100%,720px) !important;margin-left:auto !important;margin-right:auto !important}
+  .mr-scroll{padding-left:24px !important;padding-right:24px !important}
+}
+</style>
+
 </head>
 <body>
 
@@ -5309,38 +5605,42 @@
   <div class="drag-bar-wrap"><div class="drag-bar"></div></div>
 
   
-  <!-- Mobile-only wallet shell inspired by the public reference layout.
-       It reuses the existing local/simulated wallet state and actions. -->
+
+  <!-- Mobile-only local wallet simulator shell. Desktop remains unchanged. -->
   <div id="mobileReferenceWallet" class="mr-wallet" aria-label="Local wallet simulator">
     <header class="mr-top">
-      <button class="mr-avatar account-btn" type="button" onclick="toggleDropdown()" aria-label="Switch account">
+      <button class="mr-avatar" type="button" onclick="mrOpenSideMenu()" aria-label="Open account menu">
         <img id="mrAvatar" alt="Account avatar">
       </button>
+
       <nav class="mr-segments" aria-label="Wallet sections">
         <button class="mr-seg active" type="button" data-mr-page="home" onclick="mrSwitch('home',this)">Home</button>
         <button class="mr-seg" type="button" data-mr-page="trade" onclick="mrSwitch('trade',this)">Trade</button>
+        <button class="mr-seg" type="button" data-mr-page="predict" onclick="mrSwitch('predict',this)">Predict</button>
         <button class="mr-seg" type="button" data-mr-page="explore" onclick="mrSwitch('explore',this)">Explore</button>
       </nav>
     </header>
 
-    <main class="mr-scroll">
+    <main class="mr-scroll" id="mrMainScroll">
       <section class="mr-page active" id="mr-page-home">
-        <button class="mr-account-name account-btn" type="button" onclick="toggleDropdown()">
+        <button class="mr-account-name" type="button" onclick="mrOpenSideMenu()">
           <span id="mrAccountName">Account 1</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 10 4 4 4-4"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg>
         </button>
 
         <div class="mr-balance-line">
           <button class="mr-balance" id="mrBalance" type="button" onclick="mrEditBalance()" aria-label="Edit simulated balance">$128,412.90</button>
-          <button class="mr-eye" type="button" onclick="toggleMask()" aria-label="Hide or show balance">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 12s3.5-5.5 9.5-5.5S21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>
-          </button>
         </div>
-        <div class="mr-pnl" id="mrPnl">+$4,208.11&nbsp;&nbsp;+3.4%</div>
+        <div class="mr-performance">
+          <span id="mrPnlDollar">+$4,208.11</span>
+          <span class="mr-performance-pill" id="mrPnlPercent">+3.40%</span>
+        </div>
 
         <button class="mr-cash-card" type="button" onclick="openSheet('receive')">
           <span class="mr-cash-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M8 9h.01M16 15h.01"/><circle cx="12" cy="12" r="2.2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="12" cy="12" r="2.2"/><path d="M7 9h.01M17 15h.01"/>
+            </svg>
           </span>
           <span class="mr-cash-label">Cash</span>
           <span class="mr-cash-value" id="mrCashValue">$0.00</span>
@@ -5348,16 +5648,65 @@
 
         <div class="mr-section-head">
           <button type="button" class="mr-section-title" onclick="mrScrollTokens()">Tokens
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="m9 6 6 6-6 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
           </button>
         </div>
-
         <div class="mr-token-list" id="mrTokenList"></div>
+
+        <section class="mr-feed-section">
+          <button type="button" class="mr-section-title" onclick="mrSwitchByName('trade')">Perps
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <div class="mr-hscroll">
+            <button class="mr-market-card" type="button" onclick="openSheet('swap')">
+              <span class="mr-market-icon btc">₿</span><strong>BTC <small>40×</small></strong><span class="mr-green">+2.9%</span>
+            </button>
+            <button class="mr-market-card" type="button" onclick="openSheet('swap')">
+              <span class="mr-market-icon eth">◆</span><strong>ETH <small>25×</small></strong><span class="mr-green">+1.4%</span>
+            </button>
+            <button class="mr-market-card" type="button" onclick="openSheet('swap')">
+              <span class="mr-market-icon hype">H</span><strong>HYPE <small>10×</small></strong><span class="mr-green">+6.5%</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="mr-feed-section">
+          <button type="button" class="mr-section-title" onclick="mrSwitchByName('predict')">Predictions
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <div class="mr-hscroll">
+            <button class="mr-predict-card" type="button" onclick="mrSwitchByName('predict')">
+              <span class="mr-predict-logo">P</span><strong>Formula 1 2026 Driver...</strong><small>in 106d</small>
+            </button>
+            <button class="mr-predict-card" type="button" onclick="mrSwitchByName('predict')">
+              <span class="mr-predict-logo">P</span><strong>Formula 1 2026 Const...</strong><small>in 106d</small>
+            </button>
+          </div>
+        </section>
+
+        <section class="mr-feed-section">
+          <button type="button" class="mr-section-title" onclick="mrShowOriginalPanel('nfts')">Collectibles
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <button class="mr-empty-card" type="button" onclick="mrShowOriginalPanel('nfts')">
+            <span class="mr-empty-face">⌒</span>
+            <span><strong>No verified collections to show</strong><small>Tap to see all</small></span>
+          </button>
+        </section>
+
+        <section class="mr-feed-section mr-watch-section">
+          <button type="button" class="mr-section-title" onclick="openWalletSearch()">Watchlist
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+          </button>
+          <div class="mr-watch-row">
+            <span>Track tokens locally</span><button type="button" onclick="openWalletSearch()">Add</button>
+          </div>
+        </section>
       </section>
 
       <section class="mr-page" id="mr-page-trade">
-        <div class="mr-trade-title">Trade</div>
-        <div class="mr-trade-sub">Local simulated wallet actions</div>
+        <div class="mr-page-heading">Trade</div>
+        <div class="mr-page-sub">Local simulated wallet actions</div>
 
         <div class="mr-action-grid">
           <button class="mr-action-card" type="button" onclick="openSheet('send')">
@@ -5378,29 +5727,36 @@
           </button>
         </div>
 
-        <div class="mr-subsection-title">Assets</div>
+        <div class="mr-subsection-title">Markets</div>
         <div class="mr-token-list" id="mrTradeTokens"></div>
+      </section>
 
-        <div class="mr-subsection-title">Recent activity</div>
-        <div class="mr-activity-list">
-          <button type="button" onclick="navClick(document.querySelector('.wallet-nav-btn[aria-label=&quot;Activity&quot;]'),'activity');mrShowOriginalPanel('activity')" class="mr-activity-row">
-            <span class="mr-activity-dot"></span>
-            <span><strong>Wallet activity</strong><small>View simulated history</small></span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+      <section class="mr-page" id="mr-page-predict">
+        <div class="mr-page-heading">Predict</div>
+        <div class="mr-page-sub">Fictional local prediction cards</div>
+        <div class="mr-predict-stack">
+          <button class="mr-predict-wide" type="button">
+            <span class="mr-predict-logo">P</span>
+            <span><strong>Formula 1 2026 Driver Champion</strong><small>Closes in 106d · simulated</small></span>
+            <span class="mr-predict-price">52¢</span>
+          </button>
+          <button class="mr-predict-wide" type="button">
+            <span class="mr-predict-logo">P</span>
+            <span><strong>Formula 1 2026 Constructors</strong><small>Closes in 106d · simulated</small></span>
+            <span class="mr-predict-price">48¢</span>
           </button>
         </div>
       </section>
 
       <section class="mr-page" id="mr-page-explore">
-        <div class="mr-explore-search" role="button" tabindex="0" onclick="openWalletSearch()" onkeydown="if(event.key==='Enter')openWalletSearch()">
+        <button class="mr-explore-search" type="button" onclick="openWalletSearch()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
           <span>Search tokens</span>
-        </div>
-
+        </button>
         <div class="mr-subsection-title">Explore</div>
         <button class="mr-wide-card" type="button" onclick="mrShowOriginalPanel('activity')">
           <span class="mr-wide-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
-          <span><strong>Activity</strong><small>Simulated sends, receives and swaps</small></span>
+          <span><strong>Activity</strong><small>Simulated wallet history</small></span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
         </button>
         <button class="mr-wide-card" type="button" onclick="mrShowOriginalPanel('nfts')">
@@ -5417,9 +5773,35 @@
         <span>Search Phantom</span>
       </button>
       <button class="mr-plus" type="button" onclick="mrQuickActions()" aria-label="Open wallet actions">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 5v14M5 12h14"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 5v14M5 12h14"/></svg>
       </button>
     </footer>
+
+    <div class="mr-side-backdrop" id="mrSideBackdrop" onclick="mrCloseSideMenu()" hidden></div>
+    <aside class="mr-side-panel" id="mrSidePanel" aria-hidden="true">
+      <div class="mr-side-head">
+        <button class="mr-side-avatar" type="button" onclick="mrCloseSideMenu()"><img id="mrSideAvatar" alt=""></button>
+        <button class="mr-side-copy" type="button" onclick="copyAddr()" aria-label="Copy local wallet address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="10" height="10" rx="2"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="mr-side-handle">@Zzekuro</div>
+      <div class="mr-side-address">Local simulator account</div>
+
+      <button class="mr-side-account" type="button" onclick="toggleDropdown();mrCloseSideMenu()">
+        <span class="mr-side-mini"><img id="mrSideMiniAvatar" alt=""></span>
+        <span><strong id="mrSideAccountName">Account 1</strong><small>Switch account</small></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
+
+      <div class="mr-side-links">
+        <button type="button" onclick="mrShowSideNotice('Profile')"><span>Profile</span><span>›</span></button>
+        <button type="button" onclick="mrShowOriginalPanel('activity');mrCloseSideMenu()"><span>History</span><span>›</span></button>
+        <button type="button" onclick="mrOpenSettings()"><span>Settings</span><span>›</span></button>
+        <button type="button" onclick="showToast('This is a local wallet simulator');mrCloseSideMenu()"><span>Help &amp; Support</span><span>›</span></button>
+      </div>
+      <div class="mr-sim-badge">LOCAL SIMULATOR</div>
+    </aside>
   </div>
 
 <div class="lock" id="lockScreen" aria-label="Fictional wallet unlock screen">
@@ -7278,6 +7660,184 @@ hydrateStreamAvatars();
 
   mrRender();
   window.addEventListener('resize',mrRender);
+})();
+</script>
+
+
+<script>
+(function initReferencePassV2(){
+  if(window.__mrReferencePassV2) return;
+  window.__mrReferencePassV2=true;
+
+  const extraMeta={
+    zec:{name:'ZCash',symbol:'ZEC',icon:'Z',bg:'#f0ad2d',fg:'#111',weight:.9522,move:'+0.12%',down:false},
+    btc:{name:'Bitcoin',symbol:'BTC',icon:'₿',bg:'#f59d2a',fg:'#fff',weight:.0395,move:'+0.42%',down:false},
+    eth:{name:'Ethereum',symbol:'ETH',icon:'◆',bg:'#eeeeef',fg:'#26262a',weight:.0090,move:'+0.54%',down:false},
+    sol:{name:'Solana',symbol:'SOL',icon:'',bg:'#09090c',fg:'#fff',weight:.00815,move:'+0.31%',down:false},
+    usdt:{name:'USDT',symbol:'USDT',icon:'T',bg:'#40aa8c',fg:'#fff',weight:.0001137,move:'+0.02%',down:false},
+    mon:{name:'Monad',symbol:'MON',icon:'◇',bg:'#f5f4f8',fg:'#7254df',weight:0,move:'$0.00',down:false},
+    pol:{name:'Polygon',symbol:'POL',icon:'P',bg:'#7f4edb',fg:'#fff',weight:0,move:'$0.00',down:false},
+    hype:{name:'Hyperliquid',symbol:'HYPE',icon:'H',bg:'#73e8c9',fg:'#0f2c28',weight:0,move:'$0.00',down:false}
+  };
+
+  function nfmt(v, max=2){
+    return Number(v||0).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:max});
+  }
+  function money(v){
+    return '$'+Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  function referenceValue(key,total){
+    const m=extraMeta[key];
+    return total*(m.weight||0);
+  }
+  function qtyFor(key,value){
+    if(masked) return '•••• '+extraMeta[key].symbol;
+    if(key==='btc') return nfmt(value/93000,3)+' BTC';
+    if(key==='eth') return nfmt(value/2439,3)+' ETH';
+    if(key==='sol') return nfmt(value/94.52,2)+' SOL';
+    if(key==='usdt') return nfmt(value,0)+' USDT';
+    if(key==='zec') return nfmt(value/615,2)+' ZEC';
+    return '0 '+extraMeta[key].symbol;
+  }
+  function tokenIcon(key,m){
+    if(key==='sol'){
+      return '<span class="mr-token-icon sol"><span></span></span>';
+    }
+    return '<span class="mr-token-icon" style="background:'+m.bg+';color:'+m.fg+'">'+m.icon+'</span>';
+  }
+  function tokenRows(){
+    const total=accounts[current].balance;
+    const order = total>500000 ? ['zec','btc','eth','sol','usdt','mon'] : ['sol','eth','btc','mon','pol','hype'];
+    return order.map(key=>{
+      const m=extraMeta[key];
+      const value=referenceValue(key,total);
+      const known = ['sol','eth'].includes(key);
+      const click = known ? "openDetail('"+key+"')" : "showToast('"+m.name+" is a local simulated asset')";
+      const secondary = value>0 ? money(value*(key==='zec'?.00018:key==='btc'?.000007:key==='eth'?.0054:key==='sol'?.0031:.0002)) : '$0.00';
+      return '<button class="mr-token-row" type="button" onclick="'+click+'">'+
+        '<span class="mr-token-left">'+tokenIcon(key,m)+
+          '<span class="mr-token-copy"><span class="mr-token-name">'+m.name+'<span class="mr-verified">✓</span></span>'+
+          '<span class="mr-token-qty">'+qtyFor(key,value)+'</span></span>'+
+        '</span>'+
+        '<span class="mr-token-right"><span class="mr-token-value">'+(masked?'••••••':money(value))+'</span>'+
+          '<span class="mr-token-move '+(m.down?'down':'')+'">'+(value>0?(m.down?'-':'+')+secondary:m.move)+'</span></span>'+
+      '</button>';
+    }).join('');
+  }
+
+  const previousRender=window.mrRender;
+  window.mrRender=function(){
+    if(previousRender) previousRender();
+    if(!isWalletApp()) return;
+    const acct=document.getElementById('mrAccountName');
+    const sideAcct=document.getElementById('mrSideAccountName');
+    if(acct) acct.textContent=current==='Account 1'?'@Zzekuro':current;
+    if(sideAcct) sideAcct.textContent=current;
+
+    const bal=document.getElementById('mrBalance');
+    if(bal) bal.textContent=masked?'••••••':money(accounts[current].balance);
+
+    const total=accounts[current].balance;
+    const cash=document.getElementById('mrCashValue');
+    if(cash) cash.textContent=masked?'••••':money(total>500000 ? 3668.73 : total*.01801);
+
+    const change=document.getElementById('changeText');
+    const perf=document.querySelector('.mr-performance');
+    const dollar=document.getElementById('mrPnlDollar');
+    const pct=document.getElementById('mrPnlPercent');
+    let down=false;
+    let pctText='+3.40%';
+    let dollarText='+'+money(Math.max(0,total*.034)).replace('$','$');
+    if(change){
+      down=change.classList.contains('down') || String(change.textContent).includes('-');
+      const match=String(change.textContent).match(/[+-]?\d+(?:\.\d+)?%/);
+      if(match) pctText=match[0];
+    }
+    if(total>500000){ dollarText='+$1,623,838.07'; pctText='+22.04%'; down=false; }
+    if(dollar) dollar.textContent=dollarText;
+    if(pct) pct.textContent=pctText;
+    if(perf) perf.classList.toggle('down',down);
+
+    const rows=tokenRows();
+    const home=document.getElementById('mrTokenList');
+    const trade=document.getElementById('mrTradeTokens');
+    if(home) home.innerHTML=rows;
+    if(trade) trade.innerHTML=rows;
+
+    const srcAvatar=document.getElementById('walletCreatorAvatar');
+    ['mrAvatar','mrSideAvatar','mrSideMiniAvatar'].forEach(id=>{
+      const img=document.getElementById(id);
+      if(img && srcAvatar && srcAvatar.src) img.src=srcAvatar.src;
+    });
+  };
+
+  window.mrSwitchByName=function(name){
+    const btn=document.querySelector('.mr-seg[data-mr-page="'+name+'"]');
+    if(btn) mrSwitch(name,btn);
+  };
+
+  window.mrOpenSideMenu=function(){
+    const panel=document.getElementById('mrSidePanel');
+    const bg=document.getElementById('mrSideBackdrop');
+    if(!panel||!bg) return;
+    bg.hidden=false;
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    buzz(5);
+  };
+  window.mrCloseSideMenu=function(){
+    const panel=document.getElementById('mrSidePanel');
+    const bg=document.getElementById('mrSideBackdrop');
+    if(panel){panel.classList.remove('open');panel.setAttribute('aria-hidden','true')}
+    if(bg) bg.hidden=true;
+    document.body.style.overflow='';
+  };
+  window.mrShowSideNotice=function(label){
+    mrCloseSideMenu();
+    showToast(label+' is simulated locally');
+  };
+
+  window.mrOpenSettings=function(){
+    mrCloseSideMenu();
+    const overlay=document.getElementById('overlay');
+    const sheet=document.getElementById('sheet');
+    if(!overlay||!sheet) return;
+    overlay.classList.remove('mobile-bottomsheet');
+    overlay.classList.add('mobile-fullpage');
+    const total=accounts[current].balance;
+    sheet.innerHTML=
+      '<div class="mobile-page-inner">'+walletPageHead('Settings')+
+      '<div class="mr-settings">'+
+        '<div class="mr-setting-group"><div class="mr-setting-title">Wallet display</div>'+
+          '<div class="mr-setting-row"><label for="mrSetBalance">Portfolio balance</label><input id="mrSetBalance" inputmode="decimal" value="'+total.toFixed(2)+'"></div>'+
+          '<div class="mr-setting-row"><label for="mrSetCash">Cash display</label><input id="mrSetCash" inputmode="decimal" value="'+(total>500000?3668.73:total*.01801).toFixed(2)+'"></div>'+
+        '</div>'+
+        '<div class="mr-setting-group"><div class="mr-setting-title">Simulator</div>'+
+          '<div style="font-size:12px;line-height:1.5;color:#9a9aa1">This interface is local and simulated. It does not connect to a real wallet, request a seed phrase, sign transactions, or move crypto.</div>'+
+        '</div>'+
+        '<button class="mr-setting-save" type="button" onclick="mrSaveSettings()">Save</button>'+
+      '</div></div>';
+    overlay.classList.remove('hidden');
+  };
+
+  window.mrSaveSettings=function(){
+    const b=document.getElementById('mrSetBalance');
+    if(b){
+      let v=parseFloat(String(b.value).replace(/[^0-9.-]/g,''));
+      if(Number.isFinite(v) && v>=0) accounts[current].balance=Math.min(v,999999999999.99);
+    }
+    renderAccount();
+    mrRender();
+    closeSheet();
+    showToast('Simulator settings saved');
+  };
+
+  // Keep the bottom search truly anchored while content scrolls.
+  const sc=document.getElementById('mrMainScroll');
+  if(sc) sc.addEventListener('scroll',()=>{}, {passive:true});
+
+  mrRender();
 })();
 </script>
 
