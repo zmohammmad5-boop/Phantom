@@ -7623,6 +7623,53 @@
     padding:0 !important;
   }
 </style>
+
+<style id="phone-same-wallet-final">
+@media (max-width:1180px){
+  /* Kill the unrelated alternate mobile shell completely. */
+  #mobileReferenceWallet,
+  #mobileReferenceWallet.mr-wallet,
+  .frame > #mobileReferenceWallet.mr-wallet{
+    display:none !important;
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+    width:0 !important;
+    height:0 !important;
+    overflow:hidden !important;
+  }
+
+  /* Force the edited wallet UI to be the phone/tablet UI. */
+  #frame{
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  #frame > .topbar{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    flex:0 0 auto !important;
+  }
+
+  #frame > .wallet-main{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    flex:1 1 auto !important;
+    min-height:0 !important;
+    flex-direction:column !important;
+  }
+
+  #frame > .bottom-nav{
+    display:grid !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    flex:0 0 calc(50px + env(safe-area-inset-bottom)) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -10111,14 +10158,18 @@ hydrateStreamAvatars();
 </script>
 
 
-<script>
+<script id="disable-old-wallet-cache">
 (function(){
-  function isSecureWebOrigin(){
-    return location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-  }
-  if('serviceWorker' in navigator && isSecureWebOrigin()){
-    window.addEventListener('load', function(){
-      navigator.serviceWorker.register('./sw.js', {scope:'./'}).catch(function(){});
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', async function(){
+      try{
+        const regs=await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r=>r.unregister()));
+        if(window.caches){
+          const keys=await caches.keys();
+          await Promise.all(keys.map(k=>caches.delete(k)));
+        }
+      }catch(e){}
     });
   }
 })();
@@ -11066,18 +11117,6 @@ hydrateStreamAvatars();
 </script>
 
 
-<script id="force-fresh-service-worker">
-if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
-  window.addEventListener('load', async ()=>{
-    try{
-      const reg = await navigator.serviceWorker.register('./sw.js', {updateViaCache:'none'});
-      await reg.update();
-    }catch(e){}
-  });
-}
-</script>
-
-
 <script id="token-zero-spacing-normalizer">
 (function(){
   function normalizeZeroTokenAmounts(root=document){
@@ -11367,6 +11406,44 @@ if('serviceWorker' in navigator && (location.protocol === 'https:' || location.h
   }else{
     start();
   }
+})();
+</script>
+
+
+<script id="phone-same-wallet-final-script">
+(function(){
+  function forceCorrectPhoneWallet(){
+    if(!window.matchMedia || !window.matchMedia('(max-width:1180px)').matches) return;
+
+    var mr=document.getElementById('mobileReferenceWallet');
+    if(mr){
+      mr.style.setProperty('display','none','important');
+      mr.style.setProperty('visibility','hidden','important');
+      mr.style.setProperty('pointer-events','none','important');
+    }
+
+    var frame=document.getElementById('frame');
+    if(frame){
+      frame.style.setProperty('display','flex','important');
+      frame.style.setProperty('flex-direction','column','important');
+    }
+
+    var top=frame && frame.querySelector(':scope > .topbar');
+    var main=frame && frame.querySelector(':scope > .wallet-main');
+    var nav=frame && frame.querySelector(':scope > .bottom-nav');
+
+    if(top) top.style.setProperty('display','flex','important');
+    if(main) main.style.setProperty('display','flex','important');
+    if(nav) nav.style.setProperty('display','grid','important');
+  }
+
+  forceCorrectPhoneWallet();
+  document.addEventListener('DOMContentLoaded', forceCorrectPhoneWallet);
+  window.addEventListener('load', forceCorrectPhoneWallet);
+  window.addEventListener('resize', forceCorrectPhoneWallet);
+  setTimeout(forceCorrectPhoneWallet, 50);
+  setTimeout(forceCorrectPhoneWallet, 300);
+  setTimeout(forceCorrectPhoneWallet, 1200);
 })();
 </script>
 
