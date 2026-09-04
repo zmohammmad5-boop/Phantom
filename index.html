@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>StreamHub</title>
+<title>Ghost Wallet</title>
 <style>
   :root{
     --bg-top:#241a3d;
@@ -1112,7 +1112,7 @@
 }
 
 
-/* ===== PRO+ polish: more realistic Phantom-style wallet + stronger thumbnail card treatment ===== */
+/* ===== PRO+ polish: more realistic Ghost Wallet-style wallet + stronger thumbnail card treatment ===== */
 .frame{
   max-width:386px;
   height:690px;
@@ -4286,10 +4286,10 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="application-name" content="Phantom">
+<meta name="application-name" content="Ghost Wallet">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Phantom">
+<meta name="apple-mobile-web-app-title" content="Ghost Wallet">
 <meta name="theme-color" content="#000000">
 <meta name="msapplication-TileColor" content="#000000">
 
@@ -5543,6 +5543,2086 @@
 }
 </style>
 
+
+<style>
+@media (min-width:1181px){
+  .pc-ref-token .pc-ref-logo{
+    padding:0 !important;
+    overflow:hidden !important;
+    background:transparent !important;
+    color:transparent !important;
+    font-size:0 !important;
+    border-radius:50% !important;
+  }
+  .pc-ref-token .pc-ref-logo svg{
+    width:100% !important;
+    height:100% !important;
+    display:block !important;
+  }
+  .pc-ref-token{
+    min-height:64px !important;
+  }
+}
+</style>
+
+
+<style id="compact-premium-wallet-pass">
+/* Compact premium pass. Existing JS/state/functionality is unchanged. */
+.frame,
+.frame *{box-sizing:border-box}
+
+.pc-ref-token{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif}
+.pc-ref-token .pc-ref-logo{padding:0!important;overflow:hidden!important;border-radius:50%!important;background:transparent!important;box-shadow:none!important}
+.pc-ref-token .pc-ref-logo svg{display:block;width:100%!important;height:100%!important}
+.pc-ref-token .token-copy{min-width:0}
+.pc-ref-token .token-flat{color:#777!important}
+.pc-ref-token .token-muted-val{color:#ececef!important}
+.premium-token-detail-logo{background:transparent!important;color:inherit!important;width:auto!important;height:auto!important;border-radius:0!important}
+
+@media (min-width:1181px){
+  .browser-body>.frame{
+    width:342px!important;max-width:342px!important;height:612px!important;min-height:612px!important;max-height:612px!important;
+    top:6px!important;right:12px!important;
+    border:1px solid #232326!important;border-radius:18px!important;
+    background:#000!important;background-image:none!important;
+    box-shadow:0 22px 70px rgba(0,0,0,.62),0 0 0 1px rgba(255,255,255,.015) inset!important;
+    overflow:hidden!important;
+  }
+  .frame>.drag-bar-wrap{display:none!important}
+  .frame>.topbar{
+    min-height:55px!important;height:55px!important;padding:7px 11px 6px!important;
+    border-bottom:1px solid #202023!important;background:#000!important;
+  }
+  .wallet-profile-btn{
+    min-height:39px!important;padding:2px 4px 2px 1px!important;gap:8px!important;
+    background:transparent!important;border:0!important;box-shadow:none!important;border-radius:10px!important;
+  }
+  .wallet-user-avatar{width:32px!important;height:32px!important;flex:0 0 32px!important;border:1px solid #26262a!important;box-shadow:none!important}
+  .account-btn.wallet-profile-btn .wallet-handle{font-size:11.5px!important;font-weight:680!important;line-height:1.05!important;color:#fff!important}
+  .account-btn.wallet-profile-btn .wallet-account-line,.wallet-account-line #acctName{font-size:10.5px!important;color:#f2f2f4!important;line-height:1.15!important}
+  .wallet-copy-mini{width:14px!important;height:14px!important;color:#7b7b82!important}
+  .desktop-wallet-header-icons{gap:1px!important}
+  .wallet-head-icon{width:30px!important;height:30px!important;border:0!important;background:transparent!important;color:#b9b9c1!important;border-radius:9px!important}
+  .wallet-head-icon:hover{background:#151517!important;color:#fff!important}
+  .wallet-head-icon svg{width:17px!important;height:17px!important}
+
+  .wallet-main{background:#000!important;min-height:0!important;overflow:hidden!important}
+  .wallet-balance-area{padding:31px 12px 25px!important;flex:0 0 auto!important}
+  .balance-wrap{margin:0!important;text-align:center!important}
+  .balance-row{min-height:48px!important;justify-content:center!important;gap:4px!important}
+  .balance{font-size:46px!important;line-height:.98!important;font-weight:770!important;letter-spacing:-2.2px!important;color:#fff!important;cursor:pointer!important}
+  .balance-input{font-size:42px!important;line-height:1!important;max-width:260px!important;text-align:center!important}
+  .edit-pencil{display:none!important}
+  .eye-btn{width:24px!important;height:24px!important;font-size:11px!important;opacity:.22!important;background:transparent!important;color:#aaa!important;margin-left:2px!important}
+  .change-row{margin-top:8px!important;font-size:12.5px!important;font-weight:650!important;justify-content:center!important;color:#21e47a!important}
+
+  .wallet-actions{margin:0 11px 25px!important;gap:8px!important;grid-template-columns:repeat(4,1fr)!important}
+  .wallet-actions .action{
+    min-width:0!important;height:80px!important;min-height:80px!important;padding:10px 2px 9px!important;
+    border:0!important;border-radius:19px!important;background:#202022!important;box-shadow:none!important;
+    color:#f5f5f7!important;font-size:10.5px!important;font-weight:530!important;gap:7px!important;
+  }
+  .wallet-actions .action:hover{background:#252527!important}
+  .wallet-actions .action .circ{width:29px!important;height:29px!important;background:transparent!important;box-shadow:none!important;color:#a998ff!important}
+  .wallet-actions .action .circ svg{width:25px!important;height:25px!important;stroke-width:1.75!important}
+
+  .wallet-tabs{margin:0 16px 8px!important;min-height:36px!important;height:36px!important;gap:13px!important;border:0!important;align-items:center!important}
+  .wallet-tabs .tab{padding:0!important;height:36px!important;line-height:36px!important;font-size:14.5px!important;font-weight:650!important;color:#8d8d94!important;border:0!important;white-space:nowrap!important}
+  .wallet-tabs .tab.active{color:#fff!important;border:0!important}
+  .wallet-tab-more{margin-left:auto!important;width:28px!important;height:34px!important;color:#aaa!important;background:transparent!important;font-size:18px!important}
+
+  .body-scroll{padding:0 16px 55px!important;overflow-y:auto!important;min-height:0!important;scrollbar-width:none!important}
+  .body-scroll::-webkit-scrollbar{display:none!important}
+  .token-row{
+    min-height:64px!important;margin:0 0 9px!important;padding:8px 11px!important;
+    border:0!important;border-radius:18px!important;background:#1c1c1e!important;box-shadow:none!important;
+  }
+  .token-row:hover{background:#212123!important}
+  .token-left{gap:9px!important;min-width:0!important}
+  .token-icon{width:38px!important;height:38px!important;flex:0 0 38px!important}
+  .token-name{font-size:13.5px!important;line-height:1.18!important;font-weight:620!important;color:#f7f7f8!important}
+  .token-sub{margin-top:3px!important;font-size:10.7px!important;line-height:1.12!important;color:#929299!important}
+  .token-right{min-width:72px!important;text-align:right!important}
+  .token-val{font-size:12.5px!important;line-height:1.15!important;font-weight:570!important;color:#f4f4f6!important}
+  .token-change{margin-top:3px!important;font-size:10.8px!important;line-height:1.12!important}
+  .fake-verified{width:12px!important;height:12px!important;margin-left:3px!important;font-size:7.5px!important;background:#a694ff!important;color:#111!important}
+
+  .frame>.bottom-nav{
+    position:absolute!important;left:0!important;right:0!important;bottom:0!important;
+    width:100%!important;height:54px!important;min-height:54px!important;padding:2px 15px!important;
+    grid-template-columns:repeat(4,1fr)!important;background:#000!important;border-top:1px solid #202023!important;z-index:40!important;
+  }
+  .wallet-nav-btn{min-height:46px!important;color:#777981!important;background:transparent!important;border-radius:12px!important}
+  .wallet-nav-btn.active{color:#a694ff!important;background:transparent!important}
+  .wallet-nav-btn:hover{background:#141416!important}
+  .wallet-nav-btn .nav-icon svg{width:22px!important;height:22px!important}
+}
+
+/* On phones/tablets, show the same compact wallet hierarchy instead of the
+   older alternate shell. Existing mobile sheets and safe-area behavior stay intact. */
+@media (max-width:1180px){
+  .mr-wallet{display:none!important}
+  .frame>.topbar{display:flex!important}
+  .frame>.wallet-main{display:flex!important}
+  .frame>.bottom-nav{display:grid!important}
+
+  .frame>.topbar{
+    width:min(100%,720px)!important;min-height:calc(54px + env(safe-area-inset-top))!important;
+    padding:calc(env(safe-area-inset-top) + 7px) 12px 6px!important;
+    border-bottom:1px solid #202023!important;background:#000!important;
+  }
+  .wallet-profile-btn{min-height:39px!important;padding:2px 3px 2px 0!important;gap:8px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+  .wallet-user-avatar{width:32px!important;height:32px!important;flex:0 0 32px!important;border:1px solid #26262a!important}
+  .account-btn.wallet-profile-btn .wallet-handle{font-size:11.5px!important;font-weight:680!important;color:#fff!important}
+  .account-btn.wallet-profile-btn .wallet-account-line,.wallet-account-line #acctName{font-size:10.5px!important;color:#f0f0f2!important}
+  .mobile-wallet-header-icons{gap:1px!important}
+  .wallet-head-icon{width:30px!important;height:30px!important;border:0!important;background:transparent!important;color:#b8b8c0!important;border-radius:9px!important}
+  .wallet-head-icon svg{width:17px!important;height:17px!important}
+
+  .wallet-main{width:min(100%,720px)!important;background:#000!important}
+  .wallet-balance-area{padding:29px 12px 24px!important}
+  .balance-wrap{margin:0!important;text-align:center!important}
+  .balance-row{min-height:48px!important;justify-content:center!important;gap:4px!important}
+  .balance{font-size:clamp(42px,13vw,50px)!important;line-height:.98!important;font-weight:770!important;letter-spacing:-2.1px!important;cursor:pointer!important}
+  .edit-pencil{display:none!important}
+  .eye-btn{width:24px!important;height:24px!important;opacity:.2!important;background:transparent!important;font-size:11px!important}
+  .change-row{margin-top:8px!important;font-size:12.5px!important;justify-content:center!important;font-weight:650!important}
+
+  .wallet-actions{margin:0 11px 25px!important;gap:8px!important}
+  .wallet-actions .action{height:80px!important;min-height:80px!important;border-radius:19px!important;padding:10px 2px 9px!important;background:#202022!important;border:0!important;box-shadow:none!important;font-size:10.5px!important;gap:7px!important;color:#f5f5f7!important}
+  .wallet-actions .action .circ{width:29px!important;height:29px!important;background:transparent!important;box-shadow:none!important;color:#a998ff!important}
+  .wallet-actions .action .circ svg{width:25px!important;height:25px!important}
+
+  .wallet-tabs{margin:0 16px 8px!important;height:36px!important;min-height:36px!important;gap:13px!important;border:0!important;align-items:center!important}
+  .wallet-tabs .tab{height:36px!important;line-height:36px!important;padding:0!important;font-size:14.5px!important;font-weight:650!important;color:#8d8d94!important;border:0!important}
+  .wallet-tabs .tab.active{color:#fff!important;border:0!important}
+  .wallet-tab-more{margin-left:auto!important;width:28px!important;height:34px!important;font-size:18px!important}
+
+  .body-scroll{padding:0 16px calc(58px + env(safe-area-inset-bottom))!important}
+  .token-row{min-height:64px!important;margin:0 0 9px!important;padding:8px 11px!important;border:0!important;border-radius:18px!important;background:#1c1c1e!important;box-shadow:none!important}
+  .token-left{gap:9px!important}
+  .token-icon{width:38px!important;height:38px!important;flex:0 0 38px!important}
+  .pc-ref-token .pc-ref-logo{padding:0!important;overflow:hidden!important;background:transparent!important}
+  .pc-ref-token .pc-ref-logo svg{width:100%!important;height:100%!important;display:block!important}
+  .token-name{font-size:13.5px!important;font-weight:620!important}
+  .token-sub{margin-top:3px!important;font-size:10.7px!important}
+  .token-right{min-width:72px!important}
+  .token-val{font-size:12.5px!important;font-weight:570!important}
+  .token-change{margin-top:3px!important;font-size:10.8px!important}
+
+  .frame>.bottom-nav{
+    width:min(100%,720px)!important;height:calc(54px + env(safe-area-inset-bottom))!important;min-height:calc(54px + env(safe-area-inset-bottom))!important;
+    padding:2px 15px env(safe-area-inset-bottom)!important;background:#000!important;border-top:1px solid #202023!important;
+  }
+  .wallet-nav-btn{min-height:46px!important;color:#777981!important;background:transparent!important}
+  .wallet-nav-btn.active{color:#a694ff!important;background:transparent!important}
+  .wallet-nav-btn .nav-icon svg{width:22px!important;height:22px!important}
+}
+</style>
+
+
+<style id="wallet-action-row-fix">
+/* Match the supplied four-button reference. Only this action row is affected. */
+.wallet-actions{
+  margin:0 11px 25px!important;
+  padding:0!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px!important;
+  align-items:stretch!important;
+}
+.wallet-actions .action{
+  width:100%!important;
+  height:80px!important;
+  min-height:80px!important;
+  margin:0!important;
+  padding:13px 2px 10px!important;
+  border:0!important;
+  border-radius:20px!important;
+  background:#202020!important;
+  box-shadow:none!important;
+  outline:none!important;
+  color:#f4f4f5!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  font-size:11.7px!important;
+  line-height:13px!important;
+  font-weight:500!important;
+  letter-spacing:0!important;
+  text-align:center!important;
+}
+.wallet-actions .action:hover{background:#252525!important;}
+.wallet-actions .action:active{background:#2a2a2a!important;transform:scale(.975)!important;}
+.wallet-actions .action .circ{
+  width:25px!important;
+  height:25px!important;
+  min-width:25px!important;
+  min-height:25px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#a99bf5!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+.wallet-actions .action .circ svg{
+  width:24px!important;
+  height:24px!important;
+  display:block!important;
+  overflow:visible!important;
+  color:#a99bf5!important;
+  stroke:currentColor!important;
+}
+.wallet-actions .action-icon-send svg{width:24px!important;height:24px!important;}
+.wallet-actions .action-icon-swap svg{width:24px!important;height:24px!important;}
+.wallet-actions .action-icon-receive svg{width:23px!important;height:23px!important;}
+.wallet-actions .action-icon-buy svg{width:23px!important;height:23px!important;}
+.wallet-actions .action > span:last-child{
+  display:block!important;
+  margin:0!important;
+  padding:0!important;
+  color:#f4f4f5!important;
+  font:500 11.7px/13px Arial,Helvetica,sans-serif!important;
+  white-space:nowrap!important;
+}
+</style>
+
+
+<style id="literal-reference-action-row">
+/* Literal visual copy of the user-provided 4-action reference image. */
+#frame .wallet-actions {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 74px) !important;
+  gap: 8px !important;
+  width: 320px !important;
+  height: 82px !important;
+  min-height: 82px !important;
+  margin-left: 11px !important;
+  margin-right: 11px !important;
+  margin-top: 0 !important;
+  margin-bottom: 25px !important;
+  padding: 0 !important;
+  background-image: url("data:image/png;base64,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") !important;
+  background-repeat: no-repeat !important;
+  background-position: 0 0 !important;
+  background-size: 320px 82px !important;
+  overflow: visible !important;
+}
+
+#frame .wallet-actions .action {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 74px !important;
+  height: 82px !important;
+  min-width: 74px !important;
+  min-height: 82px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  /* Keep the real controls clickable but hide their duplicate artwork,
+     because the exact reference artwork is already baked into the row. */
+  color: transparent !important;
+  font-size: 0 !important;
+  gap: 0 !important;
+}
+
+#frame .wallet-actions .action .circ,
+#frame .wallet-actions .action > span {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+#frame .wallet-actions .action:hover,
+#frame .wallet-actions .action:active,
+#frame .wallet-actions .action:focus {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Slight responsive protection while preserving the exact proportions. */
+@media (max-width: 341px) {
+  #frame .wallet-actions {
+    width: calc(100% - 22px) !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    background-size: 100% 100% !important;
+  }
+  #frame .wallet-actions .action {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+</style>
+
+
+<style id="sol-btc-reference-icon-only">
+  .token-icon img,
+  .mr-token-icon img,
+  .premium-token-detail-logo img,
+  .mobile-search-result .token-icon img{
+    width:100% !important;
+    height:100% !important;
+    display:block !important;
+    object-fit:contain !important;
+  }
+</style>
+
+
+<style id="exact-icon-centering-fix">
+  .exact-token-img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:50% 50% !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+    pointer-events:none !important;
+  }
+
+  /* The four corrected base coin icons are 40x40 screenshot crops.
+     Center them inside the existing 38/40px icon slots. */
+  .pc-ref-logo .exact-token-img{
+    width:100% !important;
+    height:100% !important;
+  }
+  .mr-token-icon.exact-mobile-token-icon{
+    background:transparent !important;
+  }
+  .mr-token-icon.exact-mobile-token-icon .exact-token-img{
+    width:100% !important;
+    height:100% !important;
+  }
+
+  /* The two ETH screenshots include their real bottom-right mini badge.
+     The base ETH circle remains centered; the badge is allowed to extend. */
+  .token-icon.exact-eth-badge,
+  .mr-token-icon.exact-eth-badge{
+    position:relative !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+  .token-icon.exact-eth-badge > .exact-eth-badge-img{
+    position:absolute !important;
+    left:0 !important;
+    top:-1px !important;
+    width:46px !important;
+    height:auto !important;
+    max-width:none !important;
+    display:block !important;
+    pointer-events:none !important;
+  }
+  .mr-token-icon.exact-eth-badge > .exact-eth-badge-img{
+    position:absolute !important;
+    left:0 !important;
+    top:-1px !important;
+    width:48px !important;
+    height:auto !important;
+    max-width:none !important;
+    display:block !important;
+    pointer-events:none !important;
+  }
+</style>
+
+
+<style id="verified-and-icon-microfix">
+  .fake-verified,
+  .mr-verified{
+    display:inline-block !important;
+    width:15px !important;
+    height:15px !important;
+    margin-left:3px !important;
+    padding:0 !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABiklEQVR42mOUkZFhIBewYBNUkDX4b2MexfDnzy+GI6eWMzx5dpURmzpGZJv1tFz/y8noMTjbJqMo2nt4DsPjp1cZLl7dyYihmZWF439+2jIGaUkNvM58+OQSw4SZEXADmBgYGBi01O0JamRgYGCQl9Fj0FSz+4+iWU5aB6eGZy9uoocHnM0kI6n13wnNjzBw7+E5hu6pgYwPH1+Ci7k5ZDBIiqv9Z2BgYGAyNw7GqvHnr28Mi1eXMkiKqf6Xl9VDkTMzDMQeVRt3dDE8eXadgY9HhOHrt/cMabEzMQz+9+8vxNknz61DkTDW82F4/fYBw7nLWxn93EsZJMVVMDSfubCRgYGBgYGZgfFnIxcnfwPMaXy8ogymhgEM/HziDbYW0RgaDx1fwnD6wkZGeGhfv30YRQE3lwCDnWUM1rC4cmMfA0pU3bh9mPHClR0E4/n0hU0Mt++dYMSRPN3+y8noMDjbpmAkz0dPLjNcurabEWfahqckWf3/1maRDP/+/mE4emoFw+NnV7BmDAAwvnqUIQvifQAAAABJRU5ErkJggg==") !important;
+    background-color:transparent !important;
+    background-repeat:no-repeat !important;
+    background-position:center !important;
+    background-size:15px 15px !important;
+    color:transparent !important;
+    font-size:0 !important;
+    line-height:0 !important;
+    vertical-align:-3px !important;
+    overflow:hidden !important;
+  }
+
+  /* Keep the corrected SOL and Polygon crops dead-center in their existing slots. */
+  .token-logo-sol .exact-token-img,
+  .token-logo-pol .exact-token-img,
+  .exact-mobile-token-icon .exact-token-img-sol,
+  .exact-mobile-token-icon .exact-token-img-pol{
+    object-position:50% 50% !important;
+    transform:none !important;
+    margin:0 !important;
+  }
+</style>
+
+
+<style id="eth-hype-row-alignment-fix">
+  /* All token card rectangles share the exact same left/right edges. */
+  #panel-tokens{
+    width:100% !important;
+    box-sizing:border-box !important;
+  }
+  #panel-tokens .token-row,
+  .mr-token-list .mr-token-row{
+    width:100% !important;
+    max-width:none !important;
+    box-sizing:border-box !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+  }
+
+  .exact-token-img{
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+    pointer-events:none !important;
+  }
+
+  /* All 3 ETH rows now share the same exact base icon. */
+  .eth-composite-logo{
+    position:absolute !important;
+    inset:0 !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+  }
+  .eth-composite-logo > .exact-token-img-eth{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+  }
+  .eth-composite-badge{
+    position:absolute !important;
+    width:17px !important;
+    height:17px !important;
+    right:-4px !important;
+    bottom:-3px !important;
+    object-fit:contain !important;
+    pointer-events:none !important;
+  }
+  .token-icon.exact-eth-badge,
+  .mr-token-icon.exact-eth-badge{
+    overflow:visible !important;
+    background:transparent !important;
+    position:relative !important;
+  }
+
+  .token-logo-hype,
+  .mr-token-icon.exact-mobile-token-icon{
+    background:transparent !important;
+  }
+</style>
+
+
+<style id="account-rail-and-eth-final-fix">
+  /* Narrow account rail matching the supplied drawer proportions. */
+  .mr-side-panel.mr-account-rail{
+    width:72px !important;
+    max-width:72px !important;
+    padding:calc(env(safe-area-inset-top) + 8px) 7px calc(env(safe-area-inset-bottom) + 8px) !important;
+    overflow:hidden !important;
+    background:#050506 !important;
+    border-right:1px solid #171719 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+  }
+  .mr-rail-top{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+  .mr-rail-back,
+  .mr-rail-tool{
+    width:42px;
+    height:42px;
+    border:0;
+    padding:0;
+    background:transparent;
+    color:#c8c8cd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mr-rail-back svg,.mr-rail-tool svg{width:19px;height:19px}
+  .mr-rail-account{
+    width:58px;
+    border:0;
+    padding:0;
+    background:transparent;
+    color:#dedee2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+  }
+  .mr-rail-circle{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#29292c;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+  }
+  .mr-rail-circle-primary{
+    background:#9a87f6;
+    color:#17131f;
+  }
+  .mr-rail-account.active .mr-rail-circle{
+    outline:2px solid #a995ff;
+    outline-offset:2px;
+  }
+  .mr-rail-label{
+    width:62px;
+    color:#bdbdc2;
+    font-size:8.5px;
+    line-height:1.12;
+    text-align:center;
+    white-space:normal;
+  }
+  .mr-rail-account.active .mr-rail-label{color:#a995ff}
+  .mr-rail-bottom{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+    padding-top:8px;
+    border-top:1px solid #18181a;
+  }
+
+  /* All 3 ETH rows use the exact same clean circular base. */
+  .token-logo-eth > svg,
+  .exact-mobile-token-icon > svg,
+  .premium-token-detail-logo svg{
+    display:block !important;
+  }
+  .token-logo-eth > svg{
+    width:100% !important;
+    height:100% !important;
+  }
+
+  /* Token card edges stay perfectly aligned. */
+  #panel-tokens,
+  .mr-token-list{
+    width:100% !important;
+    box-sizing:border-box !important;
+  }
+  #panel-tokens > .token-row,
+  .mr-token-list > .mr-token-row{
+    width:100% !important;
+    max-width:100% !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    box-sizing:border-box !important;
+  }
+</style>
+
+
+<style id="eth-three-row-real-fix">
+  /* All 3 ETH rows use the exact same 38/40px base icon sizing. */
+  .token-logo-eth > svg.exact-token-img-eth,
+  .eth-composite-logo > svg.exact-token-img-eth,
+  .mr-token-icon > svg.exact-token-img-eth,
+  .premium-token-detail-logo svg.exact-token-img-eth {
+    position:absolute !important;
+    inset:0 !important;
+    display:block !important;
+    width:100% !important;
+    height:100% !important;
+    min-width:0 !important;
+    min-height:0 !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+  }
+
+  .token-logo-eth,
+  .eth-composite-logo,
+  .mr-token-icon.exact-eth-badge {
+    position:relative !important;
+  }
+
+  .eth-composite-logo {
+    inset:auto !important;
+    width:100% !important;
+    height:100% !important;
+  }
+
+  /* Keep only the tiny badge extending outside the circular ETH icon. */
+  .eth-composite-badge {
+    width:15px !important;
+    height:15px !important;
+    right:-3px !important;
+    bottom:-2px !important;
+    object-fit:contain !important;
+    z-index:3 !important;
+  }
+</style>
+
+
+<style id="bottom-two-eth-final-fix">
+  .token-icon.exact-eth-badge,
+  .mr-token-icon.exact-eth-badge{
+    position:relative !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+
+  /* Same clean ETH base icon and same exact size as the normal ETH row. */
+  .token-icon.exact-eth-badge > svg.exact-token-img-eth,
+  .mr-token-icon.exact-eth-badge > svg.exact-token-img-eth{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+  }
+
+  /* Only the small white badge extends outside the ETH circle. */
+  .eth-row-mini-badge{
+    position:absolute !important;
+    right:-3px !important;
+    bottom:-2px !important;
+    width:15px !important;
+    height:15px !important;
+    min-width:15px !important;
+    min-height:15px !important;
+    max-width:15px !important;
+    max-height:15px !important;
+    object-fit:contain !important;
+    display:block !important;
+    z-index:20 !important;
+    pointer-events:none !important;
+  }
+
+  /* Disable all older composite-logo rules for these rows. */
+  .exact-eth-badge .eth-composite-logo,
+  .exact-eth-badge .eth-composite-badge,
+  .exact-eth-badge .exact-eth-badge-img{
+    display:none !important;
+  }
+</style>
+
+
+<style id="eth-little-circles-only-fix">
+  .eth-row-mini-badge{
+    position:absolute !important;
+    right:-2px !important;
+    bottom:-2px !important;
+    width:14px !important;
+    height:14px !important;
+    min-width:14px !important;
+    min-height:14px !important;
+    max-width:14px !important;
+    max-height:14px !important;
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    border-radius:50% !important;
+    background:transparent !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    display:block !important;
+    z-index:25 !important;
+    pointer-events:none !important;
+  }
+</style>
+
+
+<style id="eth-badge-specificity-real-fix">
+  .token-icon img.eth-row-mini-badge,
+  .mr-token-icon img.eth-row-mini-badge{
+    position:absolute !important;
+    left:auto !important;
+    top:auto !important;
+    right:-2px !important;
+    bottom:-2px !important;
+
+    width:14px !important;
+    height:14px !important;
+    min-width:14px !important;
+    min-height:14px !important;
+    max-width:14px !important;
+    max-height:14px !important;
+
+    margin:0 !important;
+    padding:0 !important;
+    border:0 !important;
+    border-radius:50% !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+    transform:none !important;
+
+    display:block !important;
+    z-index:999 !important;
+    pointer-events:none !important;
+  }
+
+  .token-icon.exact-eth-badge,
+  .mr-token-icon.exact-eth-badge{
+    position:relative !important;
+    overflow:visible !important;
+  }
+</style>
+
+
+<style id="bottom-eth-exact-composite-final">
+  .token-icon.exact-eth-composite-slot,
+  .mr-token-icon.exact-eth-composite-slot{
+    position:relative !important;
+    overflow:visible !important;
+    background:transparent !important;
+  }
+
+  .token-icon.exact-eth-composite-slot > img.eth-exact-composite{
+    position:absolute !important;
+    left:-1px !important;
+    top:-2px !important;
+    width:46px !important;
+    height:42px !important;
+    min-width:46px !important;
+    min-height:42px !important;
+    max-width:46px !important;
+    max-height:42px !important;
+    object-fit:fill !important;
+    object-position:0 0 !important;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+    z-index:50 !important;
+    pointer-events:none !important;
+  }
+
+  .mr-token-icon.exact-eth-composite-slot > img.eth-exact-composite{
+    position:absolute !important;
+    left:0 !important;
+    top:-2px !important;
+    width:48px !important;
+    height:44px !important;
+    min-width:48px !important;
+    min-height:44px !important;
+    max-width:48px !important;
+    max-height:44px !important;
+    object-fit:fill !important;
+    object-position:0 0 !important;
+    display:block !important;
+    margin:0 !important;
+    padding:0 !important;
+    transform:none !important;
+    z-index:50 !important;
+    pointer-events:none !important;
+  }
+
+  /* Old separate-badge elements must never show inside these two rows. */
+  .exact-eth-composite-slot .eth-row-mini-badge,
+  .exact-eth-composite-slot .eth-composite-logo,
+  .exact-eth-composite-slot .eth-composite-badge,
+  .exact-eth-composite-slot .exact-eth-badge-img{
+    display:none !important;
+  }
+</style>
+
+
+<style id="reference-balance-font-and-pnl-pill">
+  .balance,
+  .balance-input,
+  #changeText,
+  #changeText .pnl-dollar,
+  #changeText .pnl-percent-pill,
+  .mr-balance,
+  .mr-performance,
+  .mr-performance-pill{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    font-variant-numeric:tabular-nums !important;
+    font-feature-settings:"tnum" 1 !important;
+  }
+
+  /* White wallet balance — closer to the supplied reference typography. */
+  .balance{
+    font-weight:650 !important;
+    letter-spacing:-2.25px !important;
+    line-height:.98 !important;
+  }
+
+  .balance-input{
+    font-weight:650 !important;
+    letter-spacing:-2px !important;
+  }
+
+  /* Profit/loss row: plain dollar amount + filled percentage badge. */
+  #changeText{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:9px !important;
+    white-space:nowrap !important;
+    line-height:1 !important;
+  }
+
+  #changeText .pnl-dollar{
+    display:inline-block !important;
+    font-size:14px !important;
+    line-height:20px !important;
+    font-weight:500 !important;
+    letter-spacing:-.32px !important;
+  }
+
+  #changeText .pnl-percent-pill{
+    min-height:21px !important;
+    padding:2px 7px 2px !important;
+    border-radius:6px !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    font-size:12.5px !important;
+    line-height:17px !important;
+    font-weight:650 !important;
+    letter-spacing:-.2px !important;
+    box-sizing:border-box !important;
+  }
+
+  #changeText.up .pnl-dollar{
+    color:#00ed72 !important;
+  }
+  #changeText.up .pnl-percent-pill{
+    background:#45ed7a !important;
+    color:#07140c !important;
+  }
+
+  #changeText.down .pnl-dollar{
+    color:#ff5368 !important;
+  }
+  #changeText.down .pnl-percent-pill{
+    background:#ff5368 !important;
+    color:#18070a !important;
+  }
+
+  /* Keep older parent color rules from recoloring the filled badge text. */
+  .change-row .up .pnl-percent-pill,
+  .change-row .down .pnl-percent-pill{
+    color:#07140c !important;
+  }
+  .change-row .down .pnl-percent-pill{
+    color:#18070a !important;
+  }
+
+  /* The alternate mobile balance view gets the same font treatment. */
+  .mr-balance{
+    font-weight:650 !important;
+    letter-spacing:-2.15px !important;
+  }
+  .mr-performance{
+    font-weight:500 !important;
+    letter-spacing:-.3px !important;
+  }
+  .mr-performance-pill{
+    font-weight:650 !important;
+    border-radius:6px !important;
+  }
+</style>
+
+
+<style id="translucent-pnl-pill-fix">
+  /* Reference-style translucent profit/loss highlight. */
+  #changeText.up .pnl-percent-pill{
+    background:rgba(69,237,122,.22) !important;
+    color:#43f07c !important;
+    border:1px solid rgba(69,237,122,.14) !important;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.015) !important;
+  }
+
+  #changeText.down .pnl-percent-pill{
+    background:rgba(255,83,104,.20) !important;
+    color:#ff6173 !important;
+    border:1px solid rgba(255,83,104,.14) !important;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.015) !important;
+  }
+
+  /* Match the alternate/mobile performance badge too. */
+  .mr-performance:not(.down) .mr-performance-pill{
+    background:rgba(69,237,122,.22) !important;
+    color:#43f07c !important;
+    border:1px solid rgba(69,237,122,.14) !important;
+  }
+
+  .mr-performance.down .mr-performance-pill{
+    background:rgba(255,83,104,.20) !important;
+    color:#ff6173 !important;
+    border:1px solid rgba(255,83,104,.14) !important;
+  }
+</style>
+
+
+<style id="token-amount-spacing-final-fix">
+  /* Keep number + ticker as one compact label, with identical spacing on every row. */
+  .token-sub,
+  .mr-token-qty,
+  .mobile-search-result-sub{
+    display:block !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    justify-content:flex-start !important;
+    text-align:left !important;
+    word-spacing:0 !important;
+    letter-spacing:0 !important;
+    white-space:pre !important;
+    font-kerning:normal !important;
+    font-variant-numeric:tabular-nums !important;
+  }
+
+  .token-copy,
+  .mr-token-copy{
+    text-align:left !important;
+  }
+
+  /* Zero-balance lines get a fixed compact number-to-symbol gap. */
+  .token-sub.zero-token-amount,
+  .mr-token-qty.zero-token-amount{
+    display:inline-block !important;
+    white-space:pre !important;
+  }
+</style>
+
+
+<style id="pnl-reference-copy-final">
+  #changeText{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:9px !important;
+    white-space:nowrap !important;
+    line-height:1 !important;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    font-variant-numeric:tabular-nums !important;
+    letter-spacing:-.35px !important;
+  }
+
+  #changeText .pnl-dollar{
+    display:inline-block !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:15px !important;
+    line-height:20px !important;
+    font-weight:500 !important;
+  }
+
+  #changeText .pnl-percent-pill{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:20px !important;
+    padding:1px 6px 2px !important;
+    margin:0 !important;
+    border-radius:5px !important;
+    font-size:12px !important;
+    line-height:17px !important;
+    font-weight:650 !important;
+    letter-spacing:-.22px !important;
+    box-sizing:border-box !important;
+  }
+
+  #changeText.up .pnl-dollar{
+    color:#00f06d !important;
+  }
+  #changeText.up .pnl-percent-pill{
+    color:#00f06d !important;
+    background:rgba(0,240,109,.18) !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+
+  #changeText.down .pnl-dollar{
+    color:#ff5368 !important;
+  }
+  #changeText.down .pnl-percent-pill{
+    color:#ff5368 !important;
+    background:rgba(255,83,104,.18) !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+
+  /* Same visual treatment on the mobile/reference shell. */
+  .mr-performance{
+    gap:9px !important;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    font-variant-numeric:tabular-nums !important;
+    letter-spacing:-.35px !important;
+  }
+  .mr-performance-pill{
+    min-height:20px !important;
+    padding:1px 6px 2px !important;
+    border-radius:5px !important;
+    font-size:12px !important;
+    line-height:17px !important;
+    font-weight:650 !important;
+    box-shadow:none !important;
+  }
+  .mr-performance:not(.down) .mr-performance-pill{
+    color:#00f06d !important;
+    background:rgba(0,240,109,.18) !important;
+    border:0 !important;
+  }
+  .mr-performance.down .mr-performance-pill{
+    color:#ff5368 !important;
+    background:rgba(255,83,104,.18) !important;
+    border:0 !important;
+  }
+</style>
+
+
+<style id="user-video-ui-copy">
+  .frame,
+  .frame *{
+    box-sizing:border-box;
+  }
+
+  /* Exact compact wallet proportions from the supplied 356x598 recording. */
+  @media (min-width:1181px){
+    .browser-body>.frame{
+      width:356px !important;
+      max-width:356px !important;
+      height:598px !important;
+      min-height:598px !important;
+      max-height:598px !important;
+      border-radius:0 !important;
+      border:0 !important;
+      background:#000 !important;
+      overflow:hidden !important;
+    }
+  }
+
+  .frame{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    background:#000 !important;
+    color:#f7f7f8 !important;
+  }
+
+  .frame>.topbar{
+    height:59px !important;
+    min-height:59px !important;
+    padding:8px 14px 7px !important;
+    border-bottom:1px solid #1c1c1f !important;
+    background:#000 !important;
+  }
+
+  .wallet-profile-btn{
+    gap:9px !important;
+    min-height:43px !important;
+    padding:0 !important;
+  }
+  .wallet-user-avatar{
+    width:34px !important;
+    height:34px !important;
+    flex:0 0 34px !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+  .account-btn.wallet-profile-btn .wallet-handle{
+    font-size:13px !important;
+    line-height:15px !important;
+    font-weight:590 !important;
+    letter-spacing:-.15px !important;
+  }
+  .account-btn.wallet-profile-btn .wallet-account-line,
+  .wallet-account-line #acctName{
+    margin-top:2px !important;
+    font-size:12.5px !important;
+    line-height:15px !important;
+    font-weight:560 !important;
+    color:#f5f5f6 !important;
+  }
+  .wallet-copy-mini{
+    width:14px !important;
+    height:14px !important;
+    margin-left:2px !important;
+    color:#8f9096 !important;
+  }
+
+  .wallet-header-icons{
+    gap:3px !important;
+  }
+  .wallet-head-icon{
+    width:31px !important;
+    height:31px !important;
+    border-radius:8px !important;
+    color:#a8a9af !important;
+  }
+  .wallet-head-icon svg{
+    width:18px !important;
+    height:18px !important;
+  }
+
+  .wallet-main{
+    background:#000 !important;
+    overflow:hidden !important;
+  }
+  .wallet-balance-area{
+    padding:33px 10px 27px !important;
+  }
+  .balance-row{
+    min-height:49px !important;
+  }
+  .balance{
+    font-size:49px !important;
+    line-height:.97 !important;
+    font-weight:620 !important;
+    letter-spacing:-2.7px !important;
+  }
+  .balance-input{
+    font-size:46px !important;
+    font-weight:620 !important;
+    letter-spacing:-2.5px !important;
+  }
+  .eye-btn,
+  .edit-pencil{
+    display:none !important;
+  }
+  .change-row{
+    margin-top:6px !important;
+    min-height:21px !important;
+  }
+  #changeText{
+    gap:9px !important;
+  }
+  #changeText .pnl-dollar{
+    font-size:15px !important;
+    line-height:20px !important;
+    font-weight:500 !important;
+  }
+  #changeText .pnl-percent-pill{
+    min-height:20px !important;
+    padding:1px 6px 2px !important;
+    border-radius:4px !important;
+    font-size:12px !important;
+    line-height:17px !important;
+  }
+
+  /* User's recording: x≈19, width≈75, 4 buttons with 8px gaps. */
+  .wallet-actions{
+    margin:0 18px 28px !important;
+    gap:8px !important;
+    height:80px !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  }
+  .wallet-actions .action{
+    height:80px !important;
+    min-height:80px !important;
+    border-radius:19px !important;
+    background:#202022 !important;
+  }
+
+  .wallet-tabs{
+    margin:0 19px 8px !important;
+    height:36px !important;
+    min-height:36px !important;
+    gap:12px !important;
+  }
+  .wallet-tabs .tab{
+    height:36px !important;
+    line-height:36px !important;
+    font-size:18px !important;
+    font-weight:560 !important;
+    letter-spacing:-.65px !important;
+    color:#a0a0a5 !important;
+  }
+  .wallet-tabs .tab.active{
+    color:#f6f6f7 !important;
+  }
+  .wallet-tab-more{
+    width:31px !important;
+    margin-left:auto !important;
+    color:#a0a0a6 !important;
+    font-size:19px !important;
+    letter-spacing:1px !important;
+  }
+
+  .body-scroll{
+    padding:0 18px 52px !important;
+    scrollbar-width:none !important;
+  }
+  .body-scroll::-webkit-scrollbar{
+    display:none !important;
+  }
+
+  #panel-tokens>.token-row,
+  .video-perp-row,
+  .video-perps-power{
+    width:100% !important;
+    min-height:64px !important;
+    margin:0 0 10px !important;
+    border:0 !important;
+    border-radius:18px !important;
+    background:#1c1c1e !important;
+    box-shadow:none !important;
+  }
+  #panel-tokens>.token-row{
+    padding:9px 12px !important;
+  }
+  .token-left{
+    gap:10px !important;
+  }
+  .token-icon{
+    width:40px !important;
+    height:40px !important;
+    flex:0 0 40px !important;
+  }
+  .token-name{
+    font-size:14px !important;
+    line-height:17px !important;
+    font-weight:570 !important;
+    letter-spacing:-.2px !important;
+  }
+  .token-sub{
+    margin-top:3px !important;
+    font-size:12px !important;
+    line-height:14px !important;
+    color:#9a9aa0 !important;
+    letter-spacing:-.05px !important;
+  }
+  .token-right{
+    min-width:78px !important;
+  }
+  .token-val{
+    font-size:13px !important;
+    line-height:16px !important;
+    font-weight:500 !important;
+  }
+  .token-change{
+    margin-top:3px !important;
+    font-size:12px !important;
+    line-height:14px !important;
+  }
+
+  .frame>.bottom-nav{
+    height:50px !important;
+    min-height:50px !important;
+    padding:0 17px !important;
+    border-top:1px solid #1b1b1e !important;
+    background:#000 !important;
+  }
+  .wallet-nav-btn{
+    min-height:49px !important;
+    color:#6f7177 !important;
+    border-radius:0 !important;
+  }
+  .wallet-nav-btn.active{
+    color:#a995ff !important;
+  }
+  .wallet-nav-btn .nav-icon svg{
+    width:24px !important;
+    height:24px !important;
+  }
+
+  /* ---------- Perps from the user's video ---------- */
+  #panel-perps{
+    padding-bottom:6px !important;
+  }
+  .video-perps-power{
+    min-height:64px !important;
+    padding:8px 15px !important;
+    display:flex !important;
+    align-items:center !important;
+    gap:11px !important;
+    color:#fff !important;
+  }
+  .video-perps-power-icon{
+    width:43px;
+    height:43px;
+    flex:0 0 43px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .video-perps-power-icon svg{
+    width:43px;
+    height:43px;
+  }
+  .video-perps-power-copy{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+  }
+  .video-perps-power-copy strong{
+    font-size:14px;
+    line-height:17px;
+    font-weight:610;
+    letter-spacing:-.2px;
+  }
+  .video-perps-power-copy small{
+    color:#99999f;
+    font-size:12px;
+    line-height:14px;
+  }
+
+  .video-perp-row{
+    padding:8px 12px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    color:#fff !important;
+    text-align:left !important;
+  }
+  .video-perp-left{
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .video-perp-icon{
+    position:relative;
+    width:40px;
+    height:40px;
+    flex:0 0 40px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:visible;
+    font-weight:800;
+    font-size:22px;
+  }
+  .video-perp-icon i{
+    position:absolute;
+    right:-3px;
+    bottom:-2px;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f3f3f4;
+    color:#2a2a2c;
+    border:1.5px solid #1c1c1e;
+    font-size:9px;
+    line-height:1;
+    font-style:normal;
+    font-weight:800;
+  }
+  .video-perp-icon.btc{background:#f7931a;color:#fff}
+  .video-perp-icon.eth{background:#f0f0f2;color:#48494f;font-size:18px}
+  .video-perp-icon.hype{background:#171a1a}
+  .video-perp-icon.hype svg{width:40px;height:40px}
+  .video-perp-icon.sol{background:#090a0c}
+  .mini-sol-bars{
+    width:24px;height:24px;position:relative;display:block;
+    background:
+      linear-gradient(90deg,#985cff,#51e6bd) 6px 3px/18px 5px no-repeat,
+      linear-gradient(90deg,#51e6bd,#985cff) 1px 10px/18px 5px no-repeat,
+      linear-gradient(90deg,#985cff,#51e6bd) 6px 17px/18px 5px no-repeat;
+    transform:skewX(-17deg);
+  }
+  .video-perp-icon.zec{background:#efbd37;color:#17130b;font-size:21px}
+  .video-perp-icon.pump{background:#131516;color:#65e0a2;font-size:16px}
+  .video-perp-icon.trump{background:#f0e7cf;color:#1e1a13;font-size:17px}
+  .video-perp-icon.skhx{background:#eee;color:#7a2922;font-size:16px}
+  .video-perp-copy{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .video-perp-copy strong{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:13.5px;
+    line-height:17px;
+    font-weight:610;
+  }
+  .video-perp-copy strong b{
+    padding:2px 4px;
+    border-radius:3px;
+    background:#363638;
+    color:#eeeef0;
+    font-size:10px;
+    line-height:12px;
+    font-weight:560;
+  }
+  .video-perp-copy small{
+    color:#9a9aa0;
+    font-size:11.5px;
+    line-height:14px;
+  }
+  .video-perp-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:2px;
+    padding-left:6px;
+  }
+  .video-perp-right strong{
+    font-size:13px;
+    line-height:16px;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .video-perp-right small{
+    font-size:11.5px;
+    line-height:14px;
+  }
+  .video-perp-right small.up{color:#27e97b}
+  .video-perp-right small.down{color:#ff5066}
+  .video-perps-disclosure{
+    padding:2px 2px 8px;
+    color:#707077;
+    font-size:9.5px;
+  }
+
+  /* ---------- Collectibles empty state ---------- */
+  .video-collectibles-empty{
+    min-height:255px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:12px 10px 22px;
+  }
+  .video-collectibles-art{
+    width:107px;
+    height:85px;
+    margin-bottom:10px;
+  }
+  .video-empty-title{
+    color:#f7f7f8;
+    font-size:14px;
+    line-height:18px;
+    font-weight:620;
+  }
+  .video-empty-sub{
+    margin-top:8px;
+    color:#929298;
+    font-size:12px;
+    line-height:16px;
+  }
+
+  /* ---------- Header asset/address dropdown ---------- */
+  #dropdown.video-asset-dropdown{
+    position:absolute !important;
+    top:58px !important;
+    left:18px !important;
+    right:auto !important;
+    width:285px !important;
+    max-height:none !important;
+    padding:4px 4px 5px !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:#000 !important;
+    box-shadow:none !important;
+    z-index:150 !important;
+  }
+  .video-address-row{
+    height:27px;
+    display:grid;
+    grid-template-columns:26px minmax(0,1fr) auto 14px;
+    align-items:center;
+    gap:7px;
+    color:#f2f2f4;
+  }
+  .video-address-icon{
+    width:24px;
+    height:24px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f2f2f3;
+    color:#171719;
+    font-size:12px;
+    font-weight:750;
+  }
+  .video-address-name{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:12px;
+    line-height:15px;
+    font-weight:520;
+  }
+  .video-address-value{
+    color:#b5b5ba;
+    font-size:11px;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+  .video-address-copy{
+    width:14px;height:14px;color:#8c8d92;
+  }
+  .video-address-copy svg{width:14px;height:14px}
+
+  /* ---------- Left account rail from user's video ---------- */
+  .video-ui-backdrop{
+    position:absolute;
+    inset:0;
+    z-index:198;
+    background:rgba(0,0,0,.60);
+    backdrop-filter:blur(1.3px);
+    -webkit-backdrop-filter:blur(1.3px);
+  }
+  .video-ui-backdrop[hidden],
+  .video-ui-rail[hidden]{
+    display:none !important;
+  }
+  .video-ui-rail{
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:72px;
+    z-index:199;
+    background:#050506;
+    border-right:1px solid #171719;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:#eee;
+  }
+  .video-ui-rail-back{
+    width:44px;height:44px;margin-top:12px;border:0;background:transparent;color:#c7c8cc;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .video-ui-rail-back svg{width:19px;height:19px}
+  .video-ui-rail-accounts{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:11px;
+  }
+  .video-ui-account{
+    width:64px;
+    border:0;
+    background:transparent;
+    color:#bebec3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:5px;
+    padding:0;
+  }
+  .video-ui-account-circle{
+    width:46px;height:46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:#262628;color:#fff;font-size:12px;font-weight:700;
+  }
+  .video-ui-account.active .video-ui-account-circle{
+    background:#a78df5;color:#17131f;
+  }
+  .video-ui-account-label{
+    width:64px;text-align:center;font-size:8.5px;line-height:10px;color:#bdbdc2;
+  }
+  .video-ui-account.active .video-ui-account-label{color:#a995ff}
+  .video-ui-rail-tools{
+    margin-top:auto;
+    width:100%;
+    border-top:1px solid #19191b;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:4px 0 8px;
+  }
+  .video-ui-tool{
+    width:48px;height:39px;border:0;background:transparent;color:#c2c3c7;
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .video-ui-tool svg{width:18px;height:18px}
+  .video-ui-tool.manage{
+    margin:1px 0;
+  }
+  .video-ui-tool.manage:hover::after{
+    content:"Manage Accounts";
+    position:absolute;
+    left:54px;
+    top:5px;
+    height:31px;
+    padding:0 11px;
+    display:flex;align-items:center;
+    border-radius:5px;
+    background:#fff;color:#161616;
+    white-space:nowrap;
+    font-size:11px;
+    box-shadow:0 5px 18px rgba(0,0,0,.3);
+  }
+
+  @media (max-width:1180px){
+    .frame{
+      width:100vw !important;
+      max-width:100vw !important;
+      min-height:100dvh !important;
+      height:100dvh !important;
+      max-height:100dvh !important;
+      border-radius:0 !important;
+    }
+    .frame>.topbar{
+      min-height:calc(59px + env(safe-area-inset-top)) !important;
+      height:calc(59px + env(safe-area-inset-top)) !important;
+      padding:calc(env(safe-area-inset-top) + 8px) 14px 7px !important;
+    }
+    #dropdown.video-asset-dropdown{
+      top:calc(59px + env(safe-area-inset-top)) !important;
+    }
+    .frame>.bottom-nav{
+      height:calc(50px + env(safe-area-inset-bottom)) !important;
+      min-height:calc(50px + env(safe-area-inset-bottom)) !important;
+      padding-bottom:env(safe-area-inset-bottom) !important;
+    }
+    .body-scroll{
+      padding-bottom:calc(52px + env(safe-area-inset-bottom)) !important;
+    }
+    .video-ui-rail{
+      padding-top:env(safe-area-inset-top);
+      padding-bottom:env(safe-area-inset-bottom);
+    }
+  }
+</style>
+
+
+<style id="user-video-ui-final-tweaks">
+  /* The recording uses monitor / search / wallet icons on phone as well. */
+  @media (max-width:1180px){
+    .desktop-wallet-header-icons{
+      display:flex !important;
+    }
+    .mobile-wallet-header-icons{
+      display:none !important;
+    }
+  }
+
+  /* The address list in the recording hugs the header and ends after its rows. */
+  #dropdown.video-asset-dropdown{
+    bottom:auto !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:visible !important;
+  }
+</style>
+
+
+<style id="bottom-nav-overlap-real-fix">
+  .frame{
+    display:flex !important;
+    flex-direction:column !important;
+    overflow:hidden !important;
+  }
+
+  .frame > .topbar{
+    flex:0 0 auto !important;
+  }
+
+  .frame > .wallet-main{
+    flex:1 1 auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+
+  .wallet-main > .wallet-balance-area,
+  .wallet-main > .wallet-actions,
+  .wallet-main > .wallet-tabs{
+    flex:0 0 auto !important;
+  }
+
+  .wallet-main > .body-scroll{
+    flex:1 1 auto !important;
+    min-height:0 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    padding-bottom:12px !important;
+    scroll-padding-bottom:12px !important;
+    overscroll-behavior:contain !important;
+  }
+
+  /* THIS is the actual overlap fix:
+     cancel the old position:absolute rule completely. */
+  .frame > .bottom-nav{
+    position:relative !important;
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+    inset:auto !important;
+
+    flex:0 0 50px !important;
+    width:100% !important;
+    height:50px !important;
+    min-height:50px !important;
+    margin:0 !important;
+
+    z-index:40 !important;
+    background:#000 !important;
+    border-top:1px solid #1b1b1e !important;
+  }
+
+  @media (max-width:1180px){
+    .frame > .bottom-nav{
+      flex-basis:calc(50px + env(safe-area-inset-bottom)) !important;
+      height:calc(50px + env(safe-area-inset-bottom)) !important;
+      min-height:calc(50px + env(safe-area-inset-bottom)) !important;
+      padding:0 17px env(safe-area-inset-bottom) !important;
+    }
+
+    .wallet-main > .body-scroll{
+      padding-bottom:12px !important;
+      scroll-padding-bottom:12px !important;
+    }
+  }
+</style>
+
+
+
+<style id="balance-reference-actual-fix">
+  /* IMPORTANT: keep the balance as plain text.
+     Periods and commas are normal "." and "," characters — no span wrappers. */
+  #balanceDisplay,
+  #mrBalance,
+  .balance,
+  .mr-balance{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    font-variant-numeric:tabular-nums !important;
+    font-feature-settings:"tnum" 1 !important;
+    font-synthesis:none !important;
+  }
+
+  #balanceDisplay.balance{
+    font-size:49px !important;
+    line-height:.98 !important;
+    font-weight:600 !important;
+    letter-spacing:-2.35px !important;
+    color:#f7f7f8 !important;
+    white-space:nowrap !important;
+  }
+
+  #mrBalance.mr-balance{
+    font-weight:600 !important;
+    letter-spacing:-2.15px !important;
+    color:#f7f7f8 !important;
+    white-space:nowrap !important;
+  }
+
+  #changeText{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:7px !important;
+    white-space:nowrap !important;
+    line-height:1 !important;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif !important;
+    font-variant-numeric:tabular-nums !important;
+    font-feature-settings:"tnum" 1 !important;
+  }
+
+  #changeText .pnl-dollar{
+    display:inline-block !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-family:inherit !important;
+    font-size:14px !important;
+    line-height:18px !important;
+    font-weight:500 !important;
+    letter-spacing:-.30px !important;
+  }
+
+  #changeText .pnl-percent-pill{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-height:19px !important;
+    padding:1px 6px !important;
+    margin:0 !important;
+    border-radius:5px !important;
+    font-family:inherit !important;
+    font-size:11.5px !important;
+    line-height:17px !important;
+    font-weight:600 !important;
+    letter-spacing:-.20px !important;
+    border:0 !important;
+    box-shadow:none !important;
+  }
+
+  #changeText.up .pnl-dollar{
+    color:#00f06d !important;
+  }
+  #changeText.up .pnl-percent-pill{
+    color:#00f06d !important;
+    background:rgba(0,240,109,.17) !important;
+  }
+
+  #changeText.down .pnl-dollar{
+    color:#ff5368 !important;
+  }
+  #changeText.down .pnl-percent-pill{
+    color:#ff5368 !important;
+    background:rgba(255,83,104,.17) !important;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="white-balance-font-final-fix">
+  #balanceDisplay.balance,
+  #mrBalance.mr-balance{
+    /*
+      iPhone/iPad -> native SF system font
+      Windows/PC  -> Segoe UI Variable / Segoe UI
+      This avoids the chunky Arial punctuation visible in the screenshot.
+    */
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI Variable Display",
+      "Segoe UI",
+      "Helvetica Neue",
+      Arial,
+      sans-serif !important;
+
+    font-weight:600 !important;
+    font-style:normal !important;
+
+    /* Let the font handle comma/period spacing naturally. */
+    font-variant-numeric:proportional-nums !important;
+    font-feature-settings:"pnum" 1, "kern" 1 !important;
+    font-kerning:normal !important;
+
+    /* Less aggressive than the old -2.35px, which was crushing punctuation. */
+    letter-spacing:-1.45px !important;
+
+    text-rendering:optimizeLegibility !important;
+    -webkit-font-smoothing:antialiased !important;
+    -moz-osx-font-smoothing:grayscale !important;
+
+    white-space:nowrap !important;
+  }
+
+  #balanceDisplay.balance{
+    font-size:49px !important;
+    line-height:1 !important;
+    color:#f7f7f8 !important;
+  }
+</style>
+
+
+
+<style id="balance-dot-centering-css-only-fix">
+  /* Keep the working Segoe/SF balance text and edit logic untouched.
+     Only fine-tune punctuation visually via font metrics/spacing. */
+  #balanceDisplay.balance,
+  #mrBalance.mr-balance{
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI Variable Display",
+      "Segoe UI",
+      "Helvetica Neue",
+      Arial,
+      sans-serif !important;
+    font-weight:600 !important;
+    font-variant-numeric:proportional-nums !important;
+    font-feature-settings:"pnum" 1, "kern" 1 !important;
+    font-kerning:normal !important;
+    letter-spacing:-1.35px !important;
+    text-rendering:optimizeLegibility !important;
+    -webkit-font-smoothing:antialiased !important;
+    -moz-osx-font-smoothing:grayscale !important;
+    white-space:nowrap !important;
+  }
+</style>
+
+
+<style id="balance-font-weight-match-only">
+  /* ONLY change the desktop white balance font weight to match the reference. */
+  #balanceDisplay.balance{
+    font-weight:700 !important;
+  }
+</style>
+
+
+<style id="decimal-dot-tad-smaller">
+  #balanceDisplay .decimal-dot-small,
+  #mrBalance .decimal-dot-small{
+    display:inline-block !important;
+    width:7px !important;
+    height:6px !important;
+    min-width:7px !important;
+    min-height:6px !important;
+    margin-left:2px !important;
+    margin-right:2px !important;
+    padding:0 !important;
+    border:0 !important;
+    border-radius:50% !important;
+    background:currentColor !important;
+    vertical-align:baseline !important;
+    position:relative !important;
+    top:0 !important;
+    transform:none !important;
+  }
+</style>
+
+
+<style id="exact-uploaded-dollar-style">
+  #balanceDisplay .exact-dollar-ref,
+  #mrBalance .exact-dollar-ref {
+    display:inline-block !important;
+    width:.55em !important;
+    height:.88em !important;
+    min-width:.55em !important;
+    min-height:.88em !important;
+    margin:0 .015em 0 0 !important;
+    padding:0 !important;
+    border:0 !important;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAArCAYAAACJrvP4AAAA00lEQVR42u2YUQ6EIAxEwXCCuf8Z3xX016y7LKUtWc3yZaLyoDN0jHXf92IcnK5leXErC8dzYXVAMwzzaRaGcyMaLSMBVWMERqBM9GAk+IJ3MCZ0kOVgbwax5bjPGcasnS3PPreDtIQ5dZsyEg3TAJDVBnEBX7s+GcboRQxZjszMsws0Oqm7wGr8lMMD3KJN0FtkC9SE6HPmyTxuHzHqRQwJhli2M3ow/YpmRO2qlKJmmEDeRZ3bFYkVvLQrrdZMmefuU9dPCdBvEUNkB6n/XxO3gx115EZBBngIMwAAAABJRU5ErkJggg==") center/contain no-repeat !important;
+    vertical-align:baseline !important;
+    position:relative !important;
+    top:.055em !important;
+    transform:none !important;
+  }
+</style>
+
+
+<style id="real-header-icons-plus-spacing-fix">
+  /*
+    Exact visual copy of the user's real top-right reference.
+    The three original buttons remain in place/clickable underneath.
+  */
+  .desktop-wallet-header-icons {
+    width:110px !important;
+    height:30px !important;
+    min-width:110px !important;
+    flex:0 0 110px !important;
+    display:grid !important;
+    grid-template-columns:repeat(3, 1fr) !important;
+    gap:0 !important;
+    background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAAAgCAYAAAA7ZacxAAAD0ElEQVR42u2ZTUgqYRSG32taaGhlZGBJNlltMog2FpSUCwvc9LsQgqBN4iZo16JNtWpTbSIMalPRQiKY2kVKBGV/kK4aMsOCnFUqRKQ1d6XQ7WpdmJl7r30PzELmHObM+858fufMDwAcCN8SCZGAmE8g5hOI+QRiPoGYTyDmE4j5hJxB+t0FKCwsREtLC+rq6qBWq8EwDM7Pz8EwTM7f+w+IOOEzm83o6emBXq+HVJr9uUsmkwiFQtja2oLX6xWkHpPJBKfTCZVKBZZlEY/HUVlZCYVCAY/Hg6WlJcTj8ZzVQzTzdTodFhcXEY1Gsb+/j6enp6zxCoUCHR0dKCoqgsPhQDgc5rWe1tZWTExMwOfzYWFhAY+Pj+lznZ2dGB0dxcPDA8bGxvD29iaaHkajEUajEevr66LowYlx2Gw2jqZpjqKoL+dQFMXRNM3ZbDZea1EqldzGxgY3MzOTMaahoYGjaZobHBwUXI/8/HyutraWA8DZ7XaOpmlR9BBtw6dSqQAAwWDwyzmp2FQuX7S3t0OpVGJ+fj5jTCAQgMfjgc1mE1wPh8OB8fFx1NTUiKrHt9ztGwwGsCwLlmWzxgUCAajVahQXFwtaz/LyMjY3N3F9fU1aPaFRKpWIxWKfxqX2ASUlJYLW09bWBqvVCrlcTswXmlAohKqqKkgk2W+/uroayWSS983mh00Xx6WPnDT/9fUVAFBQUPDlnFRsKpcvgsEgZDIZrFZrxhi5XI6uri7c3t4imUwKqs3h4SH29vbw/Pycm+bf39+n26jPeloAkMlksFgsAIC7uzteazk5OQHDMBgZGUF9ff3HyZdUiunpaZSWlmJtbU1wbRwOB4aGhkBRVG5O+I6OjhAOh+F0OuF0Ov9oiT4+Pua1lkQigampKUxOTmJ2dhY7Ozu4urpKD3msVisqKioAAI2NjfD5fLzrEY1GAQBarRZzc3PQ6/UIBoMwmUwZc7Ra7bvc/2rCJ5VK0dzcDL1ej7y8PNjtdvj9fvj9/g8DjtRE6+zsjPdlP73sSSTo6+tDd3c3NBpN+sG4vLyEy+WCxWLBwMAAtre34XK5BBnyMAyDi4uL9F9LpiGPTCZDU1MTDAYDb0MeUc3/FZqmwbIsIpEIAKC8vBwajUaw3vqzvrusrAw3NzfvJnrDw8Po7+/HysoK3G43r9c0m83o7e1NvwzZSL0MbrcbBwcH/9ey/zt2d3eh0+nSvyORCE5PT/9KLbFY7Lft3+rqKhKJBF5eXni/ptfrFey7xT//5hP+LuR7PjGfQMwnEPMJxHwCMZ9AzCcQ8wm5w09xBwct9gaGWgAAAABJRU5ErkJggg==") center center / 110px 30px no-repeat !important;
+    overflow:hidden !important;
+  }
+
+  .desktop-wallet-header-icons .wallet-head-icon {
+    width:100% !important;
+    height:30px !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    border-radius:0 !important;
+  }
+
+  .desktop-wallet-header-icons .wallet-head-icon:hover,
+  .desktop-wallet-header-icons .wallet-head-icon:active {
+    background:transparent !important;
+  }
+
+  /* Hide only the old drawn icons; the exact reference image supplies them. */
+  .desktop-wallet-header-icons .wallet-head-icon svg {
+    opacity:0 !important;
+  }
+
+  /*
+    Give the positive sign a small real-reference gap before "$0.00".
+    Only the + spacing changes; amount/PILL typography stays untouched.
+  */
+  #changeText .pnl-dollar .pnl-sign.pnl-plus {
+    display:inline-block !important;
+    margin-right:4px !important;
+  }
+
+  #changeText .pnl-dollar .pnl-sign.pnl-minus {
+    display:inline-block !important;
+    margin-right:0 !important;
+  }
+</style>
+
+
+<style id="pnl-real-reference-match">
+  #changeText{
+    gap:9px !important;
+  }
+
+  #changeText .pnl-dollar{
+    font-size:15.5px !important;
+    line-height:20px !important;
+    font-weight:500 !important;
+    letter-spacing:-0.15px !important;
+  }
+
+  /* Keep the already-correct plus-to-dollar spacing. */
+  #changeText .pnl-dollar .pnl-sign.pnl-plus{
+    margin-right:4px !important;
+  }
+</style>
+
+
+<style id="sol-final-centering-fix">
+  /* Final micro-fix: nudge the Solana icon into the visual center like the reference wallet. */
+  .token-logo-sol .exact-token-img-sol,
+  .mr-token-icon .exact-token-img-sol,
+  .premium-token-detail-logo .exact-token-img-sol,
+  .mobile-search-result .exact-token-img-sol{
+    object-position:50% 50% !important;
+    transform:translateY(1px) !important;
+    margin:0 !important;
+  }
+</style>
+
+<style id="sol-final-centering-fix-v2">
+  /* Stronger Solana centering micro-fix based on the latest reference. */
+  .token-logo-sol .exact-token-img-sol,
+  .mr-token-icon .exact-token-img-sol,
+  .premium-token-detail-logo .exact-token-img-sol,
+  .mobile-search-result .exact-token-img-sol,
+  .exact-mobile-token-icon .exact-token-img-sol{
+    object-position:50% 50% !important;
+    transform:translateX(1.7px) !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+</style>
 </head>
 <body>
 
@@ -5710,7 +7790,7 @@
       <div class="sh-menu sh-profile-menu" id="shProfileMenu" hidden>
         <div class="sh-profile-summary">
           <img id="streamProfileMenuAvatar" alt="">
-          <div><b>Zzekuro</b><span>@Zzekuro</span></div>
+          <div><b>zzzaid</b><span>@zzzaid</span></div>
         </div>
         <button onclick="openStreamChannel('MoonByte');closeStreamMenus()">View your channel</button>
         <div class="sh-menu-divider"></div>
@@ -5793,7 +7873,7 @@
   
 
   <!-- Mobile-only local wallet simulator shell. Desktop remains unchanged. -->
-  <div id="mobileReferenceWallet" class="mr-wallet" aria-label="Local wallet simulator">
+  <div id="mobileReferenceWallet" class="mr-wallet" aria-label="Ghost Wallet">
     <header class="mr-top">
       <button class="mr-avatar" type="button" onclick="mrOpenSideMenu()" aria-label="Open account menu"><span class="mr-avatar-icon" id="mrAvatarIcon">🔐</span></button>
 
@@ -5954,7 +8034,7 @@
     <footer class="mr-bottom">
       <button class="mr-search-pill" type="button" onclick="openWalletSearch()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
-        <span>Search Phantom</span>
+        <span>Search Ghost</span>
       </button>
       <button class="mr-plus" type="button" onclick="mrQuickActions()" aria-label="Open wallet actions">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"><path d="M12 5v14M5 12h14"/></svg>
@@ -5962,39 +8042,49 @@
     </footer>
 
     <div class="mr-side-backdrop" id="mrSideBackdrop" onclick="mrCloseSideMenu()" hidden></div>
-    <aside class="mr-side-panel" id="mrSidePanel" aria-hidden="true">
-      <div class="mr-side-head">
-        <button class="mr-side-avatar" type="button" onclick="mrCloseSideMenu()"><span class="mr-avatar-icon mr-avatar-icon-lg" id="mrSideAvatarIcon">🔐</span></button>
-        <button class="mr-side-copy" type="button" onclick="copyAddr()" aria-label="Copy local wallet address">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="10" height="10" rx="2"/><path d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/></svg>
+    <aside class="mr-side-panel mr-account-rail" id="mrSidePanel" aria-hidden="true">
+      <div class="mr-rail-top">
+        <button class="mr-rail-back" type="button" onclick="mrCloseSideMenu()" aria-label="Close account drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <button class="mr-rail-account" type="button" data-account="Account 1" onclick="selectAccount('Account 1');mrCloseSideMenu()">
+          <span class="mr-rail-circle mr-rail-circle-primary">A1</span>
+          <span class="mr-rail-label">Account 1</span>
+        </button>
+
+        <button class="mr-rail-account" type="button" data-account="Hot Wallet" onclick="selectAccount('Hot Wallet');mrCloseSideMenu()">
+          <span class="mr-rail-circle">H</span>
+          <span class="mr-rail-label">Hot Wallet</span>
+        </button>
+
+        <button class="mr-rail-account" type="button" data-account="Hot Wallet 2" onclick="selectAccount('Hot Wallet 2');mrCloseSideMenu()">
+          <span class="mr-rail-circle">H2</span>
+          <span class="mr-rail-label">Hot Wallet 2</span>
         </button>
       </div>
-      <div class="mr-side-handle">@Zzekuro</div>
-      <div class="mr-side-address">Local simulator account</div>
 
-      <button class="mr-side-account" type="button" onclick="toggleDropdown();mrCloseSideMenu()">
-        <span class="mr-side-mini"><span class="mr-avatar-icon mr-avatar-icon-sm" id="mrSideMiniAvatarIcon">🔐</span></span>
-        <span><strong id="mrSideAccountName">Account 1</strong><small>Switch account</small></span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m9 6 6 6-6 6"/></svg>
-      </button>
-
-      <div class="mr-side-links">
-        <button type="button" onclick="mrOpenProfileEditor()"><span>Profile</span><span>›</span></button>
-        <button type="button" onclick="mrShowOriginalPanel('activity');mrCloseSideMenu()"><span>History</span><span>›</span></button>
-        <button type="button" onclick="mrOpenSettings()"><span>Settings</span><span>›</span></button>
-        <button type="button" onclick="showToast('This is a local wallet simulator');mrCloseSideMenu()"><span>Help &amp; Support</span><span>›</span></button>
+      <div class="mr-rail-bottom">
+        <button class="mr-rail-tool" type="button" onclick="showToast('Add account')" aria-label="Add account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button class="mr-rail-tool" type="button" onclick="mrOpenProfileEditor()" aria-label="Edit profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 16-.7 4 4-.7L18 8.6 15.4 6 4 16Z"/><path d="m13.8 7.6 2.6 2.6"/></svg>
+        </button>
+        <button class="mr-rail-tool" type="button" onclick="mrOpenSettings()" aria-label="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.9l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.09A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.9.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.09A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.9l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.09A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.9-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.4.3.7.6.9 1 .1.3.1.7.1 1H21v4h-.09a1.7 1.7 0 0 0-1.51 1Z"/></svg>
+        </button>
       </div>
-      <div class="mr-sim-badge">LOCAL SIMULATOR</div>
     </aside>
   </div>
 
-<div class="lock" id="lockScreen" aria-label="Fictional wallet unlock screen">
+<div class="lock" id="lockScreen" aria-label="Ghost Wallet">
     <div class="lock-header">
       <div class="lock-brand-wrap">
-        <div class="lock-brand">phantom</div>
+        <div class="lock-brand">ghost wallet</div>
         <div class="lock-demo-badge" style="display:none"></div>
       </div>
-      <button class="lock-help" type="button" aria-label="Help" onclick="showToast('Enter any password to unlock this local wallet')">?</button>
+      <button class="lock-help" type="button" aria-label="Help" onclick="showToast('Open Ghost Wallet')">?</button>
     </div>
 
     <div class="lock-content">
@@ -6004,30 +8094,19 @@
         <path d="M88 62c1 7 5 10 10 10s9-4 10-10" fill="none" stroke="#080808" stroke-width="4" stroke-linecap="round"/>
       </svg>
 
-      <div class="lock-title">Enter your password</div>
-      <input
-        id="demoPassword"
-        class="lock-password"
-        type="password"
-        placeholder="Password"
-        autocomplete="off"
-        autocapitalize="off"
-        spellcheck="false"
-        aria-label="Password"
-      >
+      <div class="lock-title">Open wallet</div>
 
-      <button class="unlock-btn" type="button" onclick="unlock()">Unlock</button>
-      <button class="lock-forgot" type="button" onclick="showToast('Forgot password is unavailable here')">Forgot password</button>
-      <div class="lock-demo-note">fictional local wallet • no credentials are stored or sent</div>
+      <button class="unlock-btn" type="button" onclick="unlock()">Open Wallet</button>
+      <button class="lock-forgot" type="button" onclick="mrOpenSettings()">Wallet options</button>
     </div>
   </div>
 
 
   <div class="topbar">
     <button class="account-btn wallet-profile-btn" onclick="toggleDropdown()" aria-label="Switch account">
-      <img class="wallet-user-avatar" id="walletCreatorAvatar" alt="Account avatar">
+      <img class="wallet-user-avatar" id="walletCreatorAvatar" alt="Account avatar" onclick="event.preventDefault();event.stopPropagation();videoUiOpenRail()">
       <span class="wallet-profile-copy">
-        <span class="wallet-handle">@Zzekuro</span>
+        <span class="wallet-handle">@zzzaid</span>
         <span class="wallet-account-line">
           <span id="acctName">Account 1</span>
           <span class="wallet-copy-mini" aria-hidden="true">
@@ -6044,7 +8123,7 @@
       <button class="wallet-head-icon" type="button" onclick="showToast('Search')" aria-label="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg>
       </button>
-      <button class="wallet-head-icon" type="button" onclick="showToast('Wallet menu')" aria-label="Wallet menu">
+      <button class="wallet-head-icon" type="button" onclick="toggleDropdown()" aria-label="Wallet menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 5v14M14 9h3M14 12h3"/></svg>
       </button>
     </div>
@@ -6055,7 +8134,7 @@
       <button class="wallet-head-icon" type="button" onclick="openSheet('receive')" aria-label="Receive QR">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2v2h-2zM18 14h2v6h-6v-2M16 18h2"/></svg>
       </button>
-      <button class="wallet-head-icon" type="button" onclick="openWalletMenu()" aria-label="Wallet menu">
+      <button class="wallet-head-icon" type="button" onclick="toggleDropdown()" aria-label="Wallet menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
       </button>
     </div>
@@ -6067,32 +8146,62 @@
     <section class="wallet-balance-area">
       <div class="balance-wrap">
         <div class="balance-row" id="balanceRow">
-          <div class="balance" id="balanceDisplay">$128,412.90</div>
+          <div class="balance" id="balanceDisplay" onclick="startEdit()" role="button" tabindex="0" aria-label="Edit balance">$0.11</div>
           <button class="edit-pencil" onclick="startEdit()" aria-label="Edit balance">✎</button>
           <button class="eye-btn" id="eyeBtn" onclick="toggleMask()" aria-label="Hide balance">◉</button>
         </div>
         <div class="change-row">
-          <span id="changeText" class="up">+$4,208.11&nbsp;&nbsp;+3.4%</span>
+          <span id="changeText" class="up">
+            <span class="pnl-dollar"><span class="pnl-sign pnl-plus">+</span><span class="pnl-money">$4,208.11</span></span>
+            <span class="pnl-percent-pill">+3.4%</span>
+          </span>
         </div>
       </div>
     </section>
 
     <div class="actions wallet-actions">
-      <button class="action" onclick="openSheet('send')">
-        <div class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11.5 19 5l-6.5 14-2.2-5.3L5 11.5Z"/><path d="m10.3 13.7 3.2-3.2"/></svg></div>
-        Send
+      <button class="action" onclick="openSheet('send')" aria-label="Send">
+        <div class="circ action-icon-send" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.25 10.75 19.55 4.9c.72-.28 1.42.42 1.13 1.14l-5.9 13.25c-.32.73-1.37.69-1.64-.06l-1.9-5.08-5.13-1.86c-.79-.28-.8-1.27-.02-1.56Z"/>
+            <path d="m11.3 14 4.18-4.18"/>
+          </svg>
+        </div>
+        <span>Send</span>
       </button>
-      <button class="action" onclick="openSheet('swap')">
-        <div class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3M17 17H6l3 3"/><path d="M18 7v4M6 17v-4"/></svg></div>
-        Swap
+
+      <button class="action" onclick="openSheet('swap')" aria-label="Swap">
+        <div class="circ action-icon-swap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.25 7.15h3.35c1.86 0 2.93.72 4.18 2.33l3.02 3.88c1.08 1.39 2.03 2.03 4.95 2.03"/>
+            <path d="m17.25 12.95 2.5 2.44-2.5 2.43"/>
+            <path d="M4.25 16.85H7.6c1.86 0 2.93-.72 4.18-2.33l3.02-3.88c1.08-1.39 2.03-2.03 4.95-2.03"/>
+            <path d="m17.25 6.18 2.5 2.43-2.5 2.44"/>
+          </svg>
+        </div>
+        <span>Swap</span>
       </button>
-      <button class="action" onclick="openSheet('receive')">
-        <div class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M14 14h2v2h-2zM18 14h2v6h-6v-2M16 18h2"/></svg></div>
-        Receive
+
+      <button class="action" onclick="openSheet('receive')" aria-label="Receive">
+        <div class="circ action-icon-receive" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4.2" y="4.2" width="5.1" height="5.1" rx="1.35"/>
+            <rect x="14.7" y="4.2" width="5.1" height="5.1" rx="1.35"/>
+            <rect x="4.2" y="14.7" width="5.1" height="5.1" rx="1.35"/>
+            <path d="M14.7 14.7h2.25v2.25H14.7zM18.2 14.7h1.6v5.1h-5.1v-1.6M14.7 18.2h2.25"/>
+          </svg>
+        </div>
+        <span>Receive</span>
       </button>
-      <button class="action" onclick="openSheet('buy')">
-        <div class="circ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 7v10M9.5 9.3c.6-.8 1.5-1.3 2.7-1.3 1.5 0 2.6.8 2.6 2 0 3-5.7 1.5-5.7 4.3 0 1.1 1 1.9 2.8 1.9 1.2 0 2.2-.4 2.9-1.2"/></svg></div>
-        Buy
+
+      <button class="action" onclick="openSheet('buy')" aria-label="Buy">
+        <div class="circ action-icon-buy" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="7.9"/>
+            <text x="12" y="15.55" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11.5" font-weight="700" fill="currentColor" stroke="none">$</text>
+          </svg>
+        </div>
+        <span>Buy</span>
       </button>
     </div>
 
@@ -6106,83 +8215,229 @@
     <div class="body-scroll">
       <div class="ptr" id="ptr"><div class="ptr-spin"></div><span>Refreshing…</span></div>
 
-      <div class="panel active" id="panel-tokens">
-        <div class="token-row" onclick="openDetail('sol')">
-          <div class="token-left">
-            <div class="token-icon sol-icon-local"><span></span></div>
-            <div>
-              <div class="token-name">Solana <span class="fake-verified">✓</span></div>
-              <div class="token-sub" id="tok-sol-sub">612.40 SOL</div>
-            </div>
-          </div>
-          <div class="token-right">
-            <div class="token-val" id="tok-sol-val">$98,204.32</div>
-            <div class="token-change up">+5.2%</div>
-          </div>
-        </div>
-
-        <div class="token-row" onclick="openDetail('usdc')">
-          <div class="token-left">
-            <div class="token-icon" style="background:#2775CA;">$</div>
-            <div>
-              <div class="token-name">USD Coin</div>
-              <div class="token-sub" id="tok-usdc-sub">2,400.00 USDC</div>
-            </div>
-          </div>
-          <div class="token-right">
-            <div class="token-val" id="tok-usdc-val">$2,400.00</div>
-            <div class="token-change up">+0.0%</div>
-          </div>
-        </div>
-
-        <div class="token-row" onclick="openDetail('bonk')">
-          <div class="token-left">
-            <div class="token-icon" style="background:#d78e33;font-size:17px;">B</div>
-            <div>
-              <div class="token-name">BONK</div>
-              <div class="token-sub" id="tok-bonk-sub">42,000,000 BONK</div>
-            </div>
-          </div>
-          <div class="token-right">
-            <div class="token-val" id="tok-bonk-val">$6,098.03</div>
-            <div class="token-change down">-2.1%</div>
-          </div>
-        </div>
-
-        <div class="token-row" onclick="openDetail('eth')">
-          <div class="token-left">
-            <div class="token-icon" style="background:#2b2b2f;">Ξ</div>
-            <div>
-              <div class="token-name">Ethereum</div>
-              <div class="token-sub" id="tok-eth-sub">6.81 ETH</div>
-            </div>
-          </div>
-          <div class="token-right">
-            <div class="token-val" id="tok-eth-val">$24,110.55</div>
-            <div class="token-change up">+1.8%</div>
-          </div>
-        </div>
+      
+<div class="panel active" id="panel-tokens">
+  <button class="token-row pc-ref-token" type="button" onclick="showToast('Flex Gains Token')">
+    <div class="token-left">
+      <div class="token-icon pc-ref-logo token-logo-flex" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <defs><linearGradient id="flexG" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#38e58a"/><stop offset="1" stop-color="#107c55"/></linearGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="#101514" stroke="#2b7558" stroke-width="2"/>
+          <path d="M18 38c2-12 9-20 22-21-1 11-7 20-19 24" fill="url(#flexG)"/>
+          <path d="M21 42c7-9 13-15 22-20" fill="none" stroke="#d9ffe9" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+          <circle cx="47" cy="47" r="10" fill="#f2f2f3" stroke="#111" stroke-width="2"/>
+          <path d="M42 44h10M42 47h10M42 50h10" stroke="#555" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
       </div>
-
-      <div class="panel" id="panel-perps">
-        <div class="perps-card">
-          <div><div class="perps-name">SOL-PERP</div><div class="perps-sub">Long · 2.0× simulated</div></div>
-          <div class="perps-right"><div class="token-val">$184.22</div><div class="perps-pnl">+$6.41</div></div>
-        </div>
-        <div class="perps-card">
-          <div><div class="perps-name">ETH-PERP</div><div class="perps-sub">No open position</div></div>
-          <div class="perps-right"><div class="token-val">$3,540.10</div><div class="token-sub">Market</div></div>
-        </div>
+      <div class="token-copy">
+        <div class="token-name">Flex Gains Token</div>
+        <div class="token-sub" id="pc-flex-sub">0.19127 FLEX</div>
       </div>
+    </div>
+    <div class="token-right">
+      <div class="token-val token-muted-val">&lt;$0.01</div>
+      <div class="token-change up">+$0.01</div>
+    </div>
+  </button>
 
-      <div class="panel" id="panel-nfts">
-        <div class="nft-grid" id="nftGrid">
-          <div class="nft-card" onclick="openCollectible('madlads')"><img class="nft-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' rx='60' fill='%231a1a1d'/%3E%3Ccircle cx='200' cy='180' r='100' fill='%232f2f35'/%3E%3Ccircle cx='165' cy='170' r='12' fill='white'/%3E%3Ccircle cx='235' cy='170' r='12' fill='white'/%3E%3Cpath d='M150 230 Q200 265 250 230' fill='none' stroke='%23a99bf5' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E" alt="Fictional collectible"><div class="nft-info"><div class="nft-name">Mad Lads #4021</div><div class="nft-sub">0.8 SOL floor</div></div></div>
-          <div class="nft-card" onclick="openCollectible('degods')"><img class="nft-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='400' height='400' rx='60' fill='%230f1f19'/%3E%3Ccircle cx='200' cy='180' r='100' fill='%231d3c30'/%3E%3Ccircle cx='165' cy='170' r='12' fill='white'/%3E%3Ccircle cx='235' cy='170' r='12' fill='white'/%3E%3Cpath d='M150 230 Q200 265 250 230' fill='none' stroke='%2359eab2' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E" alt="Fictional collectible"><div class="nft-info"><div class="nft-name">DeGods #812</div><div class="nft-sub">3.1 SOL floor</div></div></div>
-        </div>
+  <button class="token-row pc-ref-token" type="button" onclick="showToast('CHADCATE')">
+    <div class="token-left">
+      <div class="token-icon pc-ref-logo token-logo-cc" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <defs><radialGradient id="ccG" cx="35%" cy="30%"><stop stop-color="#f8dc85"/><stop offset=".55" stop-color="#b87c20"/><stop offset="1" stop-color="#6c4514"/></radialGradient></defs>
+          <circle cx="32" cy="32" r="30" fill="#17130d" stroke="#a8772a" stroke-width="2"/>
+          <circle cx="32" cy="32" r="24" fill="url(#ccG)" stroke="#f3ce77" stroke-width="1.4"/>
+          <path d="M21 29l4-8 7 5 7-5 4 8v13c-4 4-8 6-11 6s-7-2-11-6Z" fill="#332a1d" opacity=".88"/>
+          <path d="M26 34h.1M38 34h.1" stroke="#f9e7ae" stroke-width="4" stroke-linecap="round"/>
+          <path d="M29 40c2 1.5 4 1.5 6 0" fill="none" stroke="#f9e7ae" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="48" cy="48" r="9" fill="#f2f2f3" stroke="#111" stroke-width="2"/>
+          <path d="M44 45h8M44 48h8M44 51h8" stroke="#555" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </div>
+      <div class="token-copy">
+        <div class="token-name">CHADCATE</div>
+        <div class="token-sub" id="pc-cc-sub">282.53K CC</div>
+      </div>
+    </div>
+    <div class="token-right">
+      <div class="token-val token-muted-val">—</div>
+      <div class="token-change token-flat">—</div>
+    </div>
+  </button>
 
-      <div class="panel" id="panel-activity">
+  <button class="token-row pc-ref-token" type="button" onclick="openDetail('sol')">
+    <div class="token-left">
+      <div class="token-icon pc-ref-logo token-logo-sol" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <defs>
+            <linearGradient id="pcSolA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/></linearGradient>
+            <linearGradient id="pcSolB" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#14f195"/><stop offset="1" stop-color="#9945ff"/></linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="31" fill="#08090c" stroke="#1c1d22" stroke-width="2"/>
+          <g transform="translate(13 15) skewX(-17)">
+            <rect x="8" y="0" width="30" height="7" rx="3.5" fill="url(#pcSolA)"/>
+            <rect x="0" y="13" width="30" height="7" rx="3.5" fill="url(#pcSolB)"/>
+            <rect x="8" y="26" width="30" height="7" rx="3.5" fill="url(#pcSolA)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="token-copy">
+        <div class="token-name">Solana <span class="fake-verified">✓</span></div>
+        <div class="token-sub" id="pc-sol-sub">0.00105 SOL</div>
+      </div>
+    </div>
+    <div class="token-right">
+      <div class="token-val" id="pc-sol-val">$0.11</div>
+      <div class="token-change up">+$0.01</div>
+    </div>
+  </button>
+
+  <button class="token-row pc-ref-token" type="button" onclick="openDetail('eth')">
+    <div class="token-left">
+      <div class="token-icon pc-ref-logo token-logo-eth" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="31" fill="#f0f0f2"/>
+          <g transform="translate(32 9)">
+            <path d="M0 0-13 22 0 29 13 22Z" fill="#34353b"/>
+            <path d="M0 31-13 24 0 47 13 24Z" fill="#5e6068"/>
+            <path d="M0 0v29l13-7Z" fill="#8d8f96" opacity=".6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="token-copy">
+        <div class="token-name">Ethereum <span class="fake-verified">✓</span></div>
+        <div class="token-sub pc-eth-sub">0 ETH</div>
+      </div>
+    </div>
+    <div class="token-right">
+      <div class="token-val pc-eth-val">$0.00</div>
+      <div class="token-change token-flat">$0.00</div>
+    </div>
+  </button>
+
+  <button class="token-row pc-ref-token" type="button" onclick="openDetail('btc')">
+    <div class="token-left">
+      <div class="token-icon pc-ref-logo token-logo-btc" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <circle cx="32" cy="32" r="31" fill="#f7931a"/>
+          <text x="32" y="43" text-anchor="middle" font-size="31" font-family="Arial,Helvetica,sans-serif" font-weight="800" fill="#fff">₿</text>
+        </svg>
+      </div>
+      <div class="token-copy">
+        <div class="token-name">Bitcoin <span class="fake-verified">✓</span></div>
+        <div class="token-sub" id="pc-btc-sub">0 BTC</div>
+      </div>
+    </div>
+    <div class="token-right">
+      <div class="token-val" id="pc-btc-val">$0.00</div>
+      <div class="token-change token-flat">$0.00</div>
+    </div>
+  </button>
+</div>
+
+
+<div class="panel" id="panel-perps">
+  <div class="video-perps-power">
+    <span class="video-perps-power-icon" aria-hidden="true">
+      <svg viewBox="0 0 46 46" fill="none">
+        <path d="M10 31c0-7 3-12 8-12h8c5 0 8-4 8-10" stroke="#a995ff" stroke-width="3.1" stroke-linecap="round"/>
+        <path d="M10 31c0 5 3 8 7 8 5 0 8-4 8-10V17" stroke="#a995ff" stroke-width="3.1" stroke-linecap="round"/>
+        <path d="M35 7v8M31 11h8" stroke="#efff8c" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="video-perps-power-copy">
+      <strong>More Power with Perps</strong>
+      <small>Trade with up to 40x leverage</small>
+    </span>
+  </div>
+
+  <div class="video-perps-list">
+    <button class="video-perp-row" type="button" onclick="showToast('BTC Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon btc">₿<i>∞</i></span>
+        <span class="video-perp-copy"><strong>BTC <b>40x</b></strong><small>$992M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$78,040.00</strong><small class="up">+0.57%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('HYPE Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon hype"><svg viewBox="0 0 44 44"><path d="M5 23c0-7 4-12 9-12 5 0 7 4 9 9 2-5 5-9 10-9 5 0 7 6 6 12-1 7-5 11-10 11-5 0-7-4-9-9-2 5-5 9-9 9-4 0-6-5-6-11Z" fill="#73ead4"/></svg><i>∞</i></span>
+        <span class="video-perp-copy"><strong>HYPE <b>10x</b></strong><small>$311M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$83.36</strong><small class="up">+3.91%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('ETH Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon eth">◆<i>∞</i></span>
+        <span class="video-perp-copy"><strong>ETH <b>25x</b></strong><small>$304M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$2,457.70</strong><small class="up">+0.82%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('SOL Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon sol"><span class="mini-sol-bars"></span><i>∞</i></span>
+        <span class="video-perp-copy"><strong>SOL <b>20x</b></strong><small>$166M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$105.42</strong><small class="up">+1.54%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('ZEC Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon zec">Z<i>∞</i></span>
+        <span class="video-perp-copy"><strong>ZEC <b>10x</b></strong><small>$159M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$831.87</strong><small class="up">+3.71%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('PUMP Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon pump">◆<i>∞</i></span>
+        <span class="video-perp-copy"><strong>PUMP <b>10x</b></strong><small>$68M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$0.005071</strong><small class="up">+10.29%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('TRUMP Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon trump">T<i>∞</i></span>
+        <span class="video-perp-copy"><strong>TRUMP <b>10x</b></strong><small>$45M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$2.65</strong><small class="down">-3.79%</small></span>
+    </button>
+
+    <button class="video-perp-row" type="button" onclick="showToast('SKHX Perps')">
+      <span class="video-perp-left">
+        <span class="video-perp-icon skhx">S<i>∞</i></span>
+        <span class="video-perp-copy"><strong>SKHX <b>10x</b></strong><small>$37M Vol</small></span>
+      </span>
+      <span class="video-perp-right"><strong>$1,233.30</strong><small class="up">+2.48%</small></span>
+    </button>
+
+    <div class="video-perps-disclosure">ⓘ&nbsp; View Disclosures</div>
+  </div>
+</div>
+
+
+<div class="panel" id="panel-nfts">
+  <div class="video-collectibles-empty">
+    <svg class="video-collectibles-art" viewBox="0 0 120 95" aria-hidden="true">
+      <g transform="translate(18 8) rotate(12 56 42)">
+        <path d="M58 2v34c-3-3-8-4-12-2-6 2-9 7-7 11 2 5 8 6 14 4 5-2 8-6 7-10V17l20 5v25c-3-3-8-4-12-2-6 2-9 7-7 11 2 5 8 6 14 4 5-2 8-6 7-10V10L58 2Z" fill="#f4f58a"/>
+        <rect x="15" y="46" width="32" height="32" rx="2" fill="none" stroke="#9b7cff" stroke-width="4" transform="rotate(-23 31 62)"/>
+        <path d="M88 52 111 58 96 77Z" fill="#ff5a3c"/>
+        <path d="m7 39 3 5 5 1-4 3 1 6-5-3-5 3 1-6-4-3 5-1Z" fill="#1c1c21"/>
+        <path d="m97 27 2 4 5 1-4 3 1 4-4-2-4 2 1-4-4-3 5-1Z" fill="#1c1c21"/>
+      </g>
+    </svg>
+    <div class="video-empty-title">No collectibles found</div>
+    <div class="video-empty-sub">Buy or transfer a collectible to start<br>building your collection</div>
+  </div>
+</div>
+
+<div class="panel" id="panel-activity">
         <div id="activityContent">
           <div class="activity-row">
             <div class="act-icon" style="background:#10261b;color:var(--green);">↓</div>
@@ -6239,10 +8494,58 @@
 
 <script>
 const accounts = {
-  'Account 1': { balance: 128412.90, acc1:'#ab9ff2', acc2:'#5f4dc9', hasNfts:true, hasActivity:true },
-  'Account 2': { balance: 3200.00,   acc1:'#f2c94c', acc2:'#e08e0b', hasNfts:false, hasActivity:true },
-  'Hot Wallet':{ balance: 452.10,    acc1:'#21e56f', acc2:'#0c8f43', hasNfts:false, hasActivity:false },
+  'Account 1': { balance: 0.11, acc1:'#ab9ff2', acc2:'#5f4dc9', hasNfts:true,  hasActivity:true },
+  'Hot Wallet': { balance: 0.11, acc1:'#2a2a2d', acc2:'#404046', hasNfts:false, hasActivity:true },
+  'Hot Wallet 2': { balance: 0.11, acc1:'#252528', acc2:'#3b3b40', hasNfts:false, hasActivity:false },
 };
+/* Local-only simulated PC holdings. Fixed demo prices are used only for
+   the UI math; no network/API requests are made. */
+const PC_SIM_RATES = {
+  SOL: 104.7619047619,  // makes $0.11 equal 0.00105 SOL in the reference state
+  ETH: 3540.10,
+  BTC: 64000.00
+};
+const pcSimHoldings = {};
+Object.keys(accounts).forEach(name=>{
+  pcSimHoldings[name] = {
+    SOL: accounts[name].balance / PC_SIM_RATES.SOL,
+    ETH: 0,
+    BTC: 0
+  };
+});
+
+function pcHoldingsUsd(name=current){
+  const h = pcSimHoldings[name];
+  if(!h) return 0;
+  return (h.SOL||0)*PC_SIM_RATES.SOL +
+         (h.ETH||0)*PC_SIM_RATES.ETH +
+         (h.BTC||0)*PC_SIM_RATES.BTC;
+}
+function pcScaleHoldings(name, oldBalance, newBalance){
+  const h = pcSimHoldings[name];
+  if(!h) return;
+  if(newBalance <= 0){
+    h.SOL = 0; h.ETH = 0; h.BTC = 0;
+    return;
+  }
+  if(oldBalance > 0){
+    const factor = newBalance / oldBalance;
+    h.SOL *= factor;
+    h.ETH *= factor;
+    h.BTC *= factor;
+  }else{
+    h.SOL = newBalance / PC_SIM_RATES.SOL;
+    h.ETH = 0;
+    h.BTC = 0;
+  }
+}
+function pcFmtQty(qty, asset){
+  if(!Number.isFinite(qty)) qty = 0;
+  if(asset === 'BTC') return qty.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:8});
+  if(asset === 'ETH') return qty.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:8});
+  return qty.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:6});
+}
+
 let current = 'Account 1';
 const address = 'Ph4nT0mXk9vQeR3jL7wN2bC8dF5gH1sT6mYaU4pZoWq';
 
@@ -6259,7 +8562,7 @@ function walletPageHead(title, closeFn='closeSheet()'){
   </div>`;
 }
 function setMobileDocumentTitle(){
-  document.title = isWalletApp() ? 'Phantom' : 'StreamHub';
+  document.title = isWalletApp() ? 'Ghost Wallet' : 'StreamHub';
 }
 setMobileDocumentTitle();
 window.addEventListener('resize', setMobileDocumentTitle);
@@ -6333,21 +8636,32 @@ const collectibles = {
 };
 
 const tokenData = {
-  sol:{ name:'Solana', icon:'◎', color:'#ab9ff2', price:'$160.32', change:'+5.2%', up:true, held:'612.4 SOL' },
-  eth:{ name:'Ethereum', icon:'Ξ', color:'#8f9dfc', price:'$3,540.10', change:'+1.8%', up:true, held:'6.81 ETH' },
-  bonk:{ name:'BONK', icon:'🐕', color:'#f2c94c', price:'$0.000145', change:'-2.1%', up:false, held:'42,000,000 BONK' },
-  usdc:{ name:'USD Coin', icon:'$', color:'#2775ca', price:'$1.00', change:'+0.0%', up:true, held:'2,400.00 USDC' },
+  sol:{ name:'Solana', icon:'SOL', color:'#8f73ff', price:'$104.76', change:'+5.2%', up:true, held:'0 SOL' },
+  eth:{ name:'Ethereum', icon:'ETH', color:'#a9abb4', price:'$3,540.10', change:'+1.8%', up:true, held:'0 ETH' },
+  btc:{ name:'Bitcoin', icon:'BTC', color:'#f7931a', price:'$64,000.00', change:'+0.4%', up:true, held:'0 BTC' },
+  bonk:{ name:'BONK', icon:'BONK', color:'#f2c94c', price:'$0.000145', change:'-2.1%', up:false, held:'42,000,000 BONK' },
+  usdc:{ name:'USD Coin', icon:'USDC', color:'#2775ca', price:'$1.00', change:'+0.0%', up:true, held:'2,400.00 USDC' },
 };
+function walletTokenLogo(key, size=58){
+  const common=`width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 ${size}px`;
+  if(key==='sol') return `<span style="${common};background:#08090c"><svg viewBox="0 0 64 64" width="100%" height="100%"><defs><linearGradient id="detailSolA" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9945ff"/><stop offset="1" stop-color="#14f195"/></linearGradient><linearGradient id="detailSolB" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#14f195"/><stop offset="1" stop-color="#9945ff"/></linearGradient></defs><g transform="translate(13 15) skewX(-17)"><rect x="8" y="0" width="30" height="7" rx="3.5" fill="url(#detailSolA)"/><rect x="0" y="13" width="30" height="7" rx="3.5" fill="url(#detailSolB)"/><rect x="8" y="26" width="30" height="7" rx="3.5" fill="url(#detailSolA)"/></g></svg></span>`;
+  if(key==='eth') return `<span style="${common};background:#f0f0f2"><svg viewBox="0 0 64 64" width="100%" height="100%"><g transform="translate(32 9)"><path d="M0 0-13 22 0 29 13 22Z" fill="#34353b"/><path d="M0 31-13 24 0 47 13 24Z" fill="#5e6068"/><path d="M0 0v29l13-7Z" fill="#8d8f96" opacity=".6"/></g></svg></span>`;
+  if(key==='btc') return `<span style="${common};background:#f7931a;color:#fff;font:800 ${Math.round(size*.47)}px Arial">₿</span>`;
+  if(key==='usdc') return `<span style="${common};background:#2775ca;color:#fff"><svg viewBox="0 0 64 64" width="100%" height="100%"><circle cx="32" cy="32" r="30" fill="#2775ca"/><path d="M36 20c-1.3-1-3-1.6-5-1.6-4.5 0-7.5 2.2-7.5 5.5 0 7.7 15.5 3.6 15.5 11.4 0 3.5-3.2 6-7.9 6-2.3 0-4.4-.6-6-1.8M32 14v6M32 41v9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M18 16a20 20 0 0 0 0 32M46 16a20 20 0 0 1 0 32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>`;
+  if(key==='bonk') return `<span style="${common};background:#f4b42c;color:#2a1b08;font:800 ${Math.round(size*.28)}px Arial">BONK</span>`;
+  return `<span style="${common};background:#222;color:#fff;font-weight:800">${String(key||'').toUpperCase()}</span>`;
+}
+
 
 /* ---------- haptics ---------- */
 function buzz(ms){ if(navigator.vibrate){ try{ navigator.vibrate(ms); }catch(e){} } }
 
 /* ---------- lock screen ---------- */
 function unlock(){
-  buzz(15);
-  const input=document.getElementById('demoPassword');
-  if(input) input.value='';
-  document.getElementById('lockScreen').classList.add('hidden');
+  document.getElementById('lockScreen')?.classList.add('hidden');
+  const frame=document.getElementById('frame');
+  if(frame) frame.style.display='flex';
+  buzz(8);
 }
 function setupDemoUnlock(){
   const input=document.getElementById('demoPassword');
@@ -6401,9 +8715,75 @@ const tokenPrices = { sol:160.32, eth:3540.10, bonk:0.000145, usdc:1.00 };
 
 function updateTokenDisplays(){
   const total = accounts[current].balance;
+
+  // PC reference layout: render the local simulated holdings ledger.
+  if(!isWalletApp()){
+    const h = pcSimHoldings[current];
+    const solQty = h.SOL || 0;
+    const ethQty = h.ETH || 0;
+    const btcQty = h.BTC || 0;
+
+    const solUsd = solQty * PC_SIM_RATES.SOL;
+    const ethUsd = ethQty * PC_SIM_RATES.ETH;
+    const btcUsd = btcQty * PC_SIM_RATES.BTC;
+
+    const solSub = document.getElementById('pc-sol-sub');
+    const solVal = document.getElementById('pc-sol-val');
+    const flexSub = document.getElementById('pc-flex-sub');
+    const btcSub = document.getElementById('pc-btc-sub');
+    const btcVal = document.getElementById('pc-btc-val');
+
+    if(solSub) solSub.textContent = pcFmtQty(solQty,'SOL') + ' SOL';
+    if(solVal) solVal.textContent = masked ? '••••••' : fmt(solUsd);
+
+    document.querySelectorAll('.pc-eth-sub').forEach(el=>{
+      el.textContent = pcFmtQty(ethQty,'ETH') + ' ETH';
+    });
+    document.querySelectorAll('.pc-eth-val').forEach(el=>{
+      el.textContent = masked ? '••••••' : fmt(ethUsd);
+    });
+
+    if(btcSub) btcSub.textContent = pcFmtQty(btcQty,'BTC') + ' BTC';
+    if(btcVal) btcVal.textContent = masked ? '••••••' : fmt(btcUsd);
+
+    // Keep the tiny FLEX line from the reference visually proportional
+    // to the edited wallet total; FLEX is not part of the swap ledger.
+    const baseBalance = 0.11;
+    const flexQty = 0.19127 * (baseBalance > 0 ? total/baseBalance : 0);
+    if(flexSub){
+      const digits = flexQty < 1 ? 5 : 2;
+      flexSub.textContent = flexQty.toLocaleString('en-US',{
+        minimumFractionDigits:digits, maximumFractionDigits:digits
+      }) + ' FLEX';
+    }
+
+    if(tokenData.sol) tokenData.sol.held = pcFmtQty(solQty,'SOL') + ' SOL';
+    if(tokenData.eth) tokenData.eth.held = pcFmtQty(ethQty,'ETH') + ' ETH';
+    if(tokenData.btc) tokenData.btc.held = pcFmtQty(btcQty,'BTC') + ' BTC';
+    return;
+  }
+
+  // Mobile wallet behavior: keep the underlying token details synchronized
+  // with the same local SOL/ETH/BTC ledger used by the visible mobile shell.
+  if(tokenData.sol){
+    tokenData.sol.held=pcFmtQty(pcSimHoldings[current].SOL||0,'SOL')+' SOL';
+    tokenData.sol.price=fmt(PC_SIM_RATES.SOL);
+  }
+  if(tokenData.eth){
+    tokenData.eth.held=pcFmtQty(pcSimHoldings[current].ETH||0,'ETH')+' ETH';
+    tokenData.eth.price=fmt(PC_SIM_RATES.ETH);
+  }
+
   Object.keys(tokenWeights).forEach(key=>{
-    const value = total * tokenWeights[key];
-    const heldQty = value / tokenPrices[key];
+    let value = total * tokenWeights[key];
+    let heldQty = value / tokenPrices[key];
+    if(key==='sol'){
+      heldQty=pcSimHoldings[current].SOL||0;
+      value=heldQty*PC_SIM_RATES.SOL;
+    }else if(key==='eth'){
+      heldQty=pcSimHoldings[current].ETH||0;
+      value=heldQty*PC_SIM_RATES.ETH;
+    }
     const valEl = document.getElementById('tok-'+key+'-val');
     const subEl = document.getElementById('tok-'+key+'-sub');
     if(valEl) valEl.textContent = masked ? '••••••' : fmt(value);
@@ -6411,10 +8791,11 @@ function updateTokenDisplays(){
       let qtyStr;
       if(key==='bonk'){ qtyStr = Math.round(heldQty).toLocaleString('en-US'); }
       else if(key==='usdc'){ qtyStr = heldQty.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+      else if(key==='sol'){ qtyStr = pcFmtQty(heldQty,'SOL'); }
+      else if(key==='eth'){ qtyStr = pcFmtQty(heldQty,'ETH'); }
       else { qtyStr = heldQty.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
       subEl.textContent = qtyStr + ' ' + key.toUpperCase();
     }
-    // keep the token detail page in sync too
     if(tokenData[key]) tokenData[key].held = (subEl ? subEl.textContent : tokenData[key].held);
   });
 }
@@ -6507,9 +8888,11 @@ function commitEdit(){
   if(!input) return;
   let val = parseFloat(input.value.replace(/[^0-9.\-]/g,''));
   if(isNaN(val) || val < 0) val = accounts[current].balance;
+  const oldBalance = accounts[current].balance;
   accounts[current].balance = val;
+  pcScaleHoldings(current, oldBalance, val);
   const row = document.getElementById('balanceRow');
-  row.innerHTML = `<div class="balance ${masked?'masked':''}" id="balanceDisplay">${masked?'••••••':fmt(val)}</div><button class="edit-pencil" onclick="startEdit()">✎</button><button class="eye-btn" id="eyeBtn" onclick="toggleMask()">${masked?'🙈':'👁'}</button>`;
+  row.innerHTML = `<div class="balance ${masked?'masked':''}" id="balanceDisplay" onclick="startEdit()" role="button" tabindex="0" aria-label="Edit balance">${masked?'••••••':fmt(val)}</div><button class="edit-pencil" onclick="startEdit()" aria-label="Edit balance">✎</button><button class="eye-btn" id="eyeBtn" onclick="toggleMask()" aria-label="Hide balance">${masked?'🙈':'👁'}</button>`;
   document.getElementById('balanceDisplay').addEventListener('click', handleBalanceTap);
   randomizeChange();
   updateTokenDisplays();
@@ -6524,8 +8907,14 @@ function randomizeChange(){
   const pct = (Math.random()*6 - 1).toFixed(1);
   const el = document.getElementById('changeText');
   const up = parseFloat(pct) >= 0;
+  const sign = up ? '+' : '-';
+  const dollar = fmt(Math.abs(accounts[current].balance*pct/100));
+  const percent = sign + Math.abs(pct) + '%';
+
   el.className = up ? 'up' : 'down';
-  el.textContent = (up?'+':'-') + fmt(Math.abs(accounts[current].balance*pct/100)) + '  ' + (up?'+':'-') + Math.abs(pct) + '%';
+  el.innerHTML =
+    '<span class="pnl-dollar"><span class="pnl-sign ' + (up ? 'pnl-plus' : 'pnl-minus') + '">' + sign + '</span><span class="pnl-money">' + dollar + '</span></span>' +
+    '<span class="pnl-percent-pill">' + percent + '</span>';
 }
 document.getElementById('balanceDisplay').addEventListener('click', handleBalanceTap);
 
@@ -6600,22 +8989,27 @@ function openSheet(type){
       sheet.innerHTML = `<div class="mobile-page-inner">
         ${walletPageHead('Swap')}
         <div class="mobile-page-section mobile-swap-card">
-          <div class="mobile-page-label">You pay</div>
-          <div class="mobile-swap-row">
-            <input id="swapAmt" inputmode="decimal" placeholder="0">
-            <select id="swapFrom"><option>SOL</option><option>ETH</option><option>USDC</option><option>BONK</option></select>
+          <div class="mobile-page-label" style="display:flex;justify-content:space-between;align-items:center;">
+            <span>You pay</span>
+            <span id="swapAvail" style="font-size:11px;color:#777;">Available: —</span>
           </div>
+          <div class="mobile-swap-row">
+            <input id="swapAmt" inputmode="decimal" placeholder="0" oninput="updatePcSwapQuote()">
+            <select id="swapFrom" onchange="refreshPcSwapUi()"><option>SOL</option><option>ETH</option><option>BTC</option></select>
+          </div>
+          <button type="button" onclick="setPcSwapMax()" style="border:0;background:transparent;color:#a99bf5;font-size:12px;font-weight:750;padding:8px 2px 0;cursor:pointer;">MAX</button>
         </div>
-        <div class="mobile-swap-flip" aria-hidden="true">
+        <div class="mobile-swap-flip" onclick="flipPcSwapPair()" style="cursor:pointer;" aria-label="Flip swap pair">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M8 7h8M16 7l-3-3M16 17H8M8 17l3 3"/><path d="M16 7v5M8 17v-5"/></svg>
         </div>
         <div class="mobile-page-section mobile-swap-card" style="margin-top:0;">
           <div class="mobile-page-label">You receive</div>
           <div class="mobile-swap-row">
             <input id="swapOut" disabled placeholder="0">
-            <select id="swapTo"><option>USDC</option><option>SOL</option><option>ETH</option><option>BONK</option></select>
+            <select id="swapTo" onchange="updatePcSwapQuote()"><option>ETH</option><option>SOL</option><option>BTC</option></select>
           </div>
         </div>
+        <div id="swapUsdPreview" style="font-size:11px;color:#777;margin:10px 4px 0;"></div>
         <button class="mobile-review-btn" onclick="doSwap()">Review Swap</button>
       </div>`;
     }
@@ -6639,6 +9033,9 @@ function openSheet(type){
     }
 
     overlay.classList.remove('hidden');
+    if(type==='swap'){
+      setTimeout(()=>{ refreshPcSwapUi(); updatePcSwapQuote(); },0);
+    }
     return;
   }
 
@@ -6665,21 +9062,26 @@ function openSheet(type){
   else if(type==='swap'){
     sheet.innerHTML = `
       <div class="sheet-head"><div class="sheet-title">Swap</div><div class="sheet-close" onclick="closeSheet()">✕</div></div>
-      <div class="field-label">You pay</div>
+      <div class="field-label" style="display:flex;justify-content:space-between;align-items:center;">
+        <span>You pay</span>
+        <span id="swapAvail" style="font-size:11px;color:var(--text-dim);">Available: —</span>
+      </div>
       <div class="swap-box">
-        <input class="field swap-select" id="swapAmt" inputmode="decimal" placeholder="0.00">
-        <select class="field" id="swapFrom" style="max-width:100px;">
-          <option>SOL</option><option>ETH</option><option>USDC</option><option>BONK</option>
+        <input class="field swap-select" id="swapAmt" inputmode="decimal" placeholder="0.00" oninput="updatePcSwapQuote()">
+        <select class="field" id="swapFrom" style="max-width:100px;" onchange="refreshPcSwapUi()">
+          <option>SOL</option><option>ETH</option><option>BTC</option>
         </select>
       </div>
-      <div class="swap-flip">↓</div>
+      <button type="button" onclick="setPcSwapMax()" style="border:0;background:transparent;color:var(--accent);font-size:11px;font-weight:700;padding:2px 2px 8px;cursor:pointer;">MAX</button>
+      <div class="swap-flip" onclick="flipPcSwapPair()" style="cursor:pointer;">↓</div>
       <div class="field-label">You receive</div>
       <div class="swap-box">
         <input class="field swap-select" id="swapOut" disabled placeholder="0.00">
-        <select class="field" id="swapTo" style="max-width:100px;">
-          <option>USDC</option><option>SOL</option><option>ETH</option><option>BONK</option>
+        <select class="field" id="swapTo" style="max-width:100px;" onchange="updatePcSwapQuote()">
+          <option>ETH</option><option>SOL</option><option>BTC</option>
         </select>
       </div>
+      <div id="swapUsdPreview" style="font-size:11px;color:var(--text-dim);margin:8px 2px 12px;"></div>
       <button class="primary-btn" onclick="doSwap()">Swap</button>
     `;
   }
@@ -6696,6 +9098,9 @@ function openSheet(type){
     `;
   }
   overlay.classList.remove('hidden');
+  if(type==='swap' && !isWalletApp()){
+    setTimeout(()=>{ refreshPcSwapUi(); updatePcSwapQuote(); },0);
+  }
 }
 function closeSheet(){
   const overlay=document.getElementById('overlay');
@@ -6729,20 +9134,100 @@ function doSend(){
   if(!amt || amt<=0){ showToast('Enter an amount'); return; }
   if(amt > accounts[current].balance){ showToast("Insufficient balance"); return; }
   showSpinnerThen(()=>{
+    const oldBalance = accounts[current].balance;
     accounts[current].balance -= amt;
+    pcScaleHoldings(current, oldBalance, accounts[current].balance);
     renderAccount();
     randomizeChange();
     return `<div class="sheet-center"><div class="success-tick">✓</div><div style="font-weight:700;">Sent ${fmt(amt)}</div><div style="color:var(--text-dim); font-size:12.5px; margin-top:4px;">to ${to.slice(0,14)}${to.length>14?'…':''}</div></div>`;
   });
 }
+
+function refreshPcSwapUi(){
+  const fromEl=document.getElementById('swapFrom');
+  const availEl=document.getElementById('swapAvail');
+  if(!fromEl || !availEl) return;
+  const asset=fromEl.value;
+  const qty=(pcSimHoldings[current] && pcSimHoldings[current][asset]) || 0;
+  availEl.textContent='Available: ' + pcFmtQty(qty,asset) + ' ' + asset;
+  updatePcSwapQuote();
+}
+function updatePcSwapQuote(){
+  const amtEl=document.getElementById('swapAmt');
+  const outEl=document.getElementById('swapOut');
+  const fromEl=document.getElementById('swapFrom');
+  const toEl=document.getElementById('swapTo');
+  const preview=document.getElementById('swapUsdPreview');
+  if(!amtEl || !outEl || !fromEl || !toEl) return;
+
+  const amount=parseFloat(String(amtEl.value||'').replace(/[^0-9.]/g,''))||0;
+  const from=fromEl.value, to=toEl.value;
+  if(from===to){
+    outEl.value='0';
+    if(preview) preview.textContent='Choose two different assets';
+    return;
+  }
+  const usd=amount*(PC_SIM_RATES[from]||0);
+  const received=usd/(PC_SIM_RATES[to]||1);
+  outEl.value=amount>0 ? pcFmtQty(received,to) : '';
+  if(preview) preview.textContent=amount>0 ? 'Simulated value: ' + fmt(usd) : '';
+}
+function setPcSwapMax(){
+  const fromEl=document.getElementById('swapFrom');
+  const amtEl=document.getElementById('swapAmt');
+  if(!fromEl || !amtEl) return;
+  const asset=fromEl.value;
+  const qty=(pcSimHoldings[current] && pcSimHoldings[current][asset]) || 0;
+  amtEl.value=String(qty.toFixed(asset==='SOL'?6:8)).replace(/0+$/,'').replace(/\.$/,'');
+  updatePcSwapQuote();
+}
+function flipPcSwapPair(){
+  const fromEl=document.getElementById('swapFrom');
+  const toEl=document.getElementById('swapTo');
+  if(!fromEl || !toEl) return;
+  const oldFrom=fromEl.value;
+  fromEl.value=toEl.value;
+  toEl.value=oldFrom;
+  const amtEl=document.getElementById('swapAmt');
+  if(amtEl) amtEl.value='';
+  const outEl=document.getElementById('swapOut');
+  if(outEl) outEl.value='';
+  refreshPcSwapUi();
+}
+
 function doSwap(){
   const amt = parseFloat((document.getElementById('swapAmt').value||'').replace(/[^0-9.]/g,''));
   if(!amt || amt<=0){ showToast('Enter an amount'); return; }
   const from = document.getElementById('swapFrom').value;
   const to = document.getElementById('swapTo').value;
-  const out = document.getElementById('swapOut').value || '0';
+  if(from===to){ showToast('Choose a different asset'); return; }
+
+  const h=pcSimHoldings[current];
+  const available=h[from]||0;
+  if(amt > available + 1e-12){ showToast('Insufficient ' + from); return; }
+
+  const usd=amt*PC_SIM_RATES[from];
+  const received=usd/PC_SIM_RATES[to];
+
   showSpinnerThen(()=>{
-    return `<div class="sheet-center"><div class="success-tick">✓</div><div style="font-weight:700;">Swapped</div><div style="color:var(--text-dim); font-size:12.5px; margin-top:4px;">${amt} ${from} → ${out} ${to}</div></div>`;
+    h[from]=Math.max(0,available-amt);
+    h[to]=(h[to]||0)+received;
+    accounts[current].balance=pcHoldingsUsd(current);
+
+    if(tokenData.sol){
+      tokenData.sol.held=pcFmtQty(h.SOL||0,'SOL')+' SOL';
+      tokenData.sol.price=fmt(PC_SIM_RATES.SOL);
+    }
+    if(tokenData.eth){
+      tokenData.eth.held=pcFmtQty(h.ETH||0,'ETH')+' ETH';
+      tokenData.eth.price=fmt(PC_SIM_RATES.ETH);
+    }
+
+    renderAccount();
+    randomizeChange();
+    if(window.mrRender) window.mrRender();
+
+    return `<div class="sheet-center"><div class="success-tick">✓</div><div style="font-weight:700;">Swapped</div><div style="color:var(--text-dim); font-size:12.5px; margin-top:4px;">${pcFmtQty(amt,from)} ${from} → ${pcFmtQty(received,to)} ${to}</div></div>`;
   });
 }
 function doBuy(){
@@ -6752,13 +9237,7 @@ function doBuy(){
 }
 document.addEventListener('input', (e)=>{
   if(e.target && e.target.id==='swapAmt'){
-    const out = document.getElementById('swapOut');
-    const from = document.getElementById('swapFrom').value;
-    const rates = {SOL:160.32, ETH:3540.10, USDC:1, BONK:0.000145};
-    const to = document.getElementById('swapTo').value;
-    const val = parseFloat(e.target.value)||0;
-    const usd = val * (rates[from]||1);
-    out.value = (usd / (rates[to]||1)).toFixed(4);
+    updatePcSwapQuote();
   }
 });
 
@@ -6768,14 +9247,14 @@ function openDetail(key){
 
   if(isWalletApp()){
     const value = accounts[current].balance * (tokenWeights[key]||0);
-    const icon = key==='bonk' ? 'B' : t.icon;
+    const icon = walletTokenLogo(key,58);
     detail.innerHTML = `
       <div class="detail-top">
         <button class="back-btn" onclick="closeDetail()" aria-label="Back">←</button>
         <div style="font-weight:700;">${t.name}</div>
       </div>
       <div class="detail-body">
-        <div class="detail-icon" style="color:${t.color}">${icon}</div>
+        <div class="detail-icon premium-token-detail-logo">${icon}</div>
         <div class="detail-price">${t.price}</div>
         <div class="detail-change ${t.up?'up':'down'}">${t.change} today</div>
         <div class="mobile-held-card">
@@ -6807,7 +9286,7 @@ function openDetail(key){
   detail.innerHTML = `
     <div class="detail-top"><div class="back-btn" onclick="closeDetail()">←</div><div style="font-weight:700;">${t.name}</div></div>
     <div class="detail-body">
-      <div class="detail-icon" style="color:${t.color}">${t.icon}</div>
+      <div class="detail-icon premium-token-detail-logo">${walletTokenLogo(key,58)}</div>
       <div class="detail-price">${t.price}</div>
       <div class="detail-change ${t.up?'up':'down'}">${t.up?'▲':'▼'} ${t.change} today</div>
       <svg class="sparkline" width="100%" height="70" viewBox="0 0 300 70">
@@ -6920,7 +9399,10 @@ function isEditingBalance(){ return !!document.getElementById('balanceInput'); }
 
 function applyDelta(amount){
   if(isEditingBalance()) return;
-  accounts[current].balance = Math.max(0, accounts[current].balance + amount);
+  const oldBalance = accounts[current].balance;
+  const newBalance = Math.max(0, oldBalance + amount);
+  accounts[current].balance = newBalance;
+  pcScaleHoldings(current, oldBalance, newBalance);
   renderAccount();
   randomizeChange();
 }
@@ -7736,10 +10218,10 @@ hydrateStreamAvatars();
     overlay.classList.remove('mobile-fullpage');
     overlay.classList.add('mobile-bottomsheet');
     sheet.innerHTML=
-      '<div class="mr-sheet-title">Set simulated balance</div>'+
-      '<input id="mrBalanceInput" class="mr-balance-editor" inputmode="decimal" value="'+accounts[current].balance.toFixed(2)+'" aria-label="Simulated balance">'+
+      '<div class="mr-sheet-title">Set balance</div>'+
+      '<input id="mrBalanceInput" class="mr-balance-editor" inputmode="decimal" value="'+accounts[current].balance.toFixed(2)+'" aria-label="Wallet balance">'+
       '<button class="mr-save" type="button" onclick="mrSaveBalance()">Save balance</button>'+
-      '<div class="mr-sheet-note">This changes only the local simulator. It does not connect to or move real funds.</div>';
+      '<div class="mr-sheet-note">Changes are saved only for this demo interface.</div>';
     overlay.classList.remove('hidden');
     setTimeout(()=>{const i=document.getElementById('mrBalanceInput');if(i){i.focus();i.select();}},30);
   };
@@ -7750,7 +10232,9 @@ hydrateStreamAvatars();
     let value=parseFloat(String(input.value).replace(/[^0-9.-]/g,''));
     if(!Number.isFinite(value)||value<0) value=accounts[current].balance;
     value=Math.min(value,999999999999.99);
+    const oldBalance=accounts[current].balance;
     accounts[current].balance=value;
+    pcScaleHoldings(current,oldBalance,value);
     renderAccount();
     randomizeChange();
     mrRender();
@@ -7871,16 +10355,18 @@ hydrateStreamAvatars();
     return '$'+Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
   }
   function referenceValue(key,total){
-    const m=extraMeta[key];
-    return total*(m.weight||0);
+    const h=pcSimHoldings[current]||{};
+    if(key==='sol') return (h.SOL||0)*PC_SIM_RATES.SOL;
+    if(key==='eth') return (h.ETH||0)*PC_SIM_RATES.ETH;
+    if(key==='btc') return (h.BTC||0)*PC_SIM_RATES.BTC;
+    return 0;
   }
   function qtyFor(key,value){
     if(masked) return '•••• '+extraMeta[key].symbol;
-    if(key==='btc') return nfmt(value/93000,3)+' BTC';
-    if(key==='eth') return nfmt(value/2439,3)+' ETH';
-    if(key==='sol') return nfmt(value/94.52,2)+' SOL';
-    if(key==='usdt') return nfmt(value,0)+' USDT';
-    if(key==='zec') return nfmt(value/615,2)+' ZEC';
+    const h=pcSimHoldings[current]||{};
+    if(key==='btc') return pcFmtQty(h.BTC||0,'BTC')+' BTC';
+    if(key==='eth') return pcFmtQty(h.ETH||0,'ETH')+' ETH';
+    if(key==='sol') return pcFmtQty(h.SOL||0,'SOL')+' SOL';
     return '0 '+extraMeta[key].symbol;
   }
   function tokenIcon(key,m){
@@ -7891,7 +10377,7 @@ hydrateStreamAvatars();
   }
   function tokenRows(){
     const total=accounts[current].balance;
-    const order = total>500000 ? ['zec','btc','eth','sol','usdt','mon'] : ['sol','eth','btc','mon','pol','hype'];
+    const order = ['sol','eth','btc','mon','pol','hype'];
     return order.map(key=>{
       const m=extraMeta[key];
       const value=referenceValue(key,total);
@@ -7915,7 +10401,7 @@ hydrateStreamAvatars();
     if(!isWalletApp()) return;
     const acct=document.getElementById('mrAccountName');
     const sideAcct=document.getElementById('mrSideAccountName');
-    if(acct) acct.textContent=current==='Account 1'?'@Zzekuro':current;
+    if(acct) acct.textContent=current==='Account 1'?'@zzzaid':current;
     if(sideAcct) sideAcct.textContent=current;
 
     const bal=document.getElementById('mrBalance');
@@ -8014,7 +10500,7 @@ hydrateStreamAvatars();
     renderAccount();
     mrRender();
     closeSheet();
-    showToast('Simulator settings saved');
+    showToast('Settings saved');
   };
 
   // Keep the bottom search truly anchored while content scrolls.
@@ -8032,7 +10518,7 @@ hydrateStreamAvatars();
   window.__iconProfileSupport = true;
 
   window.profileState = window.profileState || {
-    username: "Zzekuro",
+    username: "zzzaid",
     profileName: "Account 1",
     icon: "🔐"
   };
@@ -8053,7 +10539,7 @@ hydrateStreamAvatars();
     });
 
     const sideHandle = document.querySelector(".mr-side-handle");
-    if(sideHandle) sideHandle.textContent = "@" + (profileState.username || "Zzekuro");
+    if(sideHandle) sideHandle.textContent = "@" + (profileState.username || "zzzaid");
 
     const sideAddress = document.querySelector(".mr-side-address");
     if(sideAddress) sideAddress.textContent = "Profile: " + (profileState.profileName || "Account 1");
@@ -8090,7 +10576,7 @@ hydrateStreamAvatars();
   window.mrGenerateWalletLabel = function(){
     const input = document.getElementById("mrProfileNameInput");
     if(!input) return;
-    const names = ["Lyno Holder","Midnight Vault","Ghost Configs","Moon Wallet","Phantom Bag","Chain Locker"];
+    const names = ["Lyno Holder","Midnight Vault","Ghost Configs","Moon Wallet","Ghost Wallet","Chain Locker"];
     input.value = names[Math.floor(Math.random()*names.length)];
   };
 
@@ -8110,7 +10596,7 @@ hydrateStreamAvatars();
       return `<button class="mr-icon-choice${active}" data-icon="${safeIcon}" type="button" onclick="mrSetIcon('${safeIcon}')">${safeIcon}</button>`;
     }).join("");
 
-    const username = escapeHtml(profileState.username || "Zzekuro");
+    const username = escapeHtml(profileState.username || "zzzaid");
     const profileName = escapeHtml(profileState.profileName || "Account 1");
 
     sheet.innerHTML = `
@@ -8161,7 +10647,7 @@ hydrateStreamAvatars();
         </div>
 
         <div class="mr-profile-note">
-          This only changes the look of your local wallet simulator. It does not connect to a real wallet or use a real profile picture.
+          This changes the look of your Ghost Wallet profile.
         </div>
       </div>
     `;
@@ -8175,7 +10661,7 @@ hydrateStreamAvatars();
     const username = userInput ? userInput.value.trim().replace(/^@+/, "") : "";
     const profileName = profileInput ? profileInput.value.trim() : "";
 
-    profileState.username = username || "Zzekuro";
+    profileState.username = username || "zzzaid";
     profileState.profileName = profileName || "Account 1";
 
     updateIconAvatars();
@@ -8185,6 +10671,702 @@ hydrateStreamAvatars();
   };
 
   if(typeof mrRender === "function") mrRender();
+})();
+</script>
+
+
+<script>
+(function desktopLocalPreview(){
+  if(window.matchMedia('(min-width:1181px)').matches){
+    const lock=document.getElementById('lockScreen');
+    if(lock) lock.classList.add('hidden');
+    const frame=document.getElementById('frame');
+    if(frame) frame.style.display='flex';
+  }
+})();
+</script>
+
+
+<!-- CURRENT_WALLET_COINS_PATCH_START -->
+<style id="current-wallet-coins-style">
+  .token-icon.with-mini-badge,
+  .mr-token-icon.with-mini-badge{
+    position:relative !important;
+    overflow:visible !important;
+  }
+  .token-mini-badge,
+  .mr-mini-badge{
+    position:absolute;
+    right:-2px;
+    bottom:-2px;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f6f6f7;
+    border:1.5px solid #0b0b0c;
+    box-shadow:0 1px 2px rgba(0,0,0,.28);
+    pointer-events:none;
+  }
+  .token-mini-badge svg,
+  .mr-mini-badge svg{
+    width:10px;
+    height:10px;
+    display:block;
+  }
+</style>
+
+<script id="current-wallet-coins-script">
+(function patchCurrentWalletCoins(){
+  if(window.__currentWalletCoinsPatch) return;
+  window.__currentWalletCoinsPatch = true;
+
+  function solLogo(){
+    return `<img class="exact-token-img exact-token-img-sol" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+  function ethLogo(){
+    return `<img class="exact-token-img exact-token-img-eth" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+
+  function ethBadgeA(){
+    return `<img class="eth-exact-composite eth-exact-composite-a" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+  function ethBadgeB(){
+    return `<img class="eth-exact-composite eth-exact-composite-b" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+
+  function btcLogo(){
+    return `<img class="exact-token-img exact-token-img-btc" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+  function suiLogo(){
+    return `<img class="exact-token-img exact-token-img-sui" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+  function polLogo(){
+    return `<img class="exact-token-img exact-token-img-pol" src="data:image/png;base64,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" alt="" draggable="false">`;
+  }
+
+  function hypeLogo(){
+    return `<img class="exact-token-img exact-token-img-hype" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAErUlEQVR42tWZe0xTVxzHv+fe25ZHYax0IFJhSJBYHspwaZS5zejE/rEFTNyLzLFlzmSZkWVOpyRk2XxM5tQ9EhLtAhoNkbBJJGrqNhy6aVhAtiAYNtF0RVh0PKaV3tLee/eHlsBuH/fetgq/pP/cnt/vfM7vfM/vnnsOMRgMmElGYYbZjANmwjZyigIhBBRFgaLu5YHnefA8D0EQwPP8wwWmKAoMw4CiKMFfG5qmQdP0lGccxxGO4xQPgFECqlarBaUDpWla8A5ifHycyAVnHhSoL/PGkwNOPSzY/4N7dR9yhhmGAcMwYYeNT52F/Befhz57Llx3HLh15arQfeIMRvoHSSA/EujFESnYnNVmrNq5xed/1qo9aD/cSGRL4n4VCDts5vKn/MICQPHHm/BEWakgC5gQEhHNxup1KN65OWg7844teLzoSUEysEajicgCW1a5AdGPxEtq+9I3e8BoNMGBvas1Vq9DyoL50CbpwwKbuigf2eZl0uttlAZF75YLQRddYppBeO6T95H5zOKJZ7aLHTi1aTvGhkYUA7/aUIOU/PmyfDysC58vXAkP6yI+MxwdHye8fPTLKbAAkL64EK8dPwj9vLmKYDOWmmTDerNseusV/5Io2lCOhDmzfTprk/RYU7dXkUSWbHxT8czklZp9A1MqBqZ1ZQGdY3QJMH9WKavDhWWlmJWbrRg4MTMdam2sIAI2FORKqgxppgKYq7dJ6iw5NxtPf7A+5AU7e4FRnOHUwjzJAYwvrMSaQ/sCyiOlIAerD+yGKioq9ApTkCPeSyQb5U1bmqkAr5+sw8/7LLC3dWK4zwZNnBaphXmYt+pZ5JQUh61+JxhSxMCGSaOQalFxWqyoqoj4Z9Gj6QaxJGIfS5y233G6jDliYLeTnbbARMWIgUftA9MWeOS6XQw8fP2vaQs8ah8UL7qha8qABzq70Xu6BaP2QbjHnEgyZiFrxVJZZTIosO2GGLi/o0t2oB+3f4Hfjhyf8sze1omO2gYYS4qxvKoC6pjokIH7O7vEkrjReVlWkKZ3KkWwk62nyYpv120Oy2IemMQ2ATzuuEuG+mySApzd9TX6Wn4J3lFHF6yV1SHBDvXZwN52+N5eXqg5HDRA39kLuHSoUXKHvada0NP8vWLg3xtP+t9edp84Q9ysy6+z4+Y/sG7bLbvTn3Z8hbHhUdl+btaF9roG/8DcuBvH3njPt7OTxXfrP4Rz5F/ZHTtHb6O1uka2X3ttA9xOlgT8prNdvEROb90lyuyxtRW4deWq4qntabLi78u9ktu77jjQuvcAkXyQEp+oE9KWFEIdE40/rK3wBJCK5M14VgbKm2slta1fuxHXzrVJB47UeZqxpBjmT7cGbHNuvwXn91uIrJMfnufh8XhIuIF7mqxorvgILsddn/+3Wer9wgY9WwMAtVod8NBaqUXrEmB6uwzpRYugTdbjZs+f+NVSj94fzis/DIy0PKZUIbebcBwXnEVKMJ7n4XK5SKRgWZaVBDtl8xPMBEEAy7KEpmmoVCrhQWZVEfDEy4XjwHEcCUUmSu42FANPlgnL3nsLea+6vFdfhBDh/qwQ75WX9xeqheWezgdMxPT+H5uvpeT9CpI9AAAAAElFTkSuQmCC" alt="" draggable="false">`;
+  }
+
+  function badgeA(){
+    return `
+      <span class="token-mini-badge" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" stroke="#121214" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 8.8 8.5 3.3"/>
+          <path d="M4 3.2h4.7v4.7"/>
+        </svg>
+      </span>`;
+  }
+  function badgeB(){
+    return `
+      <span class="token-mini-badge" aria-hidden="true">
+        <svg viewBox="0 0 12 12" fill="none" stroke="#121214" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2.2" y="4.1" width="7.6" height="3.8" rx="1.6"/>
+        </svg>
+      </span>`;
+  }
+
+  if(window.tokenData){
+    window.tokenData.sui = { name:'Sui', icon:'SUI', color:'#56a7ff', price:'$0.00', change:'$0.00', up:true, held:'0 SUI' };
+    window.tokenData.pol = { name:'Polygon', icon:'POL', color:'#7a56ec', price:'$0.00', change:'$0.00', up:true, held:'0 POL' };
+  }
+
+  if(typeof tokenData !== 'undefined'){
+    tokenData.hype = { name:'HYPE', icon:'HYPE', color:'#63e8d1', price:'$0.00', change:'$0.00', up:true, held:'0 HYPE' };
+  }
+
+  const oldWalletTokenLogo = window.walletTokenLogo;
+  window.walletTokenLogo = function(key, size=58){
+    const common = `width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:0 0 ${size}px`;
+    if(key === 'sol') return `<span style="${common};background:transparent">${solLogo()}</span>`;
+    if(key === 'eth') return `<span style="${common};background:transparent">${ethLogo()}</span>`;
+    if(key === 'btc') return `<span style="${common};background:transparent">${btcLogo()}</span>`;
+    if(key === 'sui') return `<span style="${common};background:transparent">${suiLogo()}</span>`;
+    if(key === 'pol') return `<span style="${common};background:transparent">${polLogo()}</span>`;
+    if(key === 'hype') return `<span style="${common};background:transparent">${hypeLogo()}</span>`;
+    return oldWalletTokenLogo ? oldWalletTokenLogo(key,size) : `<span style="${common};background:#222;color:#fff;font-weight:800">${String(key||'').toUpperCase()}</span>`;
+  };
+
+  function desktopRowHTML(){
+    return `
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('sol')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-sol" aria-hidden="true">${solLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">Solana <span class="fake-verified">✓</span></div>
+            <div class="token-sub" id="pc-sol-sub">0.00105 SOL</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val" id="pc-sol-val">$0.11</div>
+          <div class="token-change up pc-sol-change">+&lt;$0.01</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('eth')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-eth" aria-hidden="true">${ethLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">Ethereum <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-eth-main-sub">0 ETH</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-eth-main-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('btc')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-btc" aria-hidden="true">${btcLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">Bitcoin <span class="fake-verified">✓</span></div>
+            <div class="token-sub" id="pc-btc-sub">0 BTC</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val" id="pc-btc-val">$0.00</div>
+          <div class="token-change token-flat">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('eth')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-eth exact-eth-composite-slot" aria-hidden="true">${ethBadgeA()}</div>
+          <div class="token-copy">
+            <div class="token-name">Ethereum <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-zero-sub" data-symbol="ETH">0 ETH</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-zero-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('eth')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-eth exact-eth-composite-slot" aria-hidden="true">${ethBadgeB()}</div>
+          <div class="token-copy">
+            <div class="token-name">Ethereum <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-zero-sub" data-symbol="ETH">0 ETH</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-zero-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('sui')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-sui" aria-hidden="true">${suiLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">Sui <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-zero-sub" data-symbol="SUI">0 SUI</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-zero-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('pol')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-pol" aria-hidden="true">${polLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">Polygon <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-zero-sub" data-symbol="POL">0 POL</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-zero-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+
+      <button class="token-row pc-ref-token" type="button" onclick="openDetail('hype')">
+        <div class="token-left">
+          <div class="token-icon pc-ref-logo token-logo-hype" aria-hidden="true">${hypeLogo()}</div>
+          <div class="token-copy">
+            <div class="token-name">HYPE <span class="fake-verified">✓</span></div>
+            <div class="token-sub pc-zero-sub" data-symbol="HYPE">0 HYPE</div>
+          </div>
+        </div>
+        <div class="token-right">
+          <div class="token-val pc-zero-val">$0.00</div>
+          <div class="token-change token-flat pc-zero-change">$0.00</div>
+        </div>
+      </button>
+    `;
+  }
+
+  function applyDesktopRows(){
+    const panel = document.getElementById('panel-tokens');
+    if(!panel) return;
+    panel.innerHTML = desktopRowHTML();
+    if(typeof window.updateTokenDisplays === 'function'){
+      window.updateTokenDisplays();
+    }
+  }
+
+  const oldUpdateTokenDisplays = window.updateTokenDisplays;
+  window.updateTokenDisplays = function(){
+    if(oldUpdateTokenDisplays) oldUpdateTokenDisplays();
+
+    const h = (window.pcSimHoldings && window.pcSimHoldings[window.current]) || {};
+    const ethQty = (typeof window.pcFmtQty === 'function') ? window.pcFmtQty(h.ETH||0,'ETH') : '0';
+    const ethUsd = (h.ETH||0) * ((window.PC_SIM_RATES && window.PC_SIM_RATES.ETH) || 0);
+
+    document.querySelectorAll('.pc-eth-main-sub').forEach(el=>{
+      el.textContent = ethQty + ' ETH';
+    });
+    document.querySelectorAll('.pc-eth-main-val').forEach(el=>{
+      el.textContent = window.masked ? '••••••' : (typeof window.fmt === 'function' ? window.fmt(ethUsd) : '$0.00');
+    });
+
+    document.querySelectorAll('.pc-zero-sub').forEach(el=>{
+      const sym = el.getAttribute('data-symbol') || '';
+      el.textContent = (window.masked ? ('•••• ' + sym) : ('0 ' + sym));
+    });
+    document.querySelectorAll('.pc-zero-val, .pc-zero-change').forEach(el=>{
+      el.textContent = window.masked ? '••••••' : '$0.00';
+    });
+    document.querySelectorAll('.pc-sol-change').forEach(el=>{
+      el.textContent = window.masked ? '••••••' : '+<$0.01';
+    });
+
+    if(window.tokenData){
+      window.tokenData.sui.held = '0 SUI';
+      window.tokenData.pol.held = '0 POL';
+      if(window.tokenData.hype) window.tokenData.hype.held = '0 HYPE';
+    }
+  };
+
+  window.filterWalletSearch = function(query){
+    const target = document.getElementById('walletSearchResults');
+    if(!target) return;
+    const q = String(query || '').trim().toLowerCase();
+    const rows = [
+      {key:'sol', name:'Solana',  sub:'SOL · Network asset', iconHTML:`<div class="token-icon" style="background:#09090c">${solLogo()}</div>`},
+      {key:'eth', name:'Ethereum',sub:'ETH · Network asset', iconHTML:`<div class="token-icon" style="background:#f0f0f2">${ethLogo()}</div>`},
+      {key:'btc', name:'Bitcoin', sub:'BTC · Network asset', iconHTML:`<div class="token-icon" style="background:#f7931a">${btcLogo()}</div>`},
+      {key:'sui', name:'Sui',     sub:'SUI · Network asset', iconHTML:`<div class="token-icon" style="background:#56a7ff">${suiLogo()}</div>`},
+      {key:'pol', name:'Polygon', sub:'POL · Network asset', iconHTML:`<div class="token-icon" style="background:#7a56ec">${polLogo()}</div>`},
+      {key:'hype',name:'HYPE',    sub:'HYPE · Network asset', iconHTML:`<div class="token-icon" style="background:transparent">${hypeLogo()}</div>`}
+    ].filter(x=>!q || (x.name + ' ' + x.sub).toLowerCase().includes(q));
+
+    target.innerHTML = rows.length ? rows.map(x=>`
+      <div class="mobile-search-result" onclick="openDetail('${x.key}')">
+        ${x.iconHTML}
+        <div>
+          <div class="mobile-search-result-title">${x.name}</div>
+          <div class="mobile-search-result-sub">${x.sub}</div>
+        </div>
+      </div>
+    `).join('') : `<div class="empty-state"><div class="empty-title">No results</div><div class="empty-sub">Try another search.</div></div>`;
+  };
+
+  function mrIcon(kind, badge){
+    if(kind === 'sol') return '<span class="mr-token-icon exact-mobile-token-icon">'+solLogo()+'</span>';
+    if(kind === 'eth') return '<span class="mr-token-icon exact-mobile-token-icon">'+ethLogo()+'</span>';
+    if(kind === 'btc') return '<span class="mr-token-icon exact-mobile-token-icon">'+btcLogo()+'</span>';
+    if(kind === 'sui') return '<span class="mr-token-icon exact-mobile-token-icon">'+suiLogo()+'</span>';
+    if(kind === 'pol') return '<span class="mr-token-icon exact-mobile-token-icon">'+polLogo()+'</span>';
+    if(kind === 'hype') return '<span class="mr-token-icon exact-mobile-token-icon">'+hypeLogo()+'</span>';
+    return '<span class="mr-token-icon" style="background:#26262a;color:#fff">'+kind.toUpperCase()+'</span>';
+  }
+  function mrIconWithBadge(kind, which){
+    return '<span class="mr-token-icon exact-eth-composite-slot">' +
+      (which === 'a' ? ethBadgeA() : ethBadgeB()) +
+      '</span>';
+  }
+  function mrRows(){
+    const h = (window.pcSimHoldings && window.pcSimHoldings[window.current]) || {};
+    const solQty = (typeof window.pcFmtQty === 'function' ? window.pcFmtQty(h.SOL||0,'SOL') : '0') + ' SOL';
+    const ethQty = (typeof window.pcFmtQty === 'function' ? window.pcFmtQty(h.ETH||0,'ETH') : '0') + ' ETH';
+    const btcQty = (typeof window.pcFmtQty === 'function' ? window.pcFmtQty(h.BTC||0,'BTC') : '0') + ' BTC';
+    const solVal = window.masked ? '••••••' : (typeof window.fmt === 'function' ? window.fmt((h.SOL||0) * ((window.PC_SIM_RATES && window.PC_SIM_RATES.SOL) || 0)) : '$0.11');
+    const ethVal = window.masked ? '••••••' : (typeof window.fmt === 'function' ? window.fmt((h.ETH||0) * ((window.PC_SIM_RATES && window.PC_SIM_RATES.ETH) || 0)) : '$0.00');
+    const btcVal = window.masked ? '••••••' : (typeof window.fmt === 'function' ? window.fmt((h.BTC||0) * ((window.PC_SIM_RATES && window.PC_SIM_RATES.BTC) || 0)) : '$0.00');
+    const zeroVal = window.masked ? '••••••' : '$0.00';
+
+    const rows = [
+      {label:'Solana',  qty:solQty, val:solVal, move:'+<$0.01', cls:'mr-green', click:"openDetail('sol')", icon:mrIcon('sol'), verified:true},
+      {label:'Ethereum',qty:ethQty, val:ethVal, move:'$0.00',   cls:'',         click:"openDetail('eth')", icon:mrIcon('eth'), verified:true},
+      {label:'Bitcoin', qty:btcQty, val:btcVal, move:'$0.00',   cls:'',         click:"openDetail('btc')", icon:mrIcon('btc'), verified:true},
+      {label:'Ethereum',qty:(window.masked?'•••• ETH':'0 ETH'), val:zeroVal, move:'$0.00', cls:'', click:"openDetail('eth')", icon:mrIconWithBadge('eth','a'), verified:true},
+      {label:'Ethereum',qty:(window.masked?'•••• ETH':'0 ETH'), val:zeroVal, move:'$0.00', cls:'', click:"openDetail('eth')", icon:mrIconWithBadge('eth','b'), verified:true},
+      {label:'Sui',     qty:(window.masked?'•••• SUI':'0 SUI'), val:zeroVal, move:'$0.00', cls:'', click:"openDetail('sui')", icon:mrIcon('sui'), verified:true},
+      {label:'Polygon', qty:(window.masked?'•••• POL':'0 POL'), val:zeroVal, move:'$0.00', cls:'', click:"openDetail('pol')", icon:mrIcon('pol'), verified:true},
+      {label:'HYPE',    qty:(window.masked?'•••• HYPE':'0 HYPE'), val:zeroVal, move:'$0.00', cls:'', click:"openDetail('hype')", icon:mrIcon('hype'), verified:true}
+    ];
+
+    return rows.map(r => `
+      <button class="mr-token-row" type="button" onclick="${r.click}">
+        <span class="mr-token-left">
+          ${r.icon}
+          <span class="mr-token-copy">
+            <span class="mr-token-name">${r.label}${r.verified ? '<span class="mr-verified">✓</span>' : ''}</span>
+            <span class="mr-token-qty">${r.qty}</span>
+          </span>
+        </span>
+        <span class="mr-token-right">
+          <span class="mr-token-value">${r.val}</span>
+          <span class="mr-token-move ${r.cls}">${window.masked ? '••••••' : r.move}</span>
+        </span>
+      </button>
+    `).join('');
+  }
+
+  const oldMrRender = window.mrRender;
+  window.mrRender = function(){
+    if(oldMrRender) oldMrRender();
+    if(typeof window.isWalletApp === 'function' && !window.isWalletApp()) return;
+    const rows = mrRows();
+    const home = document.getElementById('mrTokenList');
+    const trade = document.getElementById('mrTradeTokens');
+    if(home) home.innerHTML = rows;
+    if(trade) trade.innerHTML = rows;
+  };
+
+  function bootApply(){
+    applyDesktopRows();
+    if(typeof window.mrRender === 'function') window.mrRender();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', bootApply, {once:true});
+  }else{
+    bootApply();
+  }
+
+  setTimeout(bootApply, 60);
+})();
+</script>
+<!-- CURRENT_WALLET_COINS_PATCH_END -->
+
+
+<script id="account-rail-state-sync">
+(function(){
+  const previous = window.mrRender;
+  window.mrRender = function(){
+    if(previous) previous();
+    document.querySelectorAll('.mr-rail-account').forEach(btn=>{
+      btn.classList.toggle('active', btn.dataset.account === current);
+    });
+  };
+  setTimeout(()=>{ if(window.mrRender) window.mrRender(); }, 20);
+})();
+</script>
+
+
+<script id="force-fresh-service-worker">
+if('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')){
+  window.addEventListener('load', async ()=>{
+    try{
+      const reg = await navigator.serviceWorker.register('./sw.js', {updateViaCache:'none'});
+      await reg.update();
+    }catch(e){}
+  });
+}
+</script>
+
+
+<script id="token-zero-spacing-normalizer">
+(function(){
+  function normalizeZeroTokenAmounts(root=document){
+    root.querySelectorAll('.token-sub, .mr-token-qty').forEach(el=>{
+      const raw=(el.textContent||'').trim();
+      const match=raw.match(/^0(?:\.0+)?\s+([A-Z0-9]+)$/);
+      if(match){
+        el.textContent='0\u00A0'+match[1];
+        el.classList.add('zero-token-amount');
+      }else{
+        el.classList.remove('zero-token-amount');
+      }
+    });
+  }
+
+  const previousUpdate=window.updateTokenDisplays;
+  if(typeof previousUpdate==='function'){
+    window.updateTokenDisplays=function(){
+      const result=previousUpdate.apply(this,arguments);
+      normalizeZeroTokenAmounts();
+      return result;
+    };
+  }
+
+  const previousMrRender=window.mrRender;
+  if(typeof previousMrRender==='function'){
+    window.mrRender=function(){
+      const result=previousMrRender.apply(this,arguments);
+      normalizeZeroTokenAmounts();
+      return result;
+    };
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',()=>normalizeZeroTokenAmounts(),{once:true});
+  }else{
+    normalizeZeroTokenAmounts();
+  }
+
+  setTimeout(()=>normalizeZeroTokenAmounts(),100);
+  setTimeout(()=>normalizeZeroTokenAmounts(),900);
+})();
+</script>
+
+
+<script id="user-video-ui-interactions">
+(function(){
+  const addresses = [
+    ['Solana','S','8q4w...kLj4'],
+    ['Ethereum','◆','0x7678...6B78'],
+    ['Bitcoin','₿','bc1q...nnxk'],
+    ['Robinhood C...','R','0x7678...6B78'],
+    ['Base','□','0x7678...6B78'],
+    ['Sui','◉','0xfd36...d659'],
+    ['Polygon','∞','0x7678...6B78'],
+    ['HyperEVM','⌁','0x7678...6B78']
+  ];
+
+  window.buildDropdown = function(){
+    const dd=document.getElementById('dropdown');
+    if(!dd) return;
+    dd.classList.add('video-asset-dropdown');
+    dd.innerHTML=addresses.map(([name,icon,value])=>`
+      <div class="video-address-row">
+        <span class="video-address-icon">${icon}</span>
+        <span class="video-address-name">${name}</span>
+        <span class="video-address-value">${value}</span>
+        <button type="button" class="video-address-copy" onclick="event.stopPropagation();showToast('Address copied')" aria-label="Copy ${name} address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="10" height="10" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+        </button>
+      </div>
+    `).join('');
+  };
+
+  window.toggleDropdown = function(){
+    buildDropdown();
+    const dd=document.getElementById('dropdown');
+    if(dd) dd.classList.toggle('hidden');
+  };
+
+  function ensureRail(){
+    const frame=document.getElementById('frame');
+    if(!frame || document.getElementById('videoUiRail')) return;
+
+    const backdrop=document.createElement('div');
+    backdrop.id='videoUiBackdrop';
+    backdrop.className='video-ui-backdrop';
+    backdrop.hidden=true;
+    backdrop.onclick=videoUiCloseRail;
+
+    const rail=document.createElement('aside');
+    rail.id='videoUiRail';
+    rail.className='video-ui-rail';
+    rail.hidden=true;
+    rail.innerHTML=`
+      <button class="video-ui-rail-back" type="button" onclick="videoUiCloseRail()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="video-ui-rail-accounts">
+        <button class="video-ui-account" data-account="Account 1" type="button" onclick="videoUiChooseAccount('Account 1')">
+          <span class="video-ui-account-circle">A1</span><span class="video-ui-account-label">Account 1</span>
+        </button>
+        <button class="video-ui-account" data-account="Hot Wallet" type="button" onclick="videoUiChooseAccount('Hot Wallet')">
+          <span class="video-ui-account-circle">H</span><span class="video-ui-account-label">Hot Wallet</span>
+        </button>
+        <button class="video-ui-account" data-account="Hot Wallet 2" type="button" onclick="videoUiChooseAccount('Hot Wallet 2')">
+          <span class="video-ui-account-circle">H2</span><span class="video-ui-account-label">Hot Wallet 2</span>
+        </button>
+      </div>
+      <div class="video-ui-rail-tools">
+        <button class="video-ui-tool" type="button" onclick="showToast('Add account')" aria-label="Add account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button class="video-ui-tool manage" type="button" onclick="showToast('Manage Accounts')" aria-label="Manage Accounts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m4 16-.7 4 4-.7L18 8.6 15.4 6 4 16Z"/><path d="m13.8 7.6 2.6 2.6"/></svg>
+        </button>
+        <button class="video-ui-tool" type="button" onclick="showToast('Settings')" aria-label="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.6-2-3.4-2.5 1a8 8 0 0 0-1.7-1L14.4 3h-4.8l-.3 3a8 8 0 0 0-1.7 1l-2.5-1-2 3.4L5.1 11a7 7 0 0 0 0 2l-2 1.6 2 3.4 2.5-1a8 8 0 0 0 1.7 1l.3 3h4.8l.3-3a8 8 0 0 0 1.7-1l2.5 1 2-3.4-2-1.6c.1-.3.1-.7.1-1Z"/></svg>
+        </button>
+      </div>`;
+    frame.append(backdrop,rail);
+  }
+
+  function syncRail(){
+    document.querySelectorAll('.video-ui-account').forEach(btn=>{
+      btn.classList.toggle('active',btn.dataset.account===current);
+    });
+  }
+
+  window.videoUiOpenRail=function(){
+    ensureRail();
+    const rail=document.getElementById('videoUiRail');
+    const bg=document.getElementById('videoUiBackdrop');
+    if(rail) rail.hidden=false;
+    if(bg) bg.hidden=false;
+    syncRail();
+    document.getElementById('dropdown')?.classList.add('hidden');
+  };
+  window.videoUiCloseRail=function(){
+    const rail=document.getElementById('videoUiRail');
+    const bg=document.getElementById('videoUiBackdrop');
+    if(rail) rail.hidden=true;
+    if(bg) bg.hidden=true;
+  };
+  window.videoUiChooseAccount=function(name){
+    if(accounts && accounts[name]){
+      selectAccount(name);
+      syncRail();
+    }
+    videoUiCloseRail();
+  };
+
+  // Keep the UI video's clean starting PNL state.
+  function setVideoPnl(){
+    const el=document.getElementById('changeText');
+    if(el){
+      el.className='up';
+      el.innerHTML='<span class="pnl-dollar"><span class="pnl-sign pnl-plus">+</span><span class="pnl-money">$0.00</span></span><span class="pnl-percent-pill">+1.48%</span>';
+    }
+  }
+
+  // Make special panels survive account renders.
+  const oldRenderEmptyStates=window.renderEmptyStates;
+  window.renderEmptyStates=function(){
+    if(oldRenderEmptyStates) oldRenderEmptyStates();
+    const nft=document.getElementById('panel-nfts');
+    if(nft && !nft.querySelector('.video-collectibles-empty')){
+      nft.innerHTML=`
+        <div class="video-collectibles-empty">
+          <svg class="video-collectibles-art" viewBox="0 0 120 95" aria-hidden="true">
+            <g transform="translate(18 8) rotate(12 56 42)">
+              <path d="M58 2v34c-3-3-8-4-12-2-6 2-9 7-7 11 2 5 8 6 14 4 5-2 8-6 7-10V17l20 5v25c-3-3-8-4-12-2-6 2-9 7-7 11 2 5 8 6 14 4 5-2 8-6 7-10V10L58 2Z" fill="#f4f58a"/>
+              <rect x="15" y="46" width="32" height="32" rx="2" fill="none" stroke="#9b7cff" stroke-width="4" transform="rotate(-23 31 62)"/>
+              <path d="M88 52 111 58 96 77Z" fill="#ff5a3c"/>
+            </g>
+          </svg>
+          <div class="video-empty-title">No collectibles found</div>
+          <div class="video-empty-sub">Buy or transfer a collectible to start<br>building your collection</div>
+        </div>`;
+    }
+  };
+
+  ensureRail();
+  syncRail();
+  buildDropdown();
+  setVideoPnl();
+
+  // When changing tabs, start the list at the top just like the recording.
+  const oldSwitchTab=window.switchTab;
+  window.switchTab=function(name){
+    oldSwitchTab(name);
+    const sc=document.querySelector('.body-scroll');
+    if(sc) sc.scrollTop=0;
+  };
+})();
+</script>
+
+
+<script id="user-video-avatar-copy">
+(function(){
+  const src='data:image/png;base64,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';
+  function apply(){
+    const img=document.getElementById('walletCreatorAvatar');
+    if(img) img.src=src;
+  }
+  apply();
+  setTimeout(apply,50);
+  setTimeout(apply,500);
+})();
+</script>
+
+
+
+
+
+<script id="balance-native-punctuation-fix">
+(function(){
+  function unwrapBalance(el){
+    if(!el) return;
+    const raw = (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g,'').trim();
+    if(/^\$?[\d,]+\.\d{2}$/.test(raw)) el.textContent = raw;
+  }
+  function apply(){
+    unwrapBalance(document.getElementById('balanceDisplay'));
+    unwrapBalance(document.getElementById('mrBalance'));
+  }
+  window.renderBalancePunctuation = function(){};
+  const _fmt = window.fmt;
+  if (typeof _fmt === 'function') {
+    window.fmt = function(v){ return _fmt(v).replace(/[，﹐､]/g, ',').replace(/[。｡]/g, '.'); };
+  }
+  apply();
+  setTimeout(apply, 50);
+  setTimeout(apply, 300);
+  setTimeout(apply, 1000);
+  document.addEventListener('DOMContentLoaded', apply);
+})();
+</script>
+
+
+
+<script id="decimal-dot-tad-smaller-script">
+(function(){
+  let busy=false;
+
+  function applyOne(el){
+    if(!el || busy) return;
+    if(el.querySelector('.decimal-dot-small')) return;
+
+    const raw=(el.textContent || '').replace(/\s+/g,'').trim();
+    if(!/^\$?[\d,]+\.\d{2}$/.test(raw)) return;
+
+    const i=raw.lastIndexOf('.');
+    if(i<0) return;
+
+    busy=true;
+    const before=raw.slice(0,i);
+    const after=raw.slice(i+1);
+
+    /* Keep all existing punctuation behavior. Only copy the uploaded $ shape. */
+    const hasDollar=before.startsWith('$');
+    const numberBefore=hasDollar ? before.slice(1) : before;
+    el.innerHTML=
+      (hasDollar ? '<span class="exact-dollar-ref" aria-hidden="true"></span>' : '') +
+      document.createTextNode(numberBefore).textContent +
+      '<span class="decimal-dot-small" aria-hidden="true"></span>' +
+      document.createTextNode(after).textContent;
+    busy=false;
+  }
+
+  function apply(){
+    applyOne(document.getElementById('balanceDisplay'));
+    applyOne(document.getElementById('mrBalance'));
+  }
+
+  const obs=new MutationObserver(function(){
+    if(!busy) requestAnimationFrame(apply);
+  });
+
+  function start(){
+    obs.observe(document.body,{childList:true,subtree:true,characterData:true});
+    apply();
+  }
+
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',start,{once:true});
+  }else{
+    start();
+  }
 })();
 </script>
 
